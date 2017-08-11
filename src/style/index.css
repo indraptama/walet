@@ -1,0 +1,22 @@
+html, body {
+	height: 100%;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	background: #FAFAFA;
+	font-family: 'Montserrat';
+	font-weight: 300;
+	font-size: 87.5%;
+	color: #444;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.sans {
+	font-family: 'Montserrat'
+}
+
+
+.bg-primary {
+	background-color: #b8a246;
+}

@@ -1,0 +1,37 @@
+.AgenCard {
+  width: 100%;
+  display: block;
+  background-color: #fff;
+  padding: 1rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.AgenCard_name {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+  color: #b8a246;
+}
+
+.AgenCard_address {
+  font-size: .875rem;
+  line-height: 1.25rem;
+}
+
+.AgenCard_bar {
+  width: 4px;
+  height: 100%;
+  left: 0;
+  top: 0;
+  position: absolute;
+  background-color: #b8a246;
+}
+
+
+@media (min-width: 48em) {
+  .AgenCard {
+    max-width: 200px;
+  }
+}
