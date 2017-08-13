@@ -9,15 +9,16 @@ function MainFooter(props) {
       <div className="mw9 center tc pv5">
         <img className="h3 tc" src="assets/logo.svg" alt=""/>
         <nav className="db-l mt4 tl tc-l">
-          <Link className="ttu db dib-l pv2 pv0-l ph3-l link near-black tracked f7 fw5" activeClassName={style.active} href="/">Home</Link>
-          <Link className="ttu db dib-l pv2 pv0-l ph3-l link near-black tracked f7 fw5" activeClassName={style.active} href="/profile">Profil</Link>
-          <Link className="ttu db dib-l pv2 pv0-l ph3-l link near-black tracked f7 fw5" activeClassName={style.active} href="/produk">Produk</Link>
-          <Link className="ttu db dib-l pv2 pv0-l ph3-l link near-black tracked f7 fw5" activeClassName={style.active} href="/pemesanan">Pemesanan</Link>
-          <Link className="ttu db dib-l pv2 pv0-l ph3-l link near-black tracked f7 fw5" activeClassName={style.active} href="/kontak">Kontak</Link>
-          <Link className="ttu db dib-l pv2 pv0-l ph3-l link near-black tracked f7 fw5" activeClassName={style.active} href="/agen">Agen Resmi</Link>
-          <Link className="ttu db dib-l pv2 pv0-l ph3-l link near-black tracked f7 fw5" activeClassName={style.active} href="/member">Member</Link>
-          <Link className="ttu db dib-l pv2 pv0-l ph3-l link near-black tracked f7 fw5" activeClassName={style.active} href="/gallery">Galeri</Link>
-          <Link className="ttu db dib-l pv2 pv0-l ph3-l link near-black tracked f7 fw5" activeClassName={style.active} href="/csr">CSR</Link>
+          <Link className="ttu db dib-l pv2 pv0-l ph3-l link near-black tracked f7 fw6" activeClassName={style.active} href="/">Home</Link>
+          <Link className="ttu db dib-l pv2 pv0-l ph3-l link near-black tracked f7 fw6" activeClassName={style.active} href="/profile">Profil</Link>
+          <Link className="ttu db dib-l pv2 pv0-l ph3-l link near-black tracked f7 fw6" activeClassName={style.active} href="/produk">Produk</Link>
+          <Link className="ttu db dib-l pv2 pv0-l ph3-l link near-black tracked f7 fw6" activeClassName={style.active} href="/article">Article</Link>
+          <Link className="ttu db dib-l pv2 pv0-l ph3-l link near-black tracked f7 fw6" activeClassName={style.active} href="/pemesanan">Pemesanan</Link>
+          <Link className="ttu db dib-l pv2 pv0-l ph3-l link near-black tracked f7 fw6" activeClassName={style.active} href="/kontak">Kontak</Link>
+          <Link className="ttu db dib-l pv2 pv0-l ph3-l link near-black tracked f7 fw6" activeClassName={style.active} href="/agen">Agen Resmi</Link>
+          <Link className="ttu db dib-l pv2 pv0-l ph3-l link near-black tracked f7 fw6" activeClassName={style.active} href="/member">Member</Link>
+          <Link className="ttu db dib-l pv2 pv0-l ph3-l link near-black tracked f7 fw6" activeClassName={style.active} href="/gallery">Galeri</Link>
+          <Link className="ttu db dib-l pv2 pv0-l ph3-l link near-black tracked f7 fw6" activeClassName={style.active} href="/csr">CSR</Link>
         </nav>
       </div>
     </div>

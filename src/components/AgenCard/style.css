@@ -32,6 +32,24 @@
 
 @media (min-width: 48em) {
   .AgenCard {
-    max-width: 200px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    max-width: 15rem;
+    overflow: hidden;
+    padding: 10rem 2rem 4rem;
+    text-align: center;
+    transition: transform 250ms ease;
+  }
+  .AgenCard:hover,
+  .AgenCard:focus {
+    transform: translate3d(0,-1rem,0);
+    transition: transform 250ms ease;
+  }
+  .AgenCard_bar {
+    bottom: 2rem;
+    display: inline-block;
+    height: 4px;
+    left: 5rem;
+    top: auto;
+    width: 5rem;
   }
 }

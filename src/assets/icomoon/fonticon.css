@@ -1,0 +1,128 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?9bnd6y');
+  src:  url('fonts/icomoon.eot?9bnd6y#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?9bnd6y') format('truetype'),
+    url('fonts/icomoon.woff?9bnd6y') format('woff'),
+    url('fonts/icomoon.svg?9bnd6y#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-search:before {
+  content: "\f002";
+}
+.icon-home:before {
+  content: "\f015";
+}
+.icon-eye:before {
+  content: "\f06e";
+}
+.icon-calendar:before {
+  content: "\f073";
+}
+.icon-comment:before {
+  content: "\f075";
+}
+.icon-phone:before {
+  content: "\f095";
+}
+.icon-twitter:before {
+  content: "\f099";
+}
+.icon-facebook:before {
+  content: "\f09a";
+}
+.icon-facebook-f:before {
+  content: "\f09a";
+}
+.icon-credit-card:before {
+  content: "\f09d";
+}
+.icon-envelope:before {
+  content: "\f0e0";
+}
+.icon-comment-o:before {
+  content: "\f0e5";
+}
+.icon-angle-left:before {
+  content: "\f104";
+}
+.icon-angle-right:before {
+  content: "\f105";
+}
+.icon-angle-up:before {
+  content: "\f106";
+}
+.icon-angle-down:before {
+  content: "\f107";
+}
+.icon-tablet:before {
+  content: "\f10a";
+}
+.icon-calendar-o:before {
+  content: "\f133";
+}
+.icon-ellipsis-h:before {
+  content: "\f141";
+}
+.icon-ellipsis-v:before {
+  content: "\f142";
+}
+.icon-youtube-play:before {
+  content: "\f16a";
+}
+.icon-instagram:before {
+  content: "\f16d";
+}
+.icon-google:before {
+  content: "\f1a0";
+}
+.icon-paper-plane-o:before {
+  content: "\f1d9";
+}
+.icon-send-o:before {
+  content: "\f1d9";
+}
+.icon-whatsapp:before {
+  content: "\f232";
+}
+.icon-map-o:before {
+  content: "\f278";
+}
+.icon-room:before {
+  content: "\e8b4";
+}
+.icon-menu:before {
+  content: "\e5d2";
+}
+.icon-message:before {
+  content: "\e0c9";
+}
+.icon-phone_iphone:before {
+  content: "\e325";
+}
+.icon-zoom_in:before {
+  content: "\e8ff";
+}
+.icon-zoom_out:before {
+  content: "\e900";
+}
+.icon-zoom_out_map:before {
+  content: "\e56b";
+}

@@ -23,6 +23,7 @@
     "preact-cli": "^1.4.1"
   },
   "dependencies": {
+    "animejs": "^2.0.2",
     "minireset.css": "0.0.3",
     "preact": "^8.2.1",
     "preact-compat": "^3.17.0",
