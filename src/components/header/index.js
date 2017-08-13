@@ -14,7 +14,7 @@ export default class Header extends Component {
 		return (
 			<header className="bg-white bb b--black-10">
 				<div className="center bg-primary w-100 white">
-					<div className="h2 mw9 ph3 center flex items-center justify-between">
+					<div className="h2 mw9 ph3 center dn flex-l items-center justify-between">
 						<nav className="f7">
 							<div className="dib">
 								<span className="mr3"><i className="icon icon-envelope" /> arief.walet@gmail.com </span>

@@ -1,0 +1,50 @@
+
+.Wallop-buttonPrevious,
+.Wallop-buttonNext {
+  position: absolute;
+  top: 50%;
+  display: block;
+  width: 48px;
+  height: 48px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background-color: transparent;
+  border: none;
+  color: transparent;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCINCgkgdmlld0JveD0iMCAwIDQ1OSA0NTkiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDQ1OSA0NTk7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxnPg0KCTxnPg0KCQk8cGF0aCBkPSJNMjI5LjUsMEMxMDIuNzUxLDAsMCwxMDIuNzUxLDAsMjI5LjVTMTAyLjc1MSw0NTksMjI5LjUsNDU5QzM1Ni4yNSw0NTksNDU5LDM1Ni4yNDksNDU5LDIyOS41UzM1Ni4yNSwwLDIyOS41LDB6DQoJCQkgTTM1MS43MzgsMjQ2LjA3N2MtMC4wNjMsMC4wNzEtMC4xMjIsMC4xNDQtMC4xODUsMC4yMTRjLTAuNjU5LDAuNzIzLDQuMTg0LTQuMTQ0LTg1LjA1MSw4NS4wOTENCgkJCWMtOS43NTcsOS43NTctMjUuNTg2LDkuNzctMzUuMzU2LDBjLTkuNzYzLTkuNzYzLTkuNzYzLTI1LjU5MiwwLTM1LjM1NWw0MS41MjctNDEuNTI3aC0xNDYuN2MtMTMuODA4LDAtMjUtMTEuMTkzLTI1LTI1DQoJCQlzMTEuMTkyLTI1LDI1LTI1aDE0Ni43MDFsLTQxLjUyNy00MS41MjdjLTkuNzYzLTkuNzYzLTkuNzYzLTI1LjU5MiwwLTM1LjM1NWM5Ljc2NC05Ljc2MywyNS41OTItOS43NjMsMzUuMzU2LDANCgkJCWM4OS43OTgsODkuNzk4LDg0LjcwOCw4NC42MjksODUuODUyLDg2LjAyMkMzNjAuMTM0LDIyMy4xMjksMzU5LjkwNCwyMzYuODcsMzUxLjczOCwyNDYuMDc3eiIvPg0KCTwvZz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjwvc3ZnPg0K');
+  opacity: 0.8;
+}
+
+.Wallop-buttonPrevious {
+  left: 0;
+  transform: translateY(-50%) rotate(180deg);
+}
+
+.Wallop-buttonNext {
+  right: 0;
+  transform: translateY(-50%) rotate(0deg);
+}
+
+/* pagination */
+.Wallop-pagination:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.Wallop-dot {
+  display: inline-block;
+  width: 48px;
+  margin-left: 0.125rem;
+  margin-right: 0.125rem;
+  border: 1px solid #ccc;
+  padding: 0.25rem;
+}
+
+.Wallop-dot:focus,
+.Wallop-dot--current {
+  border: 1px solid #333;
+}

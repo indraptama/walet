@@ -2,7 +2,7 @@
   width: 100%;
   display: block;
   background-color: #fff;
-  padding: 1rem;
+  padding: 0.75rem;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   position: relative;
   overflow: hidden;
@@ -33,14 +33,18 @@
 @media (min-width: 48em) {
   .AgenCard {
     border: 1px solid rgba(0, 0, 0, 0.1);
-    max-width: 15rem;
+    max-width: 14rem;
     overflow: hidden;
-    padding: 10rem 2rem 4rem;
+    padding: 10rem 1rem 4rem;
     text-align: center;
     transition: transform 250ms ease;
   }
-  .AgenCard:hover,
-  .AgenCard:focus {
+
+  .AgenCard_container {
+    transition: transform 250ms ease;
+  }
+  .AgenCard:hover .AgenCard_container,
+  .AgenCard:focus .AgenCard_container {
     transform: translate3d(0,-1rem,0);
     transition: transform 250ms ease;
   }

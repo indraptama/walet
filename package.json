@@ -24,10 +24,14 @@
   },
   "dependencies": {
     "animejs": "^2.0.2",
+    "axios": "^0.16.2",
     "minireset.css": "0.0.3",
     "preact": "^8.2.1",
     "preact-compat": "^3.17.0",
     "preact-router": "^2.5.5",
-    "tachyons": "^4.7.4"
+    "react-slick": "^0.14.11",
+    "slick-carousel": "^1.7.1",
+    "tachyons": "^4.7.4",
+    "wallop": "^2.4.1"
   }
 }

@@ -6,6 +6,7 @@ import MainFooter from './footer';
 import Home from '../routes/home';
 import Profile from '../routes/profile';
 import Article from '../routes/article';
+import Agen from '../routes/agen';
 // import Home from 'async!./home';
 // import Profile from 'async!./profile';
 
@@ -26,6 +27,7 @@ export default class App extends Component {
 					<Home path="/" />
 					<Profile path="/profile/" user="me" />
           <Article path="/article/" />
+          <Agen path="/agen/" />
 					<Profile path="/profile/:user" />
 				</Router>
 				<MainFooter />

@@ -1,0 +1,43 @@
+import { h, Component } from 'preact';
+import AgenCard from '../../components/AgenCard';
+import NewsThumb from '../../components/NewsThumb';
+import HeadlineNews from '../../components/HeadlineNews';
+import ProductThumb from '../../components/ProductThumb';
+import SubscribeBox from '../../components/SubscribeBox';
+import MessageBox from '../../components/MessageBox';
+import OwnerPicture from '../../components/OwnerPicture';
+import style from './style';
+
+export default class Home extends Component {
+	render() {
+		return (
+			<div class={style.home}>
+				<AgenCard name="Indra Pratama Putra" address="Jl. Pangeran kuning gang rukun no. 39 Tanjung Puri Sintang"/>
+         <HeadlineNews
+           title="Sekat Gantung apa Sekat Full?"
+           imageThumb="assets/images/news1.jpg"
+           postDate="2017-07-27"
+           viewer={3251}
+           postLink="post"
+           link="#"
+           reviews="Jam delapan pagi saya mulai ngantor. Seperti biasa pagi itu saya mulai melayani konsultasi on …"
+          />
+          <NewsThumb
+            title="Sekat Gantung apa Sekat Full?"
+            imageThumb="assets/images/news1.jpg"
+            postDate="2017-07-27"
+            viewer={3251}
+            postLink="post"
+            reviews="Jam delapan pagi saya mulai ngantor. Seperti biasa pagi itu saya mulai melayani konsultasi on …"
+           />
+           <ProductThumb
+             title="Walet Audio System (WAS)"
+            imageThumb="assets/images/walet-audio-s.jpg" />
+
+          <SubscribeBox />
+          <MessageBox label="Nama lengkap"/>
+          <OwnerPicture pictures="assets/images/3-1.jpg" />
+      </div>
+		);
+	}
+}

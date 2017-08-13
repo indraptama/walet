@@ -1,9 +1,8 @@
 import { h, Component } from 'preact';
-import AgenCard from '../../components/AgenCard';
+import fetch from 'unfetch';
 import NewsThumb from '../../components/NewsThumb';
 import HeadlineNews from '../../components/HeadlineNews';
 import ProductThumb from '../../components/ProductThumb';
-import SubscribeBox from '../../components/SubscribeBox';
 import MessageBox from '../../components/MessageBox';
 import OwnerPicture from '../../components/OwnerPicture';
 import style from './style';
@@ -63,10 +62,11 @@ export default class Home extends Component {
     })
 
     const address = this.state.address;
+
+    // PREACT RENDER
 		return (
 			<div>
 				<section className="Hero mw9 center vh-75 bg-primary">
-
         </section>
 
         <sction>
@@ -91,16 +91,19 @@ export default class Home extends Component {
                 <div className="dtc w5 w-third-l pb3 pr3">
                   <ProductThumb
                     title="Paket Suara Walet Original"
+                    path="/product"
                     imageThumb="assets/images/paket-suara.jpg" />
                 </div>
                 <div className="dtc w5 w-third-l pb3 pr3">
                   <ProductThumb
                     title="Walet Audio System (WAS)"
+                    path="/product"
                     imageThumb="assets/images/walet-audio-s.jpg" />
                 </div>
                 <div className="dtc w5 w-third-l pb3 pr3">
                   <ProductThumb
                     title="Buku Panduan Budidaya Walet"
+                    path="/product"
                     imageThumb="assets/images/book.jpg" />
                 </div>
               </div>
@@ -128,6 +131,8 @@ export default class Home extends Component {
             </div>
             <div className="fl dib w-100 w-third-l mb4 pr3-l">
               <h3 className="ttu f6 fw6 tracked primary mb3">from our twitter</h3>
+              <div>
+              </div>
             </div>
           </div>
         </section>
