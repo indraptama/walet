@@ -85,7 +85,7 @@ export default class Article extends Component {
     // PRact Render
     return (
       <div className={style.AP}>
-        <div className="mw8 center ph3 mt4">
+        <div className="mw8 center mt4">
           <HeadlineNews
               title={this.state.headline.title}
               imageThumb="assets/images/news1.jpg"
@@ -97,7 +97,7 @@ export default class Article extends Component {
              />
         </div>
 
-        <div className="cf mw8 center ph3">
+        <div className="cf mw8 center">
           <div className="dib fl w-100 w-two-thirds-l mb4 mb0-l">
             <h3 className={style.T_s}>Latest News</h3>
             <ul className="LNW">

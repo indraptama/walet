@@ -1,5 +1,5 @@
 .AP {
-  margin-top: 56px; 
+  margin-top: 4rem; 
 }
 
 .T_s {
@@ -16,4 +16,10 @@
 
 .LNW_li:last-child {
   border-bottom: 0;
+}
+
+@media (min-width: 960px) {
+  .AP {
+    margin-top: 6rem;
+  }
 }
