@@ -2,46 +2,86 @@
   width: 100%;
   display: block;
   background-color: #fff;
-  padding: 0.75rem;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   position: relative;
   overflow: hidden;
+  padding: 0 1rem;
+
+}
+
+.AgenCard_container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  text-transform: capitalize;
+  justify-content: space-between;
+}
+
+.AgenCard_ava {
+  display: block;
+  width: 48px;
+  overflow: hidden;
+  vertical-align: middle;
+}
+
+.AgenCard_ava img {
+  background-color: red;
+  width: 48px;
+  border-radius: 500px;
+}
+
+.AgenCard_content {
+  display: block;
+  padding: 1rem 0 1rem 1rem;
+  width: 100%;
+  vertical-align: middle;
 }
 
 .AgenCard_name {
-  font-size: 1rem;
+  font-size: 0.875rem;
   font-weight: 500;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.25rem;
   color: #b8a246;
+  line-height: 1;
 }
 
 .AgenCard_address {
-  font-size: .875rem;
-  line-height: 1.25rem;
+  font-size: .75rem;
+  line-height: 1rem;
 }
 
-.AgenCard_bar {
-  width: 4px;
-  height: 100%;
-  left: 0;
-  top: 0;
-  position: absolute;
-  background-color: #b8a246;
+.AgenCard_Arrow {
+  line-height: 32px;
 }
-
+.AgenCard_Arrow button {
+  border: none;
+  background-color: transparent;
+}
+.AgenCard_Arrow span {
+  display: none;
+}
 
 @media (min-width: 48em) {
   .AgenCard {
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    max-width: 14rem;
+    width: 12rem;
     overflow: hidden;
-    padding: 10rem 1rem 4rem;
+    padding: 3rem 1rem 1rem;
     text-align: center;
     transition: transform 250ms ease;
+    border-bottom: none;
   }
 
   .AgenCard_container {
     transition: transform 250ms ease;
+    display: block;
+  }
+
+  .AgenCard_ava,
+  .AgenCard_content {
+    display: block;
+    margin: auto;
+    padding: 0;
+    margin-bottom: 0.5rem;
   }
   .AgenCard:hover .AgenCard_container,
   .AgenCard:focus .AgenCard_container {
@@ -55,5 +95,27 @@
     left: 5rem;
     top: auto;
     width: 5rem;
+  }
+
+  .AgenCard_Arrow {
+      
+  }
+
+  .AgenCard_Arrow button {
+    border: 1px solid #b8a246;
+    padding: .25rem .5rem;
+    border-radius: 2px;
+    text-transform: uppercase;
+  }
+  .AgenCard_Arrow span {
+    display: inline-block;
+    margin-right: 0.5rem;
+    vertical-align: middle;
+    font-weight: 500;
+    font-size: .65rem;
+  }
+  .AgenCard_Arrow i {
+    display: inline-block;
+    vertical-align: middle;
   }
 }

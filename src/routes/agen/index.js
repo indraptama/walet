@@ -1,6 +1,7 @@
 import {h, Component} from 'preact';
 import fetch from 'unfetch';
 import AgenCard from '../../components/AgenCard';
+import style from './style';
 
 export default class Agen extends Component {
   constructor(props) {
@@ -32,16 +33,20 @@ export default class Agen extends Component {
   render() {
     const agens = this.state.dataAgen;
     return (
-      <div className="Agen bg-near-white">
-
-        <section>
+      <div className={style.AP}>
+        <section className={style.AP_Search}>
+          <div className={style.AP_SearchContainer}>
+            <p>Dapatkan Produk-produk asli kami hanya di agen-agen resmi di dekat anda</p>
+          </div>
         </section>
-        <section className="mw8 center ph3 flex-l flex-wrap justify-center">
-
+        <section className={style.AP_Section}>
             {agens.map(agen => {
-              const address = `${agen.address} ${agen.city}\n${agen.provice}\n${agen.contact}`;
+              const address = `${agen.city} - ${agen.provice}`;
               return(
-                <div className="flex ma1"><AgenCard name={agen.name} address={address}></AgenCard></div>
+                <div className={style.APL}>
+                  <AgenCard name={agen.name} address={address} avatar={agen.avatar} contact={agen.contact}>
+                  </AgenCard>
+                </div>
               )
             })}
 

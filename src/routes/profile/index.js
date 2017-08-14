@@ -33,13 +33,13 @@ export default class Profile extends Component {
         <section className="vh-25 vh-50-l cover z-1" style={`background:url("assets/images/sarang.jpg") center`}>
 
         </section>
-        <section className="mw8 center bg-white ft--3-l pa4 z-3 cf bt bw2 b--primary">
-          <div className="fl dib w-100 w-40-l">
+        <section className="Grid">
+          <div className="Grid-cell w-40-l">
             <div className="mb4 center w-40 w-100-l">
               <OwnerPicture pictures="assets/images/3-1.jpg" />
             </div>
           </div>
-          <article className="fl dib lh-copy w-100 w-60-l pl4-l">
+          <article className="Grid-cell w-60-l">
             <p>{this.state.content}</p>
           </article>
         </section>

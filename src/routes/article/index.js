@@ -84,7 +84,7 @@ export default class Article extends Component {
 
     // PRact Render
     return (
-      <div>
+      <div className={style.AP}>
         <div className="mw8 center ph3 mt4">
           <HeadlineNews
               title={this.state.headline.title}
@@ -99,14 +99,14 @@ export default class Article extends Component {
 
         <div className="cf mw8 center ph3">
           <div className="dib fl w-100 w-two-thirds-l mb4 mb0-l">
-            <h3 className="ttu f6 fw6 tracked primary mb3">Latest News</h3>
+            <h3 className={style.T_s}>Latest News</h3>
             <ul className="LNW">
               {LatestNews}
             </ul>
           </div>
           <div className="dib fl w-100 w-third-l">
             <div className="mb4">
-              <h3 className="ttu f6 fw6 tracked primary mb3">Follow Us</h3>
+              <h3 className={style.T_s}>Follow Us</h3>
               <div className="social-icon-top">
   							<a className="link dib mr3 f3 black" href="">
   								<i className="icon icon-facebook" />
@@ -128,7 +128,7 @@ export default class Article extends Component {
             </div>
 
             <div className="mb4">
-              <h3 className="ttu f6 fw6 tracked primary mb3">Artikel Populer</h3>
+              <h3 className={style.T_s}>Artikel Populer</h3>
               <ul>{MostView}</ul>
             </div>
 

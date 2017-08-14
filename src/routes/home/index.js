@@ -15,7 +15,7 @@ export default class Home extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className={style.HP}>
         <section className={style.Hr}>
           <Carousel Data="assets/data/carousel.json"/>
         </section>
