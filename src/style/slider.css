@@ -1,0 +1,68 @@
+.outer {
+  position: relative;
+}
+
+.outer:before {
+  display: block;
+  content: "";
+  width: 100%;
+  padding-top: 37.5%;
+}
+
+.outer > .inner {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.Wallop-buttonPrevious,
+.Wallop-buttonNext {
+  position: absolute;
+  top: 50%;
+  display: block;
+  width: 48px;
+  line-height: 48px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background-color: #fff;
+  border: none;
+  color: black;
+  background-repeat: no-repeat;
+  background-position: center;
+  font-size: 48px;
+  opacity: .5;
+}
+
+.Wallop-buttonPrevious {
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.Wallop-buttonNext {
+  right: 0;
+  transform: translateY(-50%) rotate(0deg);
+}
+
+/* pagination */
+.Wallop-pagination:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.Wallop-dot {
+  display: inline-block;
+  width: 48px;
+  margin-left: 0.125rem;
+  margin-right: 0.125rem;
+  border: 1px solid #ccc;
+  padding: 0.25rem;
+}
+
+.Wallop-dot:focus,
+.Wallop-dot--current {
+  border: 1px solid #333;
+}

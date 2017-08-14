@@ -1,0 +1,46 @@
+.HLN {
+  background-color: #fff;
+}
+.HLN_C {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.outer {
+  position: relative;
+}
+
+.outer:before {
+  display: block;
+  content: "";
+  width: 100%;
+  padding-top: 75%;
+}
+
+.outer .inner {
+  background-position: center;
+  background-size: cover;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.HLN_Con {
+  padding: 1rem;
+  line-height: 1.25;
+}
+
+.HLN_T {
+  font-weight: 500;
+  font-size: 1.15rem;
+  margin-bottom: .5rem;
+}
+
+.HLN_D {
+  font-size: .75rem;
+  color: #b8a246;
+  margin-bottom: .5rem;
+}

@@ -1,3 +1,21 @@
+.outer {
+  position: relative;
+}
+
+.outer:before {
+  display: block;
+  content: "";
+  width: 100%;
+  padding-top: 37.5%;
+}
+
+.outer > .inner {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
 
 .Wallop-buttonPrevious,
 .Wallop-buttonNext {

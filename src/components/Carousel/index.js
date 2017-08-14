@@ -1,7 +1,3 @@
-import 'wallop/css/wallop.css';
-import './theme.css';
-
-
 import {h, Component } from 'preact'
 
 
@@ -10,6 +6,7 @@ import Wallop from 'wallop'; //slider library
 import wallopInit from './helper.js';
 import fetch from 'unfetch';
 
+import style from './theme.css';
 
 export default class Carousel extends Component {
   constructor(props) {
@@ -28,7 +25,7 @@ export default class Carousel extends Component {
       .then(data => {
         // console.log(data);
         this.setState({
-          image: data.image,
+          image: data.images,
           loading:false
         })
       })
@@ -55,10 +52,14 @@ export default class Carousel extends Component {
           {mapImage}
         </div>
         <div className="Wallop-pagination">
-          {pageination}
+
         </div>
-        <button class="Wallop-buttonPrevious">Previous</button>
-        <button class="Wallop-buttonNext">Next</button>
+        <button class="Wallop-buttonPrevious">
+          <i className="icon icon-angle-left"></i>
+        </button>
+        <button class="Wallop-buttonNext">
+          <i className="icon icon-angle-right"></i>
+        </button>
       </div>
     ); //return
   } //render function
@@ -66,7 +67,11 @@ export default class Carousel extends Component {
 
 const ImageCarouselItem = ({imgLink,current}) => (
   <div className="Wallop-item">
-    <img src={imgLink} />
+    <div className={style.outer}>
+      <div className={style.inner} style={`background: url(${imgLink}) center;background-size: cover`}>
+
+      </div>
+    </div>
   </div>
 );
 

@@ -1,5 +1,6 @@
 import {h, Component} from 'preact';
 import fetch from 'unfetch';
+import style from './style';
 
 // Import Components
 import HeadlineNews from '../../components/HeadlineNews';
@@ -54,7 +55,7 @@ export default class Article extends Component {
 
     const LatestNews = this.state.dataArticle.map(key => {
       return (
-        <li className="dib fl w-100 pv2 mr3-l bb b--black-10">
+        <li className={style.LNW_li}>
           <NewsThumb
             title={key.title}
             imageThumb="assets/images/news1.jpg"
@@ -99,7 +100,7 @@ export default class Article extends Component {
         <div className="cf mw8 center ph3">
           <div className="dib fl w-100 w-two-thirds-l mb4 mb0-l">
             <h3 className="ttu f6 fw6 tracked primary mb3">Latest News</h3>
-            <ul className="pr5-l">
+            <ul className="LNW">
               {LatestNews}
             </ul>
           </div>
@@ -128,7 +129,7 @@ export default class Article extends Component {
 
             <div className="mb4">
               <h3 className="ttu f6 fw6 tracked primary mb3">Artikel Populer</h3>
-              {MostView}
+              <ul>{MostView}</ul>
             </div>
 
           </div>

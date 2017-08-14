@@ -1,22 +1,23 @@
 import {h} from 'preact';
+import style from './style';
 
 function HeadlineNews(props) {
   return (
-    <div className="HeadlineNews bg-white-l">
-      <a href={props.link} className="HeadlineNews_container link black">
-        <div className="aspect-ratio aspect-ratio--16x9 z-1">
-          <div className="aspect-ratio--object cover"
-            style={`background:url(${props.imageThumb}) center`}/>
+    <div className={style.HLN}>
+      <a href={props.link} className={style.HLN_C}>
+        <div className={style.outer}>
+          <div className={style.inner}
+            style={`background-image:url(${props.imageThumb})`}/>
         </div>
-        <div className="pv3 bg-white-l w-90-l center tc-l ft--3-l z-2 relative">
-          <h3 className="fw6 f4 f3-l mb3">{props.title}</h3>
-          <div className="f7 mb3 primary">
+        <div className={style.HLN_Con}>
+          <h3 className={style.HLN_T}>{props.title}</h3>
+          <div className={style.HLN_D}>
             <i className="icon icon-calendar mr2" />
             <span className="mr4 fw6">{props.postDate}</span>
             <i className="icon icon-eye mr2" />
             <span className="fw6">{props.viewer} viewer</span>
           </div>
-          <div className="lh-copy">
+          <div className={style.HLN_P}>
             {props.reviews}
           </div>
         </div>
