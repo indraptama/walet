@@ -81,7 +81,9 @@ export default class Home extends Component {
             </div>
             <div className="fl dib w-100 w-70-l pv4-l f5-l lh-copy">
                 <h3 className="ttu f6 fw6 tracked primary mb3 tc tl-l">Tentang Kami</h3>
-                {this.state.about}
+                <div className="measure-wide serif">
+                  {this.state.about}
+                </div>
             </div>
           </div>
         </section>

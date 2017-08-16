@@ -30,10 +30,10 @@ export default class Profile extends Component {
   render() {
     return (
       <div className="mt5-l">
-        <section className="vh-25 vh-50-l cover z-1" style={`background:url("assets/images/sarang.jpg") center`}>
+        <section className="vh-50 vh-50-l cover z-1" style={`background:url("assets/images/sarang.jpg") center`}>
 
         </section>
-        <section className="cf mw8 center ph3 ph4-l pv4 bg-white-l shadow-1-l ft--4">
+        <section className="cf mw8 center ph3 ph4-l pv4 bg-white-l ft--4">
           <div className="fl dib w-100 w-40-l">
             <div className="center w-40 w-100-l mb3 mb0-l">
               <OwnerPicture pictures="assets/images/3-1.jpg" />

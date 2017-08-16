@@ -14,8 +14,64 @@ export default class Header extends React.Component {
 		return (
       <div>
   			<header className={style.MH}>
-          <div className={style.MH_CS}></div>
-          <div className={style.MH_CB}></div>
+          <div className="dn flex-l items-center justify-between h2 f7 ph3 bb b--primary">
+						<div className="lift primary">
+							<p>
+								<span className="mr3">
+									<i className="icon icon-envelope mr2"></i>
+									arief.walet@gmail.com
+								</span>
+								<span className="mr3">
+									<i className="icon icon-whatsapp mr2"></i>
+									082138388899
+								</span>
+								<span className="mr3">
+									<i className="icon icon-phone mr2"></i>
+									082138388899
+								</span>
+							</p>
+						</div>
+						<div className="right">
+							<div className="f7">
+								<div className="social-icon-top">
+	  							<a className="link dib ml3 primary" href="">
+	  								<i className="icon icon-facebook" />
+	  							</a>
+	  							<a className="link dib ml3 primary" href="">
+	  								<i className="icon icon-twitter" />
+	  							</a>
+	  							<a className="link dib ml3 primary" href="">
+	  								<i className="icon icon-instagram" />
+	  							</a>
+	  							<a className="link dib ml3 primary" href="">
+	  								<i className="icon icon-youtube-play" />
+	  							</a>
+	  						</div>
+							</div>
+						</div>
+					</div>
+          <div className="flex items-center justify-between h3 f6 ph3">
+							<div className="left">
+								<Link className="link primary db" activeClassName={style.active} href="/">
+									<img src="assets/logo-side.svg" alt="" className="h2"/>
+								</Link>
+							</div>
+							<div className="right">
+								<nav className="dn db-l fw4">
+	                <Link className="link primary dib ml4" activeClassName={style.active} href="/">Home</Link>
+	                <Link className="link primary dib ml4" activeClassName={style.active} href="/profile">Profil</Link>
+	                <Link className="link primary dib ml4" activeClassName={style.active} href="/produk">Produk</Link>
+									<Link className="link primary dib ml4" activeClassName={style.active} href="/pemesanan">Pemesanan</Link>
+	                <Link className="link primary dib ml4" activeClassName={style.active} href="/article">Article</Link>
+									<Link className="link primary dib ml4" activeClassName={style.active} href="/agen">Agen Resmi</Link>
+									<Link className="link primary dib ml4" activeClassName={style.active} href="/member">Member</Link>
+									<Link className="link primary dib ml4" activeClassName={style.active} href="/gallery">Galeri</Link>
+									<Link className="link primary dib ml4" activeClassName={style.active} href="/csr">CSR</Link>
+	                <Link className="link primary dib ml4" activeClassName={style.active} href="/kontak">Kontak</Link>
+	              </nav>
+							</div>
+							<a href="#" onClick={""} className="link primary f2 dn-l bn bg-transparent"><i className="icon icon-menu"></i></a>
+					</div>
         </header>
         <aside className={style.MS}>
           <div className={style.MS_C}>

@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600');
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,500');
-@import url('https://fonts.googleapis.com/css?family=Archivo:400,600,700|Maitree:400,600'
+@import url('https://fonts.googleapis.com/css?family=Archivo:400,600,700|Maitree:400,600');
 
 html {
   background-color: #fff;
@@ -17,11 +17,19 @@ body {
 article {
   font-family: 'Maitree', serif;
   font-size: 1rem;
-  line-height: 1.65;
+  line-height: 1.618;
 }
 
 .primary {
   color: #b8a246;
+}
+
+.b--primary {
+  border-color: rgba(184, 162, 70, 0.1);
+}
+
+.bg-primary {
+  background-color: rgba(184, 162, 70, 1);
 }
 
 @media (min-width: 960px) {
@@ -38,4 +46,9 @@ article {
   .bg-white-l {
     background-color: #fff;
   }
+
+  .ft--3-l {
+    transform: translateY(-3rem);
+  }
+
 }
