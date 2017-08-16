@@ -66,13 +66,13 @@ export default class Home extends Component {
 
     // PREACT RENDER
 		return (
-			<div className={style.HP}>
+			<div className="{style.HP}">
           <section className={style.Hr}>
             <Carousel Data="assets/data/carousel.json"/>
           </section>
 
 
-        <sction>
+        <section className="bg-white">
           <div className="cf center mw8 ph3 pv4 pv0-l">
             <div className="fl dib w-100 w-30-l">
               <div className="w-40 w-100-l center mb3 pr4-l ft--3-l">
@@ -84,13 +84,13 @@ export default class Home extends Component {
                 {this.state.about}
             </div>
           </div>
-        </sction>
+        </section>
 
         <section>
-          <div className="cf center mw8 ph3 pv4 pv4-l">
-            <h3 className="ttu f6 fw6 tracked primary mb3">Produk kami</h3>
+          <div className="cf center mw8 ph3-l pv4 pv4-l">
+            <h3 className="ttu f7 fw6 tracked primary mb3 ml3 ml0-l">Produk kami</h3>
             <div className="overflow-x-scroll overflow-hidden-l">
-              <div className="dt dt--fixed">
+              <div className="dt dt--fixed ml3 ml0-l">
                 <div className="dtc w5 w-third-l pb3 pr3">
                   <ProductThumb
                     title="Paket Suara Walet Original"
@@ -114,7 +114,7 @@ export default class Home extends Component {
           </div>
         </section>
 
-        <section>
+        <section className="bg-white">
           <div className="cf center mw8 ph3 pv4 pv4-l">
             <div className="fl dib w-100 w-third-l mb4 pr3-l">
               <h3 className="ttu f6 fw6 tracked primary mb3">Highlight</h3>
@@ -140,7 +140,7 @@ export default class Home extends Component {
           </div>
         </section>
 
-        <section>
+        <section className="bg-white">
           <div className="cf center mw8 ph3 pv4 pv4-l">
             <h3 className="ttu f6 fw6 tracked primary mb3">Kontak Kami</h3>
             <div className="db cf flex-l items-center bg-primary-l">

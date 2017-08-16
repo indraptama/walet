@@ -1,7 +1,6 @@
 .OwnerPicture {
   background-color: #000;
   position: relative;
-  margin-right: 1rem;
   overflow: hidden;
   border-radius: 10000px;
 }
