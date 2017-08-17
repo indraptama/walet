@@ -29,11 +29,16 @@ export default class Profile extends Component {
 
   render() {
     return (
-      <div className="mt5-l">
-        <section className="vh-50 vh-50-l cover z-1" style={`background:url("assets/images/sarang.jpg") center`}>
-
+      <div className="mt4 mt5-l">
+        <section className="bg-primary ph3">
+          <div className="flex items-center mw8 center vh-50">
+            <div className="measure-wide white">
+              <h2 className="f3 f2-l fw6 white">Drs. Arief Budiman</h2>
+              <p className="serif f5-l">Konsultan Walet Asia Tenggara</p>
+            </div>
+          </div>
         </section>
-        <section className="cf mw8 center ph3 ph4-l pv4 bg-white-l ft--4">
+        <section className="cf mw8 center ph3 ph4-l pv4 bg-white-l ft--4-l elevation-10">
           <div className="fl dib w-100 w-40-l">
             <div className="center w-40 w-100-l mb3 mb0-l">
               <OwnerPicture pictures="assets/images/3-1.jpg" />

@@ -1,0 +1,85 @@
+{
+  "product": {
+    "books": {
+      "title": "Book",
+      "desc": "Dapatkan buku karangan Drs. Arief Budiman yang eksklusif dan sangat berguna untuk meningkatkan produksi sarang burung walet yang dijual khusus melalui website ini.",
+      "products": [
+        {
+          "title": "Solusi Permasalahan Budidaya Walet",
+          "price": 1500000,
+          "images": [
+            "assets/images/product/book-solusi.jpg"
+          ],
+          "bonus": [
+            "Suara Panggil Warior",
+            "Suara Inap Istimewa",
+            "Free Konsultasi"
+          ],
+          "desc":""
+        },
+        {
+          "title": "88 Strategi Sukses + 50 tips",
+          "price": 3500000,
+          "images": [
+            "assets/images/product/book-88.jpg"
+          ],
+          "bonus": [
+            "suara wallet superdrill",
+            "suara Tarik Top",
+            "suara inap top",
+            "Free Konsultasi"
+          ],
+          "desc":""
+        },
+        {
+          "title": "18 Desain Gedung Walet Paket Hemat",
+          "price": 2500000,
+          "images": [
+            "assets/images/product/book-18.jpg"
+          ],
+          "bonus": [
+            "1 set suara walet (1 suara dalam & 1 suara luar)",
+            "Free Konsultasi"
+          ],
+          "desc": ""
+        }
+      ]
+    },
+    "audios": {
+      "title": "Suara Walet Original",
+      "desc": "Dapatkan suara walet original produksi BAN dengan kemasan exlusive dan bersegel",
+      "products": [
+        {
+          "title": "Paket Suara Walet",
+          "price": "klik for details",
+          "desc": "Telah terbukti  ribuan gedung walet sukses menggunakan suara ini baik di Indonesia, maupun di Malaysia, Thailand dan Vietnam.  Belakangan ini segelintir orang yang  tidak bertanggung jawab mengcopy produk suara ini  dan menjual  dalam bentuk produk bajakan yang tentu sangat  merugikan konsumen. Sebab kualitas dan daya sedotnya tidak seperti produk original.  Oleh karena itu dapatkan produk asli yang terjamin kualitasnya di agen terdekat, demi kesuksesan gedung walet anda.",
+          "images": [
+            "assets/images/product/suara-3.jpg"
+          ]
+        }
+      ]
+    },
+    "audiosystem": {
+      "title": "Walet Audio System (WAS)",
+      "desc": "Mesin panggil walet yang selalu saya pakai di berbagai daerah WAS mengeluarkan suara sangat bersih sehingga suara yang keluar mirip suara walet aslinya.",
+      "products": [
+        {
+          "title": "WAS 3 Channel",
+          "price": 5000000,
+          "images": [
+            "assets/images/product/was-3.jpg"
+          ],
+          "desc": "Mesin walet ini dirancang sedemikian rupa, simple, praktis, agar anda mudah menggunakan.\nMesin ini dirancang agar pengguna bisa bebas memilih,mau menggunakan USB Flask disk\nMesin ini dijalankan dengan listrik, namun juga dilengkapi charge accu/ aki, sehingga jika listrik padam, mesin tetap hidup karena mendapat suplay energi dari accu/ aki\nJika di tempat anda tidak ada jaringan listrik, mesin ini bisa bekerja cukup dengan accu/ aki\nDilengkapi 3 timer digital, untuk mengatur suara panggil, tarik & suara inap\nDilengkapi 6 Petensio Volume dan 6 Output Spiker, (Per Chanel mampu mengangkat lebih dari 100 Speaker)"
+        },
+        {
+          "title": "WAS 4 Channel",
+          "price": 6000000,
+          "images": [
+            "assets/images/product/was-4.jpg"
+          ],
+          "desc": "Mesin walet ini dibikin sedemikian rupa, simple, praktis, agar anda mudah menggunakan.\nMesin ini dirancang agar pengguna bisa bebas memilih,mau menggunakan USB Flask disk\nMesin ini dijalankan dengan listrik, namun juga dilengkapi charge accu/ aki, sehingga jika listrik padam, mesin tetap hidup karena mendapat suplay energi dari accu/ aki\nJika di tempat anda tidak ada jaringan listrik, mesin ini bisa bekerja cukup dengan accu/ aki\nDilengkapi 4 timer digital, untuk mengatur suara panggil, tarik, hexagonal & suara inap\nDilengkapi 8 Petensio Volume dan 8 Output Spiker, (Per Chanel mampu mengangkat lebih dari 100 Speaker)"
+        }
+      ]
+    }
+  }
+}

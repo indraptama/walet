@@ -1,6 +1,7 @@
 import {h, Component} from 'preact';
 import fetch from 'unfetch';
 import AgenCard from '../../components/AgenCard';
+import ListToCard from '../../components/ListToCard';
 import style from './style';
 
 export default class Agen extends Component {
@@ -33,19 +34,25 @@ export default class Agen extends Component {
   render() {
     const agens = this.state.dataAgen;
     return (
-      <div className={style.AP}>
-        <section className={style.AP_Search}>
-          <div className={style.AP_SearchContainer}>
-            <p>Dapatkan Produk-produk asli kami hanya di agen-agen resmi di dekat anda</p>
+      <div>
+        <div className="pt5" />
+        <section className="bg-primary ph3">
+          <div className="flex items-center mw8 center vh-50">
+            <div className="measure-wide white">
+              <h2 className="f3 f2-l fw6 white">Agen Resmi</h2>
+              <p className="serif f5-l">Dapatkan produk-produk kami yang asli hanya di Agen-agen resmi terdekat di kota anda.</p>
+            </div>
           </div>
         </section>
-        <section className={style.AP_Section}>
+        <section className="flex flex-wrap mw8 center">
             {agens.map(agen => {
-              const address = `${agen.city} - ${agen.provice}`;
-              return(
-                <div className={style.APL}>
-                  <AgenCard name={agen.name} address={address} avatar={agen.avatar} contact={agen.contact}>
-                  </AgenCard>
+              return (
+                <div className="w-100 w-25-l pa2">
+                  <ListToCard name={agen.name}
+                    avatar={agen.avatar}
+                    city={agen.city}
+                    contact={agen.contact}
+                    prov={agen.provice}/>
                 </div>
               )
             })}

@@ -26,6 +26,7 @@
     "animejs": "^2.0.2",
     "axios": "^0.16.2",
     "minireset.css": "0.0.3",
+    "node-vibrant": "^3.0.0-alpha.2",
     "preact": "^8.2.1",
     "preact-compat": "^3.17.0",
     "preact-router": "^2.5.5",

@@ -9,7 +9,15 @@ import style from './style';
 // arief.walet@gmail.com",
 // Senin - Sabtu, Pukul 08.00 - 16.00 WIB"
 
+
+
 export default class Header extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state={
+			sideOpen: false,
+		}
+	}
 	render() {
 		return (
       <div>
@@ -57,17 +65,17 @@ export default class Header extends React.Component {
 								</Link>
 							</div>
 							<div className="right">
-								<nav className="dn db-l fw4">
-	                <Link className="link primary dib ml4" activeClassName={style.active} href="/">Home</Link>
-	                <Link className="link primary dib ml4" activeClassName={style.active} href="/profile">Profil</Link>
-	                <Link className="link primary dib ml4" activeClassName={style.active} href="/produk">Produk</Link>
-									<Link className="link primary dib ml4" activeClassName={style.active} href="/pemesanan">Pemesanan</Link>
-	                <Link className="link primary dib ml4" activeClassName={style.active} href="/article">Article</Link>
-									<Link className="link primary dib ml4" activeClassName={style.active} href="/agen">Agen Resmi</Link>
-									<Link className="link primary dib ml4" activeClassName={style.active} href="/member">Member</Link>
-									<Link className="link primary dib ml4" activeClassName={style.active} href="/gallery">Galeri</Link>
-									<Link className="link primary dib ml4" activeClassName={style.active} href="/csr">CSR</Link>
-	                <Link className="link primary dib ml4" activeClassName={style.active} href="/kontak">Kontak</Link>
+								<nav className="dn db-l fw4 f7 tracked">
+	                <Link className="link gray dim dib ml3" activeClassName="current" href="/">Home</Link>
+	                <Link className="link gray dim dib ml3" activeClassName="current" href="/profile">Profil</Link>
+	                <Link className="link gray dim dib ml3" activeClassName="current" href="/produk">Produk</Link>
+									<Link className="link gray dim dib ml3" activeClassName="current" href="/pemesanan">Pemesanan</Link>
+	                <Link className="link gray dim dib ml3" activeClassName="current" href="/article">Article</Link>
+									<Link className="link gray dim dib ml3" activeClassName="current" href="/agen">Agen Resmi</Link>
+                  <Link className="link gray dim dib ml3" activeClassName="current" href="/kontak">Kontak</Link>
+									<Link className="link gray dim dib ml3" activeClassName="current" href="/member">Member</Link>
+									<Link className="link gray dim dib ml3" activeClassName="current" href="/gallery">Galeri</Link>
+									<Link className="link gray dim dib ml3" activeClassName="current" href="/csr">CSR</Link>
 	              </nav>
 							</div>
 							<a href="#" onClick={""} className="link primary f2 dn-l bn bg-transparent"><i className="icon icon-menu"></i></a>
@@ -80,16 +88,16 @@ export default class Header extends React.Component {
             </div>
             <div className={style.MS_NAV}>
               <nav>
-                <Link activeClassName={style.active} href="/">Home</Link>
-                <Link activeClassName={style.active} href="/profile">Profil</Link>
-                <Link activeClassName={style.active} href="/produk">Produk</Link>
-                <Link activeClassName={style.active} href="/article">Article</Link>
-                <Link activeClassName={style.active} href="/pemesanan">Pemesanan</Link>
-                <Link activeClassName={style.active} href="/kontak">Kontak</Link>
-                <Link activeClassName={style.active} href="/agen">Agen Resmi</Link>
-                <Link activeClassName={style.active} href="/member">Member</Link>
-                <Link activeClassName={style.active} href="/gallery">Galeri</Link>
-                <Link activeClassName={style.active} href="/csr">CSR</Link>
+                <Link activeClassName="current" href="/">Home</Link>
+                <Link activeClassName="current" href="/profile">Profil</Link>
+                <Link activeClassName="current" href="/produk">Produk</Link>
+                <Link activeClassName="current" href="/article">Article</Link>
+                <Link activeClassName="current" href="/pemesanan">Pemesanan</Link>
+                <Link activeClassName="current" href="/kontak">Kontak</Link>
+                <Link activeClassName="current" href="/agen">Agen Resmi</Link>
+                <Link activeClassName="current" href="/member">Member</Link>
+                <Link activeClassName="current" href="/gallery">Galeri</Link>
+                <Link activeClassName="current" href="/csr">CSR</Link>
               </nav>
             </div>
 

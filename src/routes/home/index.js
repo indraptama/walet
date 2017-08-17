@@ -6,6 +6,7 @@ import ProductThumb from '../../components/ProductThumb';
 import MessageBox from '../../components/MessageBox';
 import OwnerPicture from '../../components/OwnerPicture';
 import Carousel from '../../components/Carousel';
+import TestiBox from '../../components/TestiBox';
 import style from './style';
 
 export default class Home extends Component {
@@ -28,7 +29,6 @@ export default class Home extends Component {
           about: respData.about,
           address: respData.office.head,
         })
-        console.log(this.state.address);
       })
 
     fetch('/assets/data/article-s.json')
@@ -67,30 +67,33 @@ export default class Home extends Component {
     // PREACT RENDER
 		return (
 			<div className="{style.HP}">
-          <section className={style.Hr}>
-            <Carousel Data="assets/data/carousel.json"/>
-          </section>
-
-
-        <section className="bg-white">
-          <div className="cf center mw8 ph3 pv4 pv0-l">
-            <div className="fl dib w-100 w-30-l">
-              <div className="w-40 w-100-l center mb3 pr4-l ft--3-l">
-                <OwnerPicture pictures="assets/images/3-1.jpg" />
-              </div>
-            </div>
-            <div className="fl dib w-100 w-70-l pv4-l f5-l lh-copy">
-                <h3 className="ttu f6 fw6 tracked primary mb3 tc tl-l">Tentang Kami</h3>
-                <div className="measure-wide serif">
-                  {this.state.about}
-                </div>
-            </div>
-          </div>
+        <section className="mw9 center pt5">
+          <Carousel Data="assets/data/carousel.json"/>
         </section>
 
-        <section>
-          <div className="cf center mw8 ph3-l pv4 pv4-l">
-            <h3 className="ttu f7 fw6 tracked primary mb3 ml3 ml0-l">Produk kami</h3>
+        <section className="pv5 ph3 relative">
+          <h2 className="f7 fw6 ttu tc tracked primary mb4 relative z-2">
+            <span className="dib pa2 bg-white">Tentang Kami</span>
+          </h2>
+          <div className="measure-wide center f5 tc bg-white z-2 relative">
+            <p className="serif mb4">{this.state.about}</p>
+            <div className="dt center">
+              <div className="dtc v-mid">
+                <img src="assets/images/ava/owner.jpg" alt="" className="w3 br-100"/>
+              </div>
+              <div className="dtc pl3 v-mid">
+                <h4 className="fw6 serif">Drs. Arief Budiman</h4>
+              </div>
+            </div>
+          </div>
+          <div className="bl b--primary w1px left-50 absolute top-0 bottom-0 h-100"></div>
+        </section>
+
+        <section className="pv5 ph3 bt b--primary relative">
+          <h2 className="f7 fw6 ttu tc tracked primary mb4 relative z-2">
+            <span className="dib pa2 bg-white">Produk Kami</span>
+          </h2>
+          <div className="mw8 center bg-white pv2">
             <div className="overflow-x-scroll overflow-hidden-l">
               <div className="dt dt--fixed ml3 ml0-l">
                 <div className="dtc w5 w-third-l pb3 pr3">
@@ -114,60 +117,58 @@ export default class Home extends Component {
               </div>
             </div>
           </div>
+          <div className="bl b--primary w1px left-50 absolute top-0 bottom-0 h-100"></div>
         </section>
 
-        <section className="bg-white">
-          <div className="cf center mw8 ph3 pv4 pv4-l">
-            <div className="fl dib w-100 w-third-l mb4 pr3-l">
-              <h3 className="ttu f6 fw6 tracked primary mb3">Highlight</h3>
-              <HeadlineNews
-                  title={this.state.headline.title}
-                  imageThumb="assets/images/news1.jpg"
-                  postDate={this.state.headline.date}
-                  viewer={this.state.headline.views}
-                  postLink="post"
-                  link="#"
-                  reviews={this.state.headline.preview}
-                 />
+        <section className="pv5 ph3 bt b--primary relative">
+          <h2 className="f7 fw6 ttu tc tracked primary mb4 relative z-2">
+            <span className="dib pa2 bg-white">testimony</span>
+          </h2>
+          <div className="mw8 center ph3 cf bg-white relative z-2">
+            <div className="fl dib w-100 w-50-l pa3">
+              <TestiBox quote="sangat bermanfaat untuk meningkatkan produksi walet saya." user="Melinda Guess" city="bandung" prov="jawa barat"/>
             </div>
-            <div className="fl dib w-100 w-third-l mb4 pr3-l">
-              <h3 className="ttu f6 fw6 tracked primary mb3">Berita terbaru</h3>
-              <ul>{LatestNews}</ul>
+            <div className="fl dib w-100 w-50-l pa3">
+              <TestiBox quote="Saya sangat puas dengan pelatihan, tutorial dan respon yang diberikan oleh dunia walet. Jelas, Singkat, Cepat dan Padat." user="Ujang Sinclair" city="bandung" prov="jawa barat"/>
             </div>
+          </div>
+          <div className="bl b--primary w1px left-50 absolute top-0 bottom-0 h-100"></div>
+        </section>
+
+        <section className="pv5 ph3 bt b--primary relative">
+          <div className="mw8 center ph3 cf bg-white relative z-2">
+            <div className="fl dib w-100 w-two-thirds-l">
+              <h3 className="ttu f7 fw6 tracked primary mb3">Artikel</h3>
+              <div className="cf">
+                <div className="fl dib w-100 w-50-l pr3-l">
+                  <HeadlineNews
+                      title={this.state.headline.title}
+                      imageThumb="assets/images/news1.jpg"
+                      postDate={this.state.headline.date}
+                      viewer={this.state.headline.views}
+                      postLink="post"
+                      link="#"
+                      reviews={this.state.headline.preview}
+                     />
+                </div>
+                <div className="fl dib w-100 w-50-l">
+                  <ul>{LatestNews}</ul>
+                </div>
+              </div>
+            </div>
+
             <div className="fl dib w-100 w-third-l mb4 pr3-l">
-              <h3 className="ttu f6 fw6 tracked primary mb3">from our twitter</h3>
+              <h3 className="ttu f7 fw6 tracked mb3">
+                <a className="link primary" href="https://twitter.com/duniawaletnews">from our twitter</a></h3>
               <div>
+                <a class="twitter-timeline" data-lang="id" data-height="360" data-dnt="true" href="https://twitter.com/duniawaletnews"></a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
               </div>
             </div>
           </div>
         </section>
 
-        <section className="bg-white">
-          <div className="cf center mw8 ph3 pv4 pv4-l">
-            <h3 className="ttu f6 fw6 tracked primary mb3">Kontak Kami</h3>
-            <div className="db cf flex-l items-center bg-primary-l">
-              <div className="fl dib w-100 w-50-l lh-copy v-mid pa5-l white-l mb4 mb0-l">
-                <div className="w4 mb3 center">
-                  <img src="assets/logo.svg" alt=""/>
-                </div>
-                <ul>
-                  <li className="mb2">{address.address}</li>
-                  <li className="mb2"><i className="icon icon-phone mr2 dib"/>{address.phone}</li>
-                  <li className="mb2"><i className="icon icon-whatsapp mr2 dib"/>{address.whatsapp}</li>
-                  <li className="mb2"><i className="icon icon-envelope mr2 dib"/>{address.email}</li>
-                  <li className="mb2">{`Jam Operasional : ${address.operationTime}`}</li>
-                </ul>
-              </div>
-              <div className="fl dib w-100 w-50-l v-mid">
-                <div className="mw6 center">
-                  <div className="mw6 ba b--black-10 shadow-3">
-                    <MessageBox />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+
+
 
       </div>
 		);

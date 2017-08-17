@@ -3,10 +3,9 @@ import fetch from 'unfetch';
 import style from './style';
 
 // Import Components
-import NewsFeatured from '../../components/NewsFeatured';
+import HeadlineNews from '../../components/HeadlineNews';
 import NewsThumb from '../../components/NewsThumb';
 import SubscribeBox from '../../components/SubscribeBox';
-import NewsList from '../../components/NewsList';
 
 export default class Article extends Component {
   constructor(props) {
@@ -54,18 +53,18 @@ export default class Article extends Component {
       )
     })
 
-    const LatestNews = this.state.dataArticle.slice(0,5).map(key => {
+    const LatestNews = this.state.dataArticle.map(key => {
       return (
-        <div className="fl w-100 w-third-l pa3 mb5-l">
-          <NewsList
+        <li className={style.LNW_li}>
+          <NewsThumb
             title={key.title}
             imageThumb="assets/images/news1.jpg"
             postDate={key.date}
             viewer={key.views}
             postLink="post"
-            preview={key.preview}
+            reviews={key.preview}
            />
-        </div>
+        </li>
       )
     })
 
@@ -85,34 +84,54 @@ export default class Article extends Component {
 
     // PRact Render
     return (
-      <div className="pt5 pt5-l">
-        <section className="bg-primary ph3">
-          <div className="flex items-center mw8 center vh-50">
-            <div className="measure-wide white">
-              <h2 className="f3 f2-l fw6 white lh-title">Artikel, Tips & Trick</h2>
-              <p className="serif f5-l">Kumpulan berita terkini, Tips & Trick dan tanya jawab seputar dunia sarang burung walet</p>
-            </div>
-          </div>
-        </section>
-        <div className="ft--4-l">
-          <section className="mb4 mb5-l  ph3-l">
-            <div className="mw8 center">
-              <NewsFeatured image="assets/images/news1.jpg"
-                title="Sekat Gantung apa Sekat Full?"
-                preview="Jika gedung walet anda ingin produktif, maka lakukan pengaturan …"/>
-            </div>
-          </section>
+      <div className={style.AP}>
+        <div className="mw8 center mt4">
+          <HeadlineNews
+              title={this.state.headline.title}
+              imageThumb="assets/images/news1.jpg"
+              postDate={this.state.headline.date}
+              viewer={this.state.headline.views}
+              postLink="post"
+              link="#"
+              reviews={this.state.headline.preview}
+             />
+        </div>
 
-          <section className="mb4 mb0-l ph3-l ">
-            <div className="mw8 center cf">
-              <div className="fl w-100 w-third-l">
-                <h4 className="f5-l primary ttu pa3 ph0-l tracked fw6">Latest News</h4>
-              </div>
+        <div className="cf mw8 center">
+          <div className="dib fl w-100 w-two-thirds-l mb4 mb0-l">
+            <h3 className={style.T_s}>Latest News</h3>
+            <ul className="LNW">
               {LatestNews}
+            </ul>
+          </div>
+          <div className="dib fl w-100 w-third-l">
+            <div className="mb4">
+              <h3 className={style.T_s}>Follow Us</h3>
+              <div className="social-icon-top">
+  							<a className="link dib mr3 f3 black" href="">
+  								<i className="icon icon-facebook" />
+  							</a>
+  							<a className="link dib mr3 f3 black" href="">
+  								<i className="icon icon-twitter" />
+  							</a>
+  							<a className="link dib mr3 f3 black" href="">
+  								<i className="icon icon-instagram" />
+  							</a>
+  							<a className="link dib mr3 f3 black" href="">
+  								<i className="icon icon-youtube-play" />
+  							</a>
+  						</div>
             </div>
-          </section>
-          <div className="mw8 center cf ph3 ph5-l tc mb3">
-            <button className="bg-primary white w-100 w-third-l tc pa3 ttu f7 bn fw6">Read More</button>
+
+            <div className="mb4">
+              <SubscribeBox />
+            </div>
+
+            <div className="mb4">
+              <h3 className={style.T_s}>Artikel Populer</h3>
+              <ul>{MostView}</ul>
+            </div>
+
           </div>
         </div>
       </div>

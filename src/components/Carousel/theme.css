@@ -17,6 +17,12 @@
   left: 0;
 }
 
+@media (max-width: 960px) {
+  .outer:before {
+    padding-top: 76.666%;
+  }
+}
+
 .Wallop-buttonPrevious,
 .Wallop-buttonNext {
   position: absolute;

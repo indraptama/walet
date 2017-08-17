@@ -1,7 +1,7 @@
 import {h} from 'preact';
 import {focusLine, outFocusLine} from '../animation.js';
 
-function TextField(props) {
+function TextFieldRow(props) {
   let highlightLine = null;
   let Labels = null
 
@@ -17,7 +17,7 @@ function TextField(props) {
   return(
     <label className="db">
       <span className="f7 db fw5 ttc silver ttc" ref={(span) => {Labels = span}}>{props.label}</span>
-      <input
+      <textarea
         style={Style.noFocus}
         className="input-reset sans pv2 w-100 bn bg-transparent noFocus"
         type="text"
@@ -42,8 +42,9 @@ const Style = {
   },
   noFocus: {
     outline: 'none',
+    resize: 'vertical',
   }
 }
 
 
-export default TextField;
+export default TextFieldRow;

@@ -1,0 +1,73 @@
+import {h, Component} from 'preact';
+import ProductCard from '../../components/ProductCard';
+
+export default class Product extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    return (
+    <div className="pt5 pt6-l">
+      <section className="pv3 ph3-l b--primary relative">
+        <div className="mw8 center bg-white">
+          <h2 className="f7 fw6 ttu tl tracked primary mb2 relative z-2 pl3 pl0-l">
+            Buku
+          </h2>
+          <p className="ph3 ph0-l mb3 measure-wide f5-l">Dapatkan buku karangan Drs. Arief Budiman yang eksklusif dan sangat penting yang dijual khusus melalui website ini.</p>
+        <div className="overflow-x-scroll overflow-x-visible-l bg-near-white bg-white-l pv3">
+          <div className="cf dt db-l ml3 ml0-l">
+            <div className="dtc dib-l fl-l mw5 mw-none-l w-third-l pr3">
+              <ProductCard image="assets/images/product/book-solusi.jpg"
+                title="Solusi Atas Permasalahan Dalam Budidaya Walet"
+                price="Rp.1.500.000,-"/>
+            </div>
+            <div className="dtc dib-l fl-l mw5 mw-none-l w-third-l pr3">
+              <ProductCard image="assets/images/product/book-88.jpg"
+                title="Solusi Atas Permasalahan Dalam Budidaya Walet"
+                price="Rp.1.500.000,-"/>
+            </div>
+
+            <div className="dtc dib-l fl-l mw5 mw-none-l w-third-l pr3">
+              <ProductCard image="assets/images/product/book-18.jpg"
+                title="Solusi Atas Permasalahan Dalam Budidaya Walet"
+                price="Rp.1.500.000,-"/>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      </section>
+
+      
+      <section className="pv3 ph3-l b--primary relative">
+        <div className="mw8 center bg-white">
+        <h2 className="f7 fw6 ttu tl tracked primary mb2 relative z-2 pl3 pl0-l">
+          Paket Suara
+        </h2>
+        <div className="overflow-x-scroll overflow-x-visible-l bg-near-white bg-white-l pv3">
+          <div className="cf dt db-l ml3 ml0-l">
+            <div className="dtc dib-l fl-l mw5 mw-none-l w-third-l pr3">
+              <ProductCard image="assets/images/product/book-solusi.jpg"
+                title="Solusi Atas Permasalahan Dalam Budidaya Walet"
+                price="Rp.1.500.000,-"/>
+            </div>
+            <div className="dtc dib-l fl-l mw5 mw-none-l w-third-l pr3">
+              <ProductCard image="assets/images/product/book-88.jpg"
+                title="Solusi Atas Permasalahan Dalam Budidaya Walet"
+                price="Rp.1.500.000,-"/>
+            </div>
+
+            <div className="dtc dib-l fl-l mw5 mw-none-l w-third-l pr3">
+              <ProductCard image="assets/images/product/book-18.jpg"
+                title="Solusi Atas Permasalahan Dalam Budidaya Walet"
+                price="Rp.1.500.000,-"/>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      </section>
+    </div>);
+  }
+}

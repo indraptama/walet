@@ -48,8 +48,8 @@
 .NewsThumb_title {
   text-transform: capitalize;
   margin-bottom: 0rem;
-  font-size: 0.875rem;
-  font-weight: 500;
+  font-size: 0.75rem;
+  font-weight: 600;
   line-height: 1.25;
   margin-bottom: 0.5rem;
 }
@@ -65,7 +65,7 @@
 .NewsThumb_date {
   line-height: 1;
   margin-bottom: 0.5rem;
-  font-size: 0.75rem;
+  font-size: 0.65rem;
   color: #b8a246;
 }
 
