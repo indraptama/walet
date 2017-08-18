@@ -467,7 +467,146 @@ module.exports = __webpack_require__("JkW7");
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-module.exports = {"OwnerPicture":"OwnerPicture__310cR","OwnerPicture_inner":"OwnerPicture_inner__2Ih17"};
+module.exports = {"OwnerPicture":"OwnerPicture__1NhnD","OwnerPicture_inner":"OwnerPicture_inner__1Ld8C"};
+
+/***/ }),
+
+/***/ "2yh/":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Product; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_preact__ = __webpack_require__("KM04");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_preact___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_preact__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_unfetch__ = __webpack_require__("QAmr");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_ProductCard__ = __webpack_require__("E+wR");
+
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+
+var Product = function (_Component) {
+  _inherits(Product, _Component);
+
+  function Product(props) {
+    _classCallCheck(this, Product);
+
+    var _this = _possibleConstructorReturn(this, _Component.call(this, props));
+
+    _this.state = {
+      data: {}
+    };
+    return _this;
+  }
+
+  Product.prototype.componentDidMount = function componentDidMount() {
+    var _this2 = this;
+
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_unfetch__["a" /* default */])('assets/data/product.json').then(function (resp) {
+      return resp.json();
+    }).then(function (respData) {
+      _this2.setState({
+        data: respData.product
+      });
+    }).catch(function (err) {
+      return console.error(err);
+    });
+  };
+
+  Product.prototype.render = function render() {
+    var dataBook = this.state.data.books;
+    var dataAudio = this.state.data.audios;
+    var dataAudioSystem = this.state.data.audiosystem;
+
+    var test = dataBook;
+    var Data = this.state.data;
+    var renderProduct = Object.keys(Data).map(function (key) {
+      return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+        'section',
+        { className: 'pv3 pv4-l ph3-l b--primary relative' },
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+          'div',
+          { className: 'mw8 center bg-white' },
+          __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+            'h2',
+            { className: 'f7 fw6 ttu tl tracked primary mb2 relative z-2 pl3 pl0-l' },
+            Data[key].title
+          ),
+          __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+            'p',
+            { className: 'ph3 ph0-l mb3 measure-wide f5-l serif' },
+            Data[key].desc
+          ),
+          __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+            'div',
+            { className: 'overflow-x-scroll overflow-x-visible-l nowrap ws-normal-l bg-near-white bg-white-l pv3' },
+            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+              'div',
+              { className: 'cf ml3 ml0-l' },
+              Data[key].products.map(function (product) {
+                return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+                  'div',
+                  { className: 'dib fl-l w5 w-third-l pr3' },
+                  __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_2__components_ProductCard__["a" /* default */], { image: product.images,
+                    title: product.title,
+                    price: product.price })
+                );
+              })
+            )
+          )
+        )
+      );
+    });
+
+    return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+      'div',
+      { className: 'pt5 pt6-l' },
+      renderProduct
+    );
+  };
+
+  return Product;
+}(__WEBPACK_IMPORTED_MODULE_0_preact__["Component"]);
+
+
+
+/***/ }),
+
+/***/ "5D9O":
+/***/ (function(module, exports, __webpack_require__) {
+
+/**
+ * Copyright 2013-present, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ */
+
+if (false) {
+  var REACT_ELEMENT_TYPE = typeof Symbol === 'function' && Symbol.for && Symbol.for('react.element') || 0xeac7;
+
+  var isValidElement = function isValidElement(object) {
+    return typeof object === 'object' && object !== null && object.$$typeof === REACT_ELEMENT_TYPE;
+  };
+
+  // By explicitly using `prop-types` you are opting into new development behavior.
+  // http://fb.me/prop-types-in-prod
+  var throwOnDirectAccess = true;
+  module.exports = require('./factoryWithTypeCheckers')(isValidElement, throwOnDirectAccess);
+} else {
+  // By explicitly using `prop-types` you are opting into new production behavior.
+  // http://fb.me/prop-types-in-prod
+  module.exports = __webpack_require__("wVGV")();
+}
 
 /***/ }),
 
@@ -486,88 +625,223 @@ module.exports = {"OwnerPicture":"OwnerPicture__310cR","OwnerPicture_inner":"Own
 
 
 
-var _ref = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])('img', { className: 'h3 tc', src: 'assets/logo.svg', alt: '' });
+var _ref = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+  'div',
+  { className: 'dib db-l fl w-100 w-third-l primary mb3 mb0-l' },
+  __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])('img', { className: 'h3 tc mb3', src: 'assets/logo-white.svg', alt: '' }),
+  __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+    'p',
+    null,
+    'Jl. Dr. Soetomo 41 Weleri \u2013 Kendal 51355',
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])('br', null),
+    'Jawa Tengah \u2013 Indonesia',
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])('br', null),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])('br', null),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])('i', { className: 'icon icon-phone' }),
+    ' 082138388899  -  ',
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])('i', { className: 'icon icon-whatsapp' }),
+    ' 085729486688',
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])('br', null),
+    'arief.walet@gmail.com',
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])('br', null),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])('br', null),
+    '(Senin - Sabtu, Pukul 08.00 - 16.00 WIB)'
+  )
+);
+
+var _ref2 = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+  'div',
+  { className: 'social-icon-top f4 w-20-l' },
+  __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+    'a',
+    { className: 'link dib ml3 primary', href: '' },
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])('i', { className: 'icon icon-facebook' })
+  ),
+  __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+    'a',
+    { className: 'link dib ml3 primary', href: '' },
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])('i', { className: 'icon icon-twitter' })
+  ),
+  __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+    'a',
+    { className: 'link dib ml3 primary', href: '' },
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])('i', { className: 'icon icon-instagram' })
+  ),
+  __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+    'a',
+    { className: 'link dib ml3 primary', href: '' },
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])('i', { className: 'icon icon-youtube-play' })
+  )
+);
 
 function MainFooter(props) {
   return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
     'footer',
-    null,
+    { className: 'bg-near-black' },
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
       'div',
-      { className: 'bg-primary ph3' },
+      { className: 'ph3' },
       __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
         'div',
-        { className: 'mw9 center tc pv5' },
+        { className: 'mw8 center pv5 cf f8 pr3 flex-l items-end' },
         _ref,
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-          'nav',
-          { className: 'db-l mt4 tl tc-l' },
+          'div',
+          { className: 'dib db-l fl w-100 w-two-thirds-l mb3 mb0-l tr-l' },
           __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-            __WEBPACK_IMPORTED_MODULE_1_preact_router_match__["Link"],
-            { className: 'ttu db dib-l pv2 pv0-l ph3-l link near-black tracked f7 fw6', activeClassName: __WEBPACK_IMPORTED_MODULE_2__style___default.a.active, href: '/' },
-            'Home'
-          ),
-          __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-            __WEBPACK_IMPORTED_MODULE_1_preact_router_match__["Link"],
-            { className: 'ttu db dib-l pv2 pv0-l ph3-l link near-black tracked f7 fw6', activeClassName: __WEBPACK_IMPORTED_MODULE_2__style___default.a.active, href: '/profile' },
-            'Profil'
-          ),
-          __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-            __WEBPACK_IMPORTED_MODULE_1_preact_router_match__["Link"],
-            { className: 'ttu db dib-l pv2 pv0-l ph3-l link near-black tracked f7 fw6', activeClassName: __WEBPACK_IMPORTED_MODULE_2__style___default.a.active, href: '/produk' },
-            'Produk'
-          ),
-          __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-            __WEBPACK_IMPORTED_MODULE_1_preact_router_match__["Link"],
-            { className: 'ttu db dib-l pv2 pv0-l ph3-l link near-black tracked f7 fw6', activeClassName: __WEBPACK_IMPORTED_MODULE_2__style___default.a.active, href: '/article' },
-            'Article'
-          ),
-          __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-            __WEBPACK_IMPORTED_MODULE_1_preact_router_match__["Link"],
-            { className: 'ttu db dib-l pv2 pv0-l ph3-l link near-black tracked f7 fw6', activeClassName: __WEBPACK_IMPORTED_MODULE_2__style___default.a.active, href: '/pemesanan' },
-            'Pemesanan'
-          ),
-          __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-            __WEBPACK_IMPORTED_MODULE_1_preact_router_match__["Link"],
-            { className: 'ttu db dib-l pv2 pv0-l ph3-l link near-black tracked f7 fw6', activeClassName: __WEBPACK_IMPORTED_MODULE_2__style___default.a.active, href: '/kontak' },
-            'Kontak'
-          ),
-          __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-            __WEBPACK_IMPORTED_MODULE_1_preact_router_match__["Link"],
-            { className: 'ttu db dib-l pv2 pv0-l ph3-l link near-black tracked f7 fw6', activeClassName: __WEBPACK_IMPORTED_MODULE_2__style___default.a.active, href: '/agen' },
-            'Agen Resmi'
-          ),
-          __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-            __WEBPACK_IMPORTED_MODULE_1_preact_router_match__["Link"],
-            { className: 'ttu db dib-l pv2 pv0-l ph3-l link near-black tracked f7 fw6', activeClassName: __WEBPACK_IMPORTED_MODULE_2__style___default.a.active, href: '/member' },
-            'Member'
-          ),
-          __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-            __WEBPACK_IMPORTED_MODULE_1_preact_router_match__["Link"],
-            { className: 'ttu db dib-l pv2 pv0-l ph3-l link near-black tracked f7 fw6', activeClassName: __WEBPACK_IMPORTED_MODULE_2__style___default.a.active, href: '/gallery' },
-            'Galeri'
-          ),
-          __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-            __WEBPACK_IMPORTED_MODULE_1_preact_router_match__["Link"],
-            { className: 'ttu db dib-l pv2 pv0-l ph3-l link near-black tracked f7 fw6', activeClassName: __WEBPACK_IMPORTED_MODULE_2__style___default.a.active, href: '/csr' },
-            'CSR'
+            'div',
+            { className: 'flex-l items-center' },
+            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+              'nav',
+              { className: 'dib column-2s tr-l w-80-l' },
+              __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+                __WEBPACK_IMPORTED_MODULE_1_preact_router_match__["Link"],
+                { className: 'db dib-l pv2 pv0-l pr3-l link primary tracked f7', activeClassName: __WEBPACK_IMPORTED_MODULE_2__style___default.a.active, href: '/' },
+                'Home'
+              ),
+              __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+                __WEBPACK_IMPORTED_MODULE_1_preact_router_match__["Link"],
+                { className: 'db dib-l pv2 pv0-l pr3-l link primary tracked f7', activeClassName: __WEBPACK_IMPORTED_MODULE_2__style___default.a.active, href: '/profile' },
+                'Profil'
+              ),
+              __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+                __WEBPACK_IMPORTED_MODULE_1_preact_router_match__["Link"],
+                { className: 'db dib-l pv2 pv0-l pr3-l link primary tracked f7', activeClassName: __WEBPACK_IMPORTED_MODULE_2__style___default.a.active, href: '/produk' },
+                'Produk'
+              ),
+              __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+                __WEBPACK_IMPORTED_MODULE_1_preact_router_match__["Link"],
+                { className: 'db dib-l pv2 pv0-l pr3-l link primary tracked f7', activeClassName: __WEBPACK_IMPORTED_MODULE_2__style___default.a.active, href: '/article' },
+                'Article'
+              ),
+              __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+                __WEBPACK_IMPORTED_MODULE_1_preact_router_match__["Link"],
+                { className: 'db dib-l pv2 pv0-l pr3-l link primary tracked f7', activeClassName: __WEBPACK_IMPORTED_MODULE_2__style___default.a.active, href: '/pemesanan' },
+                'Pemesanan'
+              ),
+              __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+                __WEBPACK_IMPORTED_MODULE_1_preact_router_match__["Link"],
+                { className: 'db dib-l pv2 pv0-l pr3-l link primary tracked f7', activeClassName: __WEBPACK_IMPORTED_MODULE_2__style___default.a.active, href: '/kontak' },
+                'Kontak'
+              ),
+              __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+                __WEBPACK_IMPORTED_MODULE_1_preact_router_match__["Link"],
+                { className: 'db dib-l pv2 pv0-l pr3-l link primary tracked f7', activeClassName: __WEBPACK_IMPORTED_MODULE_2__style___default.a.active, href: '/agen' },
+                'Agen Resmi'
+              ),
+              __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+                __WEBPACK_IMPORTED_MODULE_1_preact_router_match__["Link"],
+                { className: 'db dib-l pv2 pv0-l pr3-l link primary tracked f7', activeClassName: __WEBPACK_IMPORTED_MODULE_2__style___default.a.active, href: '/member' },
+                'Member'
+              ),
+              __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+                __WEBPACK_IMPORTED_MODULE_1_preact_router_match__["Link"],
+                { className: 'db dib-l pv2 pv0-l pr3-l link primary tracked f7', activeClassName: __WEBPACK_IMPORTED_MODULE_2__style___default.a.active, href: '/gallery' },
+                'Galeri'
+              ),
+              __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+                __WEBPACK_IMPORTED_MODULE_1_preact_router_match__["Link"],
+                { className: 'db dib-l pv2 pv0-l pr3-l link primary tracked f7', activeClassName: __WEBPACK_IMPORTED_MODULE_2__style___default.a.active, href: '/csr' },
+                'CSR'
+              )
+            ),
+            _ref2
           )
         )
       )
     ),
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
       'div',
-      { className: 'tl pv3 bg-black ph3 white f7' },
+      { className: 'tl pv3 bg-black ph3 ph0-l white f7' },
       __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-        'span',
-        null,
-        '\xA9 ' + new Date().getFullYear() + ' All Rights Reserved  |  duniawallet.com'
+        'div',
+        { className: 'mw8 center primary f8' },
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+          'span',
+          null,
+          '\xA9 ' + new Date().getFullYear() + ' All Rights Reserved  |  duniawallet.com'
+        )
       )
     )
   );
 }
 
 /* harmony default export */ __webpack_exports__["a"] = (MainFooter);
+
+/***/ }),
+
+/***/ "7KlK":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Wallop__ = __webpack_require__("IA/S");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Wallop___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__Wallop__);
+
+
+var wallopInit = function wallopInit() {
+  var wallopEl = document.querySelector('.Wallop');
+  var wallop = new __WEBPACK_IMPORTED_MODULE_0__Wallop___default.a(wallopEl);
+
+  var paginationDots = Array.prototype.slice.call(document.querySelectorAll('.Wallop-dot'));
+  paginationDots.forEach(function (dotEl, index) {
+    dotEl.addEventListener('click', function (e) {
+      e.preventDefault();
+      wallop.goTo(index);
+    });
+  });
+
+  wallop.on('change', function (event) {
+    removeClass(document.querySelector('.Wallop-dot--current'), 'Wallop-dot--current');
+    addClass(paginationDots[event.detail.currentItemIndex], 'Wallop-dot--current');
+  });
+
+  function addClass(element, className) {
+    if (!element) {
+      return;
+    }
+    element.className = element.className.replace(/\s+$/gi, '') + ' ' + className;
+  }
+
+  function removeClass(element, className) {
+    if (!element) {
+      return;
+    }
+    element.className = element.className.replace(className, '');
+  }
+};
+/* harmony default export */ __webpack_exports__["a"] = (wallopInit);
+
+// (function(){
+//   var Wallop = require('wallop'),
+//   wallopEl = document.getElementById('slider'),
+//   slider = new Wallop(wallopEl, {
+//     // wallop options, like custom class names, ...
+//   });
+//   var autoPlayMs = 4500,
+//   nextTimeout,
+//   loadNext = function() {
+//     var nextIndex = (slider.currentItemIndex + 1) % slider.allItemsArray.length;
+//     slider.goTo(nextIndex);
+//   };
+//   nextTimeout = setTimeout(function() {
+//     loadNext();
+//   }, autoPlayMs);
+//   slider.on('change', function() {
+//     clearTimeout(nextTimeout);
+//     nextTimeout = setTimeout(function() {
+//       loadNext();
+//     }, autoPlayMs);
+//   });
+//   // the code you asked for:
+//   wallopEl.addEventListener('mouseenter', function() {
+//     clearTimeout(nextTimeout);
+//   });
+//   wallopEl.addEventListener('mouseleave', function() {
+//     nextTimeout = setTimeout(function() {
+//       loadNext();
+//     }, autoPlayMs);
+//   });
+// })();
 
 /***/ }),
 
@@ -587,6 +861,9 @@ function MainFooter(props) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_preact___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_preact__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_unfetch__ = __webpack_require__("QAmr");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_AgenCard__ = __webpack_require__("CvPs");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_ListToCard__ = __webpack_require__("dFBD");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__style__ = __webpack_require__("L9Lz");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__style___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__style__);
 
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -599,7 +876,32 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
-var _ref = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])('section', null);
+
+
+var _ref = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])('div', { className: 'pt5' });
+
+var _ref2 = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+  'section',
+  { className: 'bg-primary ph3 mb3' },
+  __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+    'div',
+    { className: 'flex items-center mw8 center vh-50' },
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+      'div',
+      { className: 'measure-wide white' },
+      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+        'h2',
+        { className: 'f3 f2-l fw6 white' },
+        'Agen Resmi'
+      ),
+      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+        'p',
+        { className: 'serif f5-l' },
+        'Dapatkan produk-produk kami yang asli hanya di Agen-agen resmi terdekat di kota anda.'
+      )
+    )
+  )
+);
 
 var Agen = function (_Component) {
   _inherits(Agen, _Component);
@@ -636,22 +938,62 @@ var Agen = function (_Component) {
 
   Agen.prototype.render = function render() {
     var agens = this.state.dataAgen;
+    var agenSortProv = agens.reduce(function (r, a) {
+      r[a.provice] = r[a.provice] || [];
+      r[a.provice].push(a);
+      return r;
+    }, Object.create(null));
+
+    console.log(agenSortProv);
+
+    // result = cars.reduce(function (r, a) {
+    //     r[a.make] = r[a.make] || [];
+    //     r[a.make].push(a);
+    //     return r;
+    // }, Object.create(null));
+
+    // console.log(result);
+
+
+    // const agenProv = agens.map(agen => {
+    //   agenSortProv[agen.provice] = agen;
+    //   console.log(agenSortProv);
+    // })
+
+    var agenRender = Object.keys(agenSortProv).sort().map(function (prov) {
+      return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+        'section',
+        { className: 'mw8 center' },
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+          'h4',
+          { className: 'f7 ttc fw6 primary ph2 pv2 bg-near-white bg-white-l' },
+          prov
+        ),
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+          'div',
+          { className: 'flex-l flex-wrap' },
+          agenSortProv[prov].map(function (agen) {
+            return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+              'div',
+              { className: 'w-100 w-20-l pa2' },
+              __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_3__components_ListToCard__["a" /* default */], { name: agen.name,
+                avatar: agen.avatar,
+                city: agen.city,
+                streetAddress: agen.address,
+                contact: agen.contact,
+                prov: agen.provice })
+            );
+          })
+        )
+      );
+    });
+
     return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
       'div',
-      { className: 'Agen bg-near-white' },
+      null,
       _ref,
-      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-        'section',
-        { className: 'mw8 center ph3 flex-l flex-wrap justify-center' },
-        agens.map(function (agen) {
-          var address = agen.address + ' ' + agen.city + '\n' + agen.provice + '\n' + agen.contact;
-          return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-            'div',
-            { className: 'flex ma1' },
-            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_2__components_AgenCard__["a" /* default */], { name: agen.name, address: address })
-          );
-        })
-      )
+      _ref2,
+      agenRender
     );
   };
 
@@ -668,6 +1010,34 @@ var Agen = function (_Component) {
 
 /***/ }),
 
+/***/ "Asjh":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * Copyright 2013-present, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ */
+
+
+
+var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
+
+module.exports = ReactPropTypesSecret;
+
+/***/ }),
+
+/***/ "BfGA":
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ "CvPs":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -676,9 +1046,22 @@ var Agen = function (_Component) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_preact___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_preact__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__style__ = __webpack_require__("qyLb");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__style___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__style__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_preact_router__ = __webpack_require__("/QC5");
 
 
 
+
+
+var _ref = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+  'button',
+  { href: '#' },
+  __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+    'span',
+    null,
+    'Detail'
+  ),
+  __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])('i', { className: 'icon icon-angle-right' })
+);
 
 function AgenCard(props) {
   return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
@@ -689,20 +1072,168 @@ function AgenCard(props) {
       { className: __WEBPACK_IMPORTED_MODULE_1__style___default.a.AgenCard_container },
       __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
         'div',
-        { className: __WEBPACK_IMPORTED_MODULE_1__style___default.a.AgenCard_name },
-        props.name
+        { className: __WEBPACK_IMPORTED_MODULE_1__style___default.a.AgenCard_ava },
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])('img', { src: props.avatar, alt: '' })
       ),
       __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
         'div',
-        { className: __WEBPACK_IMPORTED_MODULE_1__style___default.a.AgenCard_address },
-        props.address
+        { className: __WEBPACK_IMPORTED_MODULE_1__style___default.a.AgenCard_content },
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+          'div',
+          { className: __WEBPACK_IMPORTED_MODULE_1__style___default.a.AgenCard_name },
+          props.name
+        ),
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+          'div',
+          { className: __WEBPACK_IMPORTED_MODULE_1__style___default.a.AgenCard_address },
+          __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+            'p',
+            null,
+            props.address
+          ),
+          __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+            'p',
+            null,
+            props.contact
+          )
+        )
+      ),
+      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+        'div',
+        { className: __WEBPACK_IMPORTED_MODULE_1__style___default.a.AgenCard_Arrow },
+        _ref
       )
-    ),
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])('div', { className: __WEBPACK_IMPORTED_MODULE_1__style___default.a.AgenCard_bar })
+    )
   );
 }
 
-/* harmony default export */ __webpack_exports__["a"] = (AgenCard);
+/* unused harmony default export */ var _unused_webpack_default_export = (AgenCard);
+
+/***/ }),
+
+/***/ "D4Qw":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_preact__ = __webpack_require__("KM04");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_preact___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_preact__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__animation_js__ = __webpack_require__("Jna3");
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+
+
+
+
+var _ref = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])('span', { className: 'w-100 db bb b--black-20 relative z-1' });
+
+function TextFieldRow(props) {
+  var highlightLine = null;
+  var Labels = null;
+
+  function inputOnFocus() {
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__animation_js__["a" /* focusLine */])(highlightLine, Labels);
+  }
+
+  function inputOnBlur() {
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__animation_js__["b" /* outFocusLine */])(highlightLine, Labels);
+  }
+
+  return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+    'label',
+    { className: 'db' },
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+      'span',
+      { className: 'f7 db fw5 ttc silver ttc', ref: function ref(span) {
+          Labels = span;
+        } },
+      props.label
+    ),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])('textarea', _extends({
+      style: Style.noFocus,
+      className: 'input-reset sans pv2 w-100 bn bg-transparent noFocus',
+      type: 'text',
+      onFocus: inputOnFocus,
+      onBlur: inputOnBlur
+    }, props)),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+      'div',
+      { className: 'relative w-100 overflow-x-hidden' },
+      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])('span', { className: 'w-100 db absolute z-2 top-0', ref: function ref(span) {
+          highlightLine = span;
+        }, style: Style.highlightLine }),
+      _ref
+    )
+  );
+}
+
+var Style = {
+  highlightLine: {
+    right: '100%',
+    height: 1,
+    width: '100%',
+    background: 'linear-gradient(to left, #ff00cc, #333399)'
+  },
+  noFocus: {
+    outline: 'none',
+    resize: 'vertical'
+  }
+};
+
+/* harmony default export */ __webpack_exports__["a"] = (TextFieldRow);
+
+/***/ }),
+
+/***/ "DEO0":
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+module.exports = {"ProductCard":"ProductCard__ZM59l"};
+
+/***/ }),
+
+/***/ "E+wR":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_preact__ = __webpack_require__("KM04");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_preact___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_preact__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__style__ = __webpack_require__("DEO0");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__style___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__style__);
+
+
+
+
+function ProductCard(props) {
+  return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+    'div',
+    { className: __WEBPACK_IMPORTED_MODULE_1__style___default.a.ProductCard },
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+      'div',
+      { className: 'bg-primary aspect-ratio aspect-ratio--1x1 aspect-ratio--4x3-l' },
+      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+        'div',
+        { className: 'aspect-ratio--object cover', style: 'background:url(' + props.image + ') center' },
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])('img', { src: props.image, alt: '', className: 'dn' })
+      )
+    ),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+      'div',
+      { className: 'pa3 pa3-l lh-title' },
+      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+        'h4',
+        { className: 'f6 truncate mb1' },
+        props.title
+      ),
+      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+        'span',
+        { className: 'primary f7 fw6' },
+        props.price
+      )
+    )
+  );
+}
+
+/* harmony default export */ __webpack_exports__["a"] = (ProductCard);
 
 /***/ }),
 
@@ -719,8 +1250,10 @@ function AgenCard(props) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_ProductThumb__ = __webpack_require__("q0al");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_MessageBox__ = __webpack_require__("KNxu");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_OwnerPicture__ = __webpack_require__("xMYh");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__style__ = __webpack_require__("ZAL5");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__style___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7__style__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_Carousel__ = __webpack_require__("U0+c");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_TestiBox__ = __webpack_require__("wmdF");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__style__ = __webpack_require__("ZAL5");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__style___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__style__);
 
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -738,48 +1271,73 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
-var _ref = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])('section', { className: 'Hero mw9 center vh-75 bg-primary' });
+
+
+var _ref = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+  'section',
+  { className: 'mw9 center pt5' },
+  __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_7__components_Carousel__["a" /* default */], { Data: 'assets/data/carousel.json' })
+);
 
 var _ref2 = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-  'div',
-  { className: 'fl dib w-100 w-30-l' },
+  'h2',
+  { className: 'f7 fw6 ttu tc tracked primary mb4 relative z-2' },
   __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-    'div',
-    { className: 'w-40 w-100-l center mb3 pr4-l ft--3-l' },
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_6__components_OwnerPicture__["a" /* default */], { pictures: 'assets/images/3-1.jpg' })
+    'span',
+    { className: 'dib pa2 bg-white' },
+    'Tentang Kami'
   )
 );
 
 var _ref3 = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-  'h3',
-  { className: 'ttu f6 fw6 tracked primary mb3 tc tl-l' },
-  'Tentang Kami'
-);
-
-var _ref4 = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-  'section',
-  null,
+  'div',
+  { className: 'dt center' },
   __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
     'div',
-    { className: 'cf center mw8 ph3 pv4 pv4-l' },
+    { className: 'dtc v-mid' },
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])('img', { src: 'assets/images/ava/owner.jpg', alt: '', className: 'w3 br-100' })
+  ),
+  __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+    'div',
+    { className: 'dtc pl3 v-mid' },
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-      'h3',
-      { className: 'ttu f6 fw6 tracked primary mb3' },
-      'Produk kami'
-    ),
+      'h4',
+      { className: 'fw6 serif' },
+      'Drs. Arief Budiman'
+    )
+  )
+);
+
+var _ref4 = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])('div', { className: 'bl b--primary w1px left-50 absolute top-0 bottom-0 h-100' });
+
+var _ref5 = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+  'section',
+  { className: 'pv5 ph3 bt b--primary relative bg-near-white' },
+  __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+    'h2',
+    { className: 'f7 fw6 ttu tc tracked primary mb4 relative z-2' },
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+      'span',
+      { className: 'dib pa2 bg-near-white' },
+      'Produk Kami'
+    )
+  ),
+  __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+    'div',
+    { className: 'mw8 center pv2' },
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
       'div',
-      { className: 'overflow-x-scroll overflow-hidden-l' },
+      { className: 'overflow-x-scroll overflow-hidden-l bg-near-white' },
       __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
         'div',
-        { className: 'dt dt--fixed' },
+        { className: 'dt dt--fixed ml3 ml0-l' },
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
           'div',
           { className: 'dtc w5 w-third-l pb3 pr3' },
           __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_4__components_ProductThumb__["a" /* default */], {
             title: 'Paket Suara Walet Original',
             path: '/product',
-            imageThumb: 'assets/images/paket-suara.jpg' })
+            imageThumb: 'assets/images/product/suara-1.jpg' })
         ),
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
           'div',
@@ -787,7 +1345,7 @@ var _ref4 = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
           __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_4__components_ProductThumb__["a" /* default */], {
             title: 'Walet Audio System (WAS)',
             path: '/product',
-            imageThumb: 'assets/images/walet-audio-s.jpg' })
+            imageThumb: 'assets/images/product/was-3.jpg' })
         ),
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
           'div',
@@ -795,65 +1353,67 @@ var _ref4 = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
           __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_4__components_ProductThumb__["a" /* default */], {
             title: 'Buku Panduan Budidaya Walet',
             path: '/product',
-            imageThumb: 'assets/images/book.jpg' })
+            imageThumb: 'assets/images/product/book-solusi.jpg' })
         )
       )
     )
-  )
-);
-
-var _ref5 = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-  'h3',
-  { className: 'ttu f6 fw6 tracked primary mb3' },
-  'Highlight'
+  ),
+  __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])('div', { className: 'bl b--primary w1px left-50 absolute top-0 bottom-0 h-100' })
 );
 
 var _ref6 = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-  'h3',
-  { className: 'ttu f6 fw6 tracked primary mb3' },
-  'Berita terbaru'
+  'section',
+  { className: 'pv5 ph3 bt b--primary relative' },
+  __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+    'h2',
+    { className: 'f7 fw6 ttu tc tracked primary mb4 relative z-2' },
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+      'span',
+      { className: 'dib pa2 bg-white' },
+      'testimony'
+    )
+  ),
+  __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+    'div',
+    { className: 'mw8 center ph3 cf relative z-2' },
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+      'div',
+      { className: 'fl dib w-100 w-50-l pa3' },
+      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_8__components_TestiBox__["a" /* default */], { quote: 'sangat bermanfaat untuk meningkatkan produksi walet saya.', user: 'Melinda Guess', city: 'bandung', prov: 'jawa barat' })
+    ),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+      'div',
+      { className: 'fl dib w-100 w-50-l pa3' },
+      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_8__components_TestiBox__["a" /* default */], { quote: 'Saya sangat puas dengan pelatihan, tutorial dan respon yang diberikan oleh dunia walet. Jelas, Singkat, Cepat dan Padat.', user: 'Ujang Sinclair', city: 'bandung', prov: 'jawa barat' })
+    )
+  ),
+  __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])('div', { className: 'bl b--primary w1px left-50 absolute top-0 bottom-0 h-100' })
 );
 
 var _ref7 = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+  'h3',
+  { className: 'ttu f7 fw6 tracked primary mb3' },
+  'Artikel'
+);
+
+var _ref8 = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
   'div',
   { className: 'fl dib w-100 w-third-l mb4 pr3-l' },
   __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
     'h3',
-    { className: 'ttu f6 fw6 tracked primary mb3' },
-    'from our twitter'
+    { className: 'ttu f7 fw6 tracked mb3' },
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+      'a',
+      { className: 'link primary', href: 'https://twitter.com/duniawaletnews' },
+      'from our twitter'
+    )
   ),
-  __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])('div', null)
-);
-
-var _ref8 = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-  'h3',
-  { className: 'ttu f6 fw6 tracked primary mb3' },
-  'Kontak Kami'
-);
-
-var _ref9 = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-  'div',
-  { className: 'w4 mb3 center' },
-  __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])('img', { src: 'assets/logo.svg', alt: '' })
-);
-
-var _ref10 = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])('i', { className: 'icon icon-phone mr2 dib' });
-
-var _ref11 = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])('i', { className: 'icon icon-whatsapp mr2 dib' });
-
-var _ref12 = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])('i', { className: 'icon icon-envelope mr2 dib' });
-
-var _ref13 = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-  'div',
-  { className: 'fl dib w-100 w-50-l v-mid' },
   __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
     'div',
-    { className: 'mw6 center' },
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-      'div',
-      { className: 'mw6 ba b--black-10 shadow-3' },
-      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_5__components_MessageBox__["a" /* default */], null)
-    )
+    null,
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])('a', { 'class': 'twitter-timeline', 'data-lang': 'id', 'data-height': '360', 'data-dnt': 'true', href: 'https://twitter.com/duniawaletnews' }),
+    ' ',
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])('script', { async: true, src: '//platform.twitter.com/widgets.js', charset: 'utf-8' })
   )
 );
 
@@ -885,7 +1445,6 @@ var Home = function (_Component) {
         about: respData.about,
         address: respData.office.head
       });
-      console.log(_this2.state.address);
     });
 
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_unfetch__["a" /* default */])('/assets/data/article-s.json').then(function (resp) {
@@ -909,7 +1468,7 @@ var Home = function (_Component) {
         { className: 'dib fl w-100 mb2 mr3-l' },
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_2__components_NewsThumb__["a" /* default */], {
           title: key.title,
-          imageThumb: 'assets/images/news1.jpg',
+          imageThumb: 'assets/images/news1-s.jpg',
           postDate: key.date,
           viewer: key.views,
           postLink: 'post'
@@ -922,106 +1481,64 @@ var Home = function (_Component) {
     // PREACT RENDER
     return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
       'div',
-      null,
+      { className: '{style.HP}' },
       _ref,
       __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-        'sction',
-        null,
+        'section',
+        { className: 'pv5 ph3 relative' },
+        _ref2,
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
           'div',
-          { className: 'cf center mw8 ph3 pv4 pv0-l' },
-          _ref2,
+          { className: 'measure-wide center f5 tc bg-white z-2 relative' },
           __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-            'div',
-            { className: 'fl dib w-100 w-70-l pv4-l f5-l lh-copy' },
-            _ref3,
+            'p',
+            { className: 'serif mb4' },
             this.state.about
-          )
-        )
+          ),
+          _ref3
+        ),
+        _ref4
       ),
-      _ref4,
+      _ref5,
+      _ref6,
       __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
         'section',
-        null,
+        { className: 'pv5 ph3 bt b--primary relative' },
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
           'div',
-          { className: 'cf center mw8 ph3 pv4 pv4-l' },
+          { className: 'mw8 center ph3 cf bg-white relative z-2' },
           __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
             'div',
-            { className: 'fl dib w-100 w-third-l mb4 pr3-l' },
-            _ref5,
-            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_3__components_HeadlineNews__["a" /* default */], {
-              title: this.state.headline.title,
-              imageThumb: 'assets/images/news1.jpg',
-              postDate: this.state.headline.date,
-              viewer: this.state.headline.views,
-              postLink: 'post',
-              link: '#',
-              reviews: this.state.headline.preview
-            })
-          ),
-          __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-            'div',
-            { className: 'fl dib w-100 w-third-l mb4 pr3-l' },
-            _ref6,
-            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-              'ul',
-              null,
-              LatestNews
-            )
-          ),
-          _ref7
-        )
-      ),
-      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-        'section',
-        null,
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-          'div',
-          { className: 'cf center mw8 ph3 pv4 pv4-l' },
-          _ref8,
-          __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-            'div',
-            { className: 'db cf flex-l items-center bg-primary-l' },
+            { className: 'fl dib w-100 w-two-thirds-l' },
+            _ref7,
             __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
               'div',
-              { className: 'fl dib w-100 w-50-l lh-copy v-mid pa5-l white-l mb4 mb0-l' },
-              _ref9,
+              { className: 'cf' },
               __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-                'ul',
-                null,
+                'div',
+                { className: 'fl dib w-100 w-50-l pr3-l' },
+                __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_3__components_HeadlineNews__["a" /* default */], {
+                  title: this.state.headline.title,
+                  imageThumb: 'assets/images/sarang.jpg',
+                  postDate: this.state.headline.date,
+                  viewer: this.state.headline.views,
+                  postLink: 'post',
+                  link: '#',
+                  reviews: this.state.headline.preview
+                })
+              ),
+              __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+                'div',
+                { className: 'fl dib w-100 w-50-l' },
                 __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-                  'li',
-                  { className: 'mb2' },
-                  address.address
-                ),
-                __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-                  'li',
-                  { className: 'mb2' },
-                  _ref10,
-                  address.phone
-                ),
-                __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-                  'li',
-                  { className: 'mb2' },
-                  _ref11,
-                  address.whatsapp
-                ),
-                __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-                  'li',
-                  { className: 'mb2' },
-                  _ref12,
-                  address.email
-                ),
-                __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-                  'li',
-                  { className: 'mb2' },
-                  'Jam Operasional : ' + address.operationTime
+                  'ul',
+                  null,
+                  LatestNews
                 )
               )
-            ),
-            _ref13
-          )
+            )
+          ),
+          _ref8
         )
       )
     );
@@ -1031,6 +1548,14 @@ var Home = function (_Component) {
 }(__WEBPACK_IMPORTED_MODULE_0_preact__["Component"]);
 
 
+
+/***/ }),
+
+/***/ "FUXK":
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+module.exports = {"TestiBox":"TestiBox__3u_c-"};
 
 /***/ }),
 
@@ -1072,6 +1597,7 @@ function TextField(props) {
       props.label
     ),
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])('input', _extends({
+      style: Style.noFocus,
       className: 'input-reset sans pv2 w-100 bn bg-transparent noFocus',
       type: 'text',
       onFocus: inputOnFocus,
@@ -1094,6 +1620,9 @@ var Style = {
     height: 1,
     width: '100%',
     background: 'linear-gradient(to left, #ff00cc, #333399)'
+  },
+  noFocus: {
+    outline: 'none'
   }
 };
 
@@ -1105,6 +1634,275 @@ var Style = {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "IA/S":
+/***/ (function(module, exports, __webpack_require__) {
+
+var __WEBPACK_AMD_DEFINE_RESULT__;/**
+* Wallop.js
+*
+* @fileoverview Minimal JS library to show & hide things
+*
+* @author Pedro Duarte
+* @author http://pedroduarte.me/wallop
+*
+*/
+(function (global) {
+  function Wallop(selector, options) {
+    if (!selector) {
+      throw new Error('Missing selector. Refer to Usage documentation: https://github.com/peduarte/wallop#javascript');
+    }
+
+    for (var i = 0; i < selectorPool.length; i++) {
+      if (selectorPool[i] === selector) {
+        throw new Error('An instance of Wallop with this selector already exists.');
+      }
+    }
+
+    this.options = {
+      buttonPreviousClass: 'Wallop-buttonPrevious',
+      buttonNextClass: 'Wallop-buttonNext',
+      itemClass: 'Wallop-item',
+      currentItemClass: 'Wallop-item--current',
+      showPreviousClass: 'Wallop-item--showPrevious',
+      showNextClass: 'Wallop-item--showNext',
+      hidePreviousClass: 'Wallop-item--hidePrevious',
+      hideNextClass: 'Wallop-item--hideNext',
+      carousel: true
+    };
+
+    // Whitelist elements which contain `length`
+    this.whitelist = {
+      'form': true
+    };
+
+    if (selector.length > 0 && !this.whitelist[selector]) {
+      throw new Error('Selector cannot be an array, Refer to Usage documentation: https://github.com/peduarte/wallop#javascript');
+    } else {
+      this.$selector = selector;
+    }
+
+    this.options = extend(this.options, options);
+    this.event = null;
+
+    // "Global vars"
+    this.reset();
+    this.buttonPrevious = this.$selector.querySelector(' .' + this.options.buttonPreviousClass);
+    this.buttonNext = this.$selector.querySelector(' .' + this.options.buttonNextClass);
+
+    this.bindEvents();
+    this.createCustomEvent();
+
+    // If there is no active item, start at 0
+    if (this.currentItemIndex === -1) {
+      this.currentItemIndex = 0;
+      addClass(this.allItemsArray[this.currentItemIndex], this.options.currentItemClass);
+    }
+
+    // Update button states to make sure the correct state is set on initialization
+    this.updateButtonStates();
+
+    // Wrapped in timeout function so event can
+    // be listened from outside at anytime
+    var _this = this;
+    setTimeout(function () {
+      _this.event.detail.currentItemIndex = _this.currentItemIndex;
+      _this.$selector.dispatchEvent(_this.event);
+    }, 0);
+  }
+
+  var selectorPool = [];
+
+  var WS = Wallop.prototype;
+
+  // Update prev/next disabled attribute
+  WS.updateButtonStates = function () {
+    if (!this.buttonPrevious && !this.buttonNext || this.options.carousel) {
+      return;
+    }
+
+    if (this.currentItemIndex === this.lastItemIndex) {
+      this.buttonNext.setAttribute('disabled', 'disabled');
+    } else if (this.currentItemIndex === 0) {
+      this.buttonPrevious.setAttribute('disabled', 'disabled');
+    }
+  };
+
+  // Reset all settings by removing classes and attributes added by goTo() & updateButtonStates()
+  WS.removeAllHelperSettings = function () {
+    removeClass(this.allItemsArray[this.currentItemIndex], this.options.currentItemClass);
+    removeClass($$(this.options.hidePreviousClass, this.$selector), this.options.hidePreviousClass);
+    removeClass($$(this.options.hideNextClass, this.$selector), this.options.hideNextClass);
+    removeClass($$(this.options.showPreviousClass, this.$selector), this.options.showPreviousClass);
+    removeClass($$(this.options.showNextClass, this.$selector), this.options.showNextClass);
+
+    if (!this.buttonPrevious && !this.buttonNext) {
+      return;
+    }
+
+    this.buttonPrevious.removeAttribute('disabled');
+    this.buttonNext.removeAttribute('disabled');
+  };
+
+  // Method to add classes to the right elements depending on the index passed
+  WS.goTo = function (index) {
+    if (index === this.currentItemIndex) {
+      return;
+    }
+
+    // Fix the index if it's out of bounds and carousel is enabled
+    index = index === -1 && this.options.carousel ? this.lastItemIndex : index;
+    index = index === this.lastItemIndex + 1 && this.options.carousel ? 0 : index;
+
+    // Exit when index is out of bounds
+    if (index < 0 || index > this.lastItemIndex) {
+      return;
+    }
+
+    this.removeAllHelperSettings();
+
+    var isForwards = (index > this.currentItemIndex || index === 0 && this.currentItemIndex === this.lastItemIndex) && !(index === this.lastItemIndex && this.currentItemIndex === 0);
+    addClass(this.allItemsArray[this.currentItemIndex], isForwards ? this.options.hidePreviousClass : this.options.hideNextClass);
+    addClass(this.allItemsArray[index], this.options.currentItemClass + ' ' + (isForwards ? this.options.showNextClass : this.options.showPreviousClass));
+
+    this.currentItemIndex = index;
+
+    this.updateButtonStates();
+
+    this.event.detail.currentItemIndex = this.currentItemIndex;
+    this.$selector.dispatchEvent(this.event);
+  };
+
+  // Previous item handler
+  WS.previous = function () {
+    this.goTo(this.currentItemIndex - 1);
+  };
+
+  // Next item handler
+  WS.next = function () {
+    this.goTo(this.currentItemIndex + 1);
+  };
+
+  // Update global variables
+  WS.reset = function () {
+    this.allItemsArray = Array.prototype.slice.call(this.$selector.querySelectorAll(' .' + this.options.itemClass));
+    this.currentItemIndex = this.allItemsArray.indexOf(this.$selector.querySelector(' .' + this.options.currentItemClass));
+    this.lastItemIndex = this.allItemsArray.length - 1;
+  };
+
+  // Attach click handlers
+  WS.bindEvents = function () {
+    selectorPool.push(this.$selector);
+
+    var _this = this;
+
+    if (this.buttonPrevious) {
+      this.buttonPrevious.addEventListener('click', function (event) {
+        event.preventDefault();
+        _this.previous();
+      });
+    }
+
+    if (this.buttonNext) {
+      this.buttonNext.addEventListener('click', function (event) {
+        event.preventDefault();
+        _this.next();
+      });
+    }
+  };
+
+  // Method to bind custom event
+  WS.on = function (eventName, callback) {
+    this.$selector.addEventListener(eventName, callback, false);
+  };
+
+  // Method to unbind custom event
+  WS.off = function (eventName, callback) {
+    this.$selector.removeEventListener(eventName, callback, false);
+  };
+
+  // Create custom Event
+  WS.createCustomEvent = function () {
+    var _this = this;
+    this.event = new CustomEvent('change', {
+      detail: {
+        wallopEl: _this.$selector,
+        currentItemIndex: Number(_this.currentItemIndex)
+      },
+      bubbles: true,
+      cancelable: true
+    });
+  };
+
+  // Helper functions
+  function $$(element, container) {
+    if (!element) {
+      return;
+    }
+    if (!container) {
+      container = document;
+    }
+    return container.querySelector('.' + element);
+  }
+
+  function addClass(element, className) {
+    if (!element) {
+      return;
+    }
+    element.className = (element.className + ' ' + className).trim();
+  }
+
+  function removeClass(element, className) {
+    if (!element) {
+      return;
+    }
+    element.className = element.className.replace(className, '').trim();
+  }
+
+  function extend(origOptions, userOptions) {
+    var extendOptions = {},
+        attrname;
+    for (attrname in origOptions) {
+      extendOptions[attrname] = origOptions[attrname];
+    }
+    for (attrname in userOptions) {
+      extendOptions[attrname] = userOptions[attrname];
+    }
+    return extendOptions;
+  }
+
+  // Pollyfill for CustomEvent() Constructor - thanks to Internet Explorer
+  // https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent#Polyfill
+  function CustomEvent(event, params) {
+    params = params || { bubbles: false, cancelable: false, detail: undefined };
+    var evt = document.createEvent('CustomEvent');
+    evt.initCustomEvent(event, params.bubbles, params.cancelable, params.detail);
+    return evt;
+  }
+
+  if (typeof window !== "undefined") {
+    CustomEvent.prototype = window.CustomEvent ? window.CustomEvent.prototype : {};
+    window.CustomEvent = CustomEvent;
+  }
+  // Exports to multiple environments
+  if (true) {
+    //AMD
+    !(__WEBPACK_AMD_DEFINE_RESULT__ = function () {
+      return Wallop;
+    }.call(exports, __webpack_require__, exports, module),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+  } else if (typeof module !== 'undefined' && module.exports) {
+    //node
+    module.exports = Wallop;
+  } else {
+    // browser
+    // use string because of Google closure compiler ADVANCED_MODE
+    /* jslint sub:true */
+    global['Wallop'] = Wallop;
+  }
+})(this);
 
 /***/ }),
 
@@ -1121,9 +1919,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_wallop_css_wallop_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_wallop_css_wallop_css__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__style_fonticon_css__ = __webpack_require__("7VC8");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__style_fonticon_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__style_fonticon_css__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__style__ = __webpack_require__("rq4c");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__style___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__style__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_app__ = __webpack_require__("qLaj");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__style_slider_css__ = __webpack_require__("BfGA");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__style_slider_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__style_slider_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__style__ = __webpack_require__("rq4c");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__style___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__style__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_app__ = __webpack_require__("qLaj");
+// Import CSS
 
 
 
@@ -1131,7 +1932,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
-/* harmony default export */ __webpack_exports__["default"] = (__WEBPACK_IMPORTED_MODULE_5__components_app__["a" /* default */]);
+// Import Apps
+
+/* harmony default export */ __webpack_exports__["default"] = (__WEBPACK_IMPORTED_MODULE_6__components_app__["a" /* default */]);
 
 /***/ }),
 
@@ -1439,7 +2242,78 @@ function MessageBox(props) {
   return _ref;
 }
 
-/* harmony default export */ __webpack_exports__["a"] = (MessageBox);
+/* unused harmony default export */ var _unused_webpack_default_export = (MessageBox);
+
+/***/ }),
+
+/***/ "KvjY":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_preact__ = __webpack_require__("KM04");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_preact___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_preact__);
+
+
+
+var _ref = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])("i", { className: "icon icon-calendar mr2" });
+
+var _ref2 = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])("i", { className: "icon icon-eye mr2" });
+
+function NewsList(props) {
+  return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+    "div",
+    { className: "NewsList" },
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+      "a",
+      { className: "link inherit flex-l flex-column justify-between min-h10-l dim pointer" },
+      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+        "div",
+        { className: "" },
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+          "h5",
+          { className: "f5 mb3 lh-title fw6" },
+          props.title
+        )
+      ),
+      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+        "div",
+        { className: "f7" },
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+          "p",
+          { className: "f7 serif mb3" },
+          props.preview
+        ),
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+          "div",
+          { className: "cf pt3 bt b--primary-2 f8 fw6 primary" },
+          __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+            "div",
+            { className: "fl" },
+            _ref,
+            props.postDate
+          ),
+          __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+            "div",
+            { className: "fr" },
+            _ref2,
+            props.viewer,
+            " views"
+          )
+        )
+      )
+    )
+  );
+}
+
+/* harmony default export */ __webpack_exports__["a"] = (NewsList);
+
+/***/ }),
+
+/***/ "L9Lz":
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+module.exports = {"AP":"AP___Npsy","AP_Search":"AP_Search__3Atnk","AP_SearchContainer":"AP_SearchContainer__202hU","AP_Section":"AP_Section__2XggV","APL":"APL__13yG0"};
 
 /***/ }),
 
@@ -1449,38 +2323,39 @@ function MessageBox(props) {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_preact__ = __webpack_require__("KM04");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_preact___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_preact__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__style__ = __webpack_require__("ghUV");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__style___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__style__);
+
 
 
 
 var _ref = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-  "h4",
-  { className: "ttu tracked f6 fw6 mb2" },
-  "Subscribe Us"
+  'p',
+  { className: 'mb3 lh-copy' },
+  'Dapatkan info terbaru langsung ke email anda '
 );
 
 var _ref2 = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-  "p",
-  { className: "mb3 lh-copy" },
-  "Dapatkan info terbaru langsung ke email anda "
-);
-
-var _ref3 = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-  "button",
-  { className: "ph3 pv2 bn bg-primary f4 white" },
-  __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])("i", { className: "icon icon-paper-plane-o" })
+  'button',
+  { className: 'ph3 pv2 bn bg-primary f4 white' },
+  __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])('i', { className: 'icon icon-paper-plane-o' })
 );
 
 function SubscribeBox(props) {
   return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-    "div",
-    { className: "SubscribeBox pa3 bg-primary white" },
-    _ref,
-    _ref2,
+    'div',
+    { className: __WEBPACK_IMPORTED_MODULE_1__style___default.a.SB },
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-      "form",
-      { className: "pa1 bg-white flex item-center", onSubmit: console.log('submited') },
-      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])("input", { style: Style.Input, className: "w-100 input-reset pa2 bn sans", type: "email" }),
-      _ref3
+      'h4',
+      { className: __WEBPACK_IMPORTED_MODULE_1__style___default.a.SB_T },
+      'Subscribe Us'
+    ),
+    _ref,
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+      'form',
+      { className: __WEBPACK_IMPORTED_MODULE_1__style___default.a.SB_F, onSubmit: console.log('submited') },
+      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])('input', { style: Style.Input, className: 'w-100 input-reset pa2 bn sans', type: 'email' }),
+      _ref2
     )
   );
 }
@@ -1491,7 +2366,7 @@ var Style = {
   }
 };
 
-/* harmony default export */ __webpack_exports__["a"] = (SubscribeBox);
+/* unused harmony default export */ var _unused_webpack_default_export = (SubscribeBox);
 
 /***/ }),
 
@@ -1852,7 +2727,7 @@ var $jscomp$this = this;
 
 /***/ }),
 
-/***/ "PHPn":
+/***/ "OHv1":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1861,51 +2736,90 @@ var $jscomp$this = this;
 
 
 
-var _ref = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])("i", { className: "icon icon-calendar mr2" });
+var _ref = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+  "div",
+  { className: "vh-100 flex justify-center items-center bg-primary white" },
+  __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+    "div",
+    { className: "mw7 f4 tc" },
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+      "h1",
+      { className: "lh-title" },
+      "Maaf..."
+    ),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+      "p",
+      { className: "serif" },
+      "Halaman ini belum tersedia pada saat kompetisi berlangsung"
+    )
+  )
+);
 
-var _ref2 = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])("i", { className: "icon icon-eye mr2" });
+function ErrorPage() {
+  return _ref;
+}
+
+/* harmony default export */ __webpack_exports__["a"] = (ErrorPage);
+
+/***/ }),
+
+/***/ "PHPn":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_preact__ = __webpack_require__("KM04");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_preact___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_preact__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__style__ = __webpack_require__("ZIrQ");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__style___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__style__);
+
+
+
+
+var _ref = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])('i', { className: 'icon icon-calendar mr2' });
+
+var _ref2 = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])('i', { className: 'icon icon-eye mr2' });
 
 function HeadlineNews(props) {
   return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-    "div",
-    { className: "HeadlineNews bg-white-l" },
+    'div',
+    { className: __WEBPACK_IMPORTED_MODULE_1__style___default.a.HLN },
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-      "a",
-      { href: props.link, className: "HeadlineNews_container link black" },
+      'a',
+      { href: props.link, className: __WEBPACK_IMPORTED_MODULE_1__style___default.a.HLN_C },
       __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-        "div",
-        { className: "aspect-ratio aspect-ratio--16x9 z-1" },
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])("div", { className: "aspect-ratio--object cover",
-          style: "background:url(" + props.imageThumb + ") center" })
+        'div',
+        { className: __WEBPACK_IMPORTED_MODULE_1__style___default.a.outer },
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])('div', { className: __WEBPACK_IMPORTED_MODULE_1__style___default.a.inner,
+          style: 'background-image:url(' + props.imageThumb + ')' })
       ),
       __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-        "div",
-        { className: "pv3 bg-white-l w-90-l center tc-l ft--3-l z-2 relative" },
+        'div',
+        { className: __WEBPACK_IMPORTED_MODULE_1__style___default.a.HLN_Con },
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-          "h3",
-          { className: "fw6 f4 f3-l mb3" },
+          'h3',
+          { className: __WEBPACK_IMPORTED_MODULE_1__style___default.a.HLN_T },
           props.title
         ),
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-          "div",
-          { className: "f7 mb3 primary" },
+          'div',
+          { className: __WEBPACK_IMPORTED_MODULE_1__style___default.a.HLN_D },
           _ref,
           __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-            "span",
-            { className: "mr4 fw6" },
+            'span',
+            { className: 'mr4 fw6' },
             props.postDate
           ),
           _ref2,
           __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-            "span",
-            { className: "fw6" },
+            'span',
+            { className: 'fw6' },
             props.viewer,
-            " viewer"
+            ' viewer'
           )
         ),
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-          "div",
-          { className: "lh-copy" },
+          'div',
+          { className: __WEBPACK_IMPORTED_MODULE_1__style___default.a.HLN_P },
           props.reviews
         )
       )
@@ -1939,25 +2853,25 @@ function NewsThumb(props) {
     { className: __WEBPACK_IMPORTED_MODULE_1__style___default.a.NewsThumb },
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
       'a',
-      { href: '#', className: 'flex link black' },
+      { href: '#', className: __WEBPACK_IMPORTED_MODULE_1__style___default.a.NewsThumb_container },
       __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
         'div',
-        { className: 'w-25 mr3' },
+        { className: __WEBPACK_IMPORTED_MODULE_1__style___default.a.NewsThumb_imgContainer },
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
           'div',
-          { className: 'aspect-ratio aspect-ratio--3x4' },
+          { className: __WEBPACK_IMPORTED_MODULE_1__style___default.a.NewsThumb_img },
           __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
             'div',
-            { className: 'aspect-ratio--object cover', style: 'background:url(' + props.imageThumb + ') center' },
-            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])('img', { src: '' + props.imageThumb, alt: '', className: 'dn' })
+            { className: __WEBPACK_IMPORTED_MODULE_1__style___default.a.NewsThumb_imgInner, style: 'background-image:url(' + props.imageThumb + ')' },
+            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])('img', { src: '' + props.imageThumb, alt: '', className: __WEBPACK_IMPORTED_MODULE_1__style___default.a.dn })
           )
         )
       ),
       __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
         'div',
-        { className: 'w-75' },
+        { className: __WEBPACK_IMPORTED_MODULE_1__style___default.a.NewsThumb_content },
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-          'div',
+          'h4',
           { className: __WEBPACK_IMPORTED_MODULE_1__style___default.a.NewsThumb_title },
           props.title
         ),
@@ -2069,11 +2983,208 @@ var index = typeof fetch == 'function' ? fetch.bind() : function (url, options) 
 
 /***/ }),
 
+/***/ "U0+c":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Carousel; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_preact__ = __webpack_require__("KM04");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_preact___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_preact__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__helper_js__ = __webpack_require__("7KlK");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_unfetch__ = __webpack_require__("QAmr");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__theme_css__ = __webpack_require__("Y2gO");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__theme_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__theme_css__);
+
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+// Dependencies require Wallop.js
+// import Wallop from 'wallop'; //slider library
+
+
+
+
+
+var _ref = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])('div', { className: 'Wallop-pagination' });
+
+var _ref2 = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+  'button',
+  { 'class': 'Wallop-buttonPrevious' },
+  __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])('i', { className: 'icon icon-angle-left' })
+);
+
+var _ref3 = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+  'button',
+  { 'class': 'Wallop-buttonNext' },
+  __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])('i', { className: 'icon icon-angle-right' })
+);
+
+var Carousel = function (_Component) {
+  _inherits(Carousel, _Component);
+
+  function Carousel(props) {
+    _classCallCheck(this, Carousel);
+
+    var _this = _possibleConstructorReturn(this, _Component.call(this, props));
+
+    _this.state = {
+      image: [],
+      loading: true
+    };
+    return _this;
+  }
+
+  // init Wallops
+
+  Carousel.prototype.componentDidMount = function componentDidMount() {
+    var _this2 = this;
+
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2_unfetch__["a" /* default */])(this.props.Data).then(function (resp) {
+      return resp.json();
+    }).then(function (data) {
+      // console.log(data);
+      _this2.setState({
+        image: data.images,
+        loading: false
+      });
+    }).then(function () {
+      setTimeout(function () {
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__helper_js__["a" /* default */])();
+      }, 500);
+    }).catch(function (err) {
+      return console.error(err);
+    });
+  }; //componentDidMount
+
+
+  Carousel.prototype.render = function render() {
+    var test = this.state.name;
+    var images = this.state.image;
+    var mapImage = images.map(function (image) {
+      return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(ImageCarouselItem, { imgLink: image });
+    });
+    var pageination = images.map(function (image) {
+      return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(WallopDot, { imgLink: image });
+    });
+
+    return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+      'div',
+      { className: 'Wallop' },
+      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+        'div',
+        { className: 'Wallop-list' },
+        mapImage
+      ),
+      _ref,
+      _ref2,
+      _ref3
+    ); //return
+  }; //render function
+
+
+  return Carousel;
+}(__WEBPACK_IMPORTED_MODULE_0_preact__["Component"]);
+
+
+;
+
+var ImageCarouselItem = function ImageCarouselItem(_ref4) {
+  var imgLink = _ref4.imgLink,
+      current = _ref4.current;
+  return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+    'div',
+    { className: 'Wallop-item' },
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+      'div',
+      { className: __WEBPACK_IMPORTED_MODULE_3__theme_css___default.a.outer },
+      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])('div', { className: __WEBPACK_IMPORTED_MODULE_3__theme_css___default.a.inner, style: 'background: url(' + imgLink + ') center;background-size: cover' })
+    )
+  );
+};
+
+var WallopDot = function WallopDot(_ref5) {
+  var imgLink = _ref5.imgLink;
+  return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+    'a',
+    { href: '#', className: 'Wallop-dot' },
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])('img', { src: imgLink })
+  );
+};
+
+/***/ }),
+
+/***/ "UQex":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ *
+ * 
+ */
+
+function makeEmptyFunction(arg) {
+  return function () {
+    return arg;
+  };
+}
+
+/**
+ * This function accepts and discards inputs; it has no side effects. This is
+ * primarily useful idiomatically for overridable function endpoints which
+ * always need to be callable, since JS lacks a null-call idiom ala Cocoa.
+ */
+var emptyFunction = function emptyFunction() {};
+
+emptyFunction.thatReturns = makeEmptyFunction;
+emptyFunction.thatReturnsFalse = makeEmptyFunction(false);
+emptyFunction.thatReturnsTrue = makeEmptyFunction(true);
+emptyFunction.thatReturnsNull = makeEmptyFunction(null);
+emptyFunction.thatReturnsThis = function () {
+  return this;
+};
+emptyFunction.thatReturnsArgument = function (arg) {
+  return arg;
+};
+
+module.exports = emptyFunction;
+
+/***/ }),
+
+/***/ "Y2gO":
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+module.exports = {"outer":"outer__LmZ_7","inner":"inner__14PgZ","Wallop-buttonPrevious":"Wallop-buttonPrevious__vRTeW","Wallop-buttonNext":"Wallop-buttonNext__1Bj5f","Wallop-pagination":"Wallop-pagination__1OTAZ","Wallop-dot":"Wallop-dot__2QGBS","Wallop-dot--current":"Wallop-dot--current__24Pkx"};
+
+/***/ }),
+
 /***/ "ZAL5":
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-module.exports = {"home":"home__MseGd"};
+module.exports = {"HP":"HP__3TacR","Hr":"Hr__2pk3-"};
+
+/***/ }),
+
+/***/ "ZIrQ":
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+module.exports = {"HLN":"HLN__1WIt5","HLN_C":"HLN_C__VGJIM","outer":"outer__2qvlU","inner":"inner__23lJT","HLN_Con":"HLN_Con__2Gu_0","HLN_T":"HLN_T__2K9pf","HLN_D":"HLN_D__1JKnL"};
 
 /***/ }),
 
@@ -2081,6 +3192,906 @@ module.exports = {"home":"home__MseGd"};
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "dFBD":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_preact__ = __webpack_require__("KM04");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_preact___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_preact__);
+
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+var _ref = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+  'span',
+  null,
+  ' - '
+);
+
+var _ref2 = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])('br', null);
+
+var _ref3 = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+  'div',
+  { className: 'w2 ph3-l f6 bg-primary-l w-100-l tc pv2-l dn-l' },
+  __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+    'span',
+    { className: 'mr3 dn dib-l white fw6 ttc f7' },
+    'details'
+  ),
+  __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])('i', { className: 'icon icon-angle-right dn-l' })
+);
+
+var _ref4 = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+  'span',
+  { className: 'fl dib gray w-third f7' },
+  'Nama'
+);
+
+var _ref5 = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+  'span',
+  { className: 'fl dib gray w-third f7' },
+  'Alamat'
+);
+
+var _ref6 = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+  'span',
+  { className: 'fl dib gray w-third f7' },
+  'Kota'
+);
+
+var _ref7 = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+  'span',
+  { className: 'fl dib gray w-third f7' },
+  'Kontak'
+);
+
+var MyComponent = function (_Component) {
+  _inherits(MyComponent, _Component);
+
+  function MyComponent(props) {
+    _classCallCheck(this, MyComponent);
+
+    var _this = _possibleConstructorReturn(this, _Component.call(this, props));
+
+    _this.state = {
+      detailOpen: false
+    };
+    return _this;
+  }
+
+  MyComponent.prototype.handleClick = function handleClick(e) {
+    e.preventDefault();
+    this.setState({
+      detailOpen: !this.state.detailOpen
+    });
+  };
+
+  MyComponent.prototype.render = function render() {
+    var OpenDetail = this.state.detailOpen ? 'display:flex' : 'display:none';
+    return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+      'div',
+      null,
+      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+        'a',
+        { onClick: this.handleClick.bind(this),
+          href: '#',
+          className: 'elevation-hover pointer ListToCard flex flex-column-l items-center w-100 justify-between link black db-l mw5-l ba-l b--black-10' },
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+          'div',
+          { className: 'w3 center-l mt4-l mb3-l' },
+          __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+            'div',
+            { className: 'w3 h3 bg-red br-100 overflow-hidden cover', style: 'background:url(' + this.props.avatar + ') center' },
+            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])('img', { src: this.props.avatar, alt: '', className: 'dn' })
+          )
+        ),
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+          'div',
+          { className: ' ph3 w-100 f7 gray pv2 h4-l' },
+          __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+            'h4',
+            { className: 'f6 black mb1 ttc' },
+            this.props.name
+          ),
+          __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+            'p',
+            { className: 'f7 ttc' },
+            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+              'span',
+              null,
+              this.props.city
+            ),
+            _ref,
+            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+              'span',
+              null,
+              this.props.prov
+            ),
+            _ref2
+          )
+        ),
+        _ref3
+      ),
+      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+        'div',
+        { style: OpenDetail, onClick: this.handleClick.bind(this), className: 'ContactDialog bg-black-70 fixed w-100 h-100 absolute--fill z-5 pa3 flex items-center' },
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+          'div',
+          { className: 'w-90 mw6-l w-100-l center bg-white f7 br2 elevation-10 ttc' },
+          __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+            'div',
+            { className: 'pa4 center' },
+            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+              'div',
+              { className: 'w3 h3 bg-red br-100 overflow-hidden cover center', style: 'background:url(' + this.props.avatar + ') center' },
+              __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])('img', { src: this.props.avatar, alt: '', className: 'dn' })
+            )
+          ),
+          __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+            'div',
+            { className: 'bt b--black-10 pv2 ph3' },
+            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+              'div',
+              { className: 'cf justify-between' },
+              _ref4,
+              __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+                'span',
+                { className: 'fl dib black tr pl4 w-two-thirds' },
+                this.props.name
+              )
+            )
+          ),
+          __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+            'div',
+            { className: 'bt b--black-10 pv2 ph3' },
+            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+              'div',
+              { className: 'cf justify-between' },
+              _ref5,
+              __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+                'span',
+                { className: 'fl dib black tr pl4 w-two-thirds ttc' },
+                this.props.streetAddress
+              )
+            )
+          ),
+          __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+            'div',
+            { className: 'bt b--black-10 pv2 ph3' },
+            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+              'div',
+              { className: 'cf justify-between' },
+              _ref6,
+              __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+                'span',
+                { className: 'fl dib black tr pl4 w-two-thirds' },
+                this.props.city + ' - ' + this.props.prov
+              )
+            )
+          ),
+          __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+            'div',
+            { className: 'bt b--black-10 pv2 ph3' },
+            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+              'div',
+              { className: 'cf justify-between' },
+              _ref7,
+              __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+                'span',
+                { className: 'fl dib black tr pl4 w-two-thirds' },
+                this.props.contact
+              )
+            )
+          )
+        )
+      )
+    );
+  };
+
+  return MyComponent;
+}(__WEBPACK_IMPORTED_MODULE_0_preact__["Component"]);
+
+
+
+/***/ }),
+
+/***/ "eW0v":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* unused harmony export version */
+/* unused harmony export DOM */
+/* unused harmony export Children */
+/* unused harmony export render */
+/* unused harmony export createClass */
+/* unused harmony export createFactory */
+/* unused harmony export createElement */
+/* unused harmony export cloneElement */
+/* unused harmony export isValidElement */
+/* unused harmony export findDOMNode */
+/* unused harmony export unmountComponentAtNode */
+/* unused harmony export Component */
+/* unused harmony export PureComponent */
+/* unused harmony export unstable_renderSubtreeIntoContainer */
+/* unused harmony export __spread */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_prop_types__ = __webpack_require__("5D9O");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_prop_types__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_preact__ = __webpack_require__("KM04");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_preact___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_preact__);
+/* unused harmony reexport PropTypes */
+
+
+
+var version = '15.1.0'; // trick libraries to think we are react
+
+var ELEMENTS = 'a abbr address area article aside audio b base bdi bdo big blockquote body br button canvas caption cite code col colgroup data datalist dd del details dfn dialog div dl dt em embed fieldset figcaption figure footer form h1 h2 h3 h4 h5 h6 head header hgroup hr html i iframe img input ins kbd keygen label legend li link main map mark menu menuitem meta meter nav noscript object ol optgroup option output p param picture pre progress q rp rt ruby s samp script section select small source span strong style sub summary sup table tbody td textarea tfoot th thead time title tr track u ul var video wbr circle clipPath defs ellipse g image line linearGradient mask path pattern polygon polyline radialGradient rect stop svg text tspan'.split(' ');
+
+var REACT_ELEMENT_TYPE = typeof Symbol !== 'undefined' && Symbol.for && Symbol.for('react.element') || 0xeac7;
+
+var COMPONENT_WRAPPER_KEY = typeof Symbol !== 'undefined' ? Symbol.for('__preactCompatWrapper') : '__preactCompatWrapper';
+
+// don't autobind these methods since they already have guaranteed context.
+var AUTOBIND_BLACKLIST = {
+	constructor: 1,
+	render: 1,
+	shouldComponentUpdate: 1,
+	componentWillReceiveProps: 1,
+	componentWillUpdate: 1,
+	componentDidUpdate: 1,
+	componentWillMount: 1,
+	componentDidMount: 1,
+	componentWillUnmount: 1,
+	componentDidUnmount: 1
+};
+
+var CAMEL_PROPS = /^(?:accent|alignment|arabic|baseline|cap|clip|color|fill|flood|font|glyph|horiz|marker|overline|paint|stop|strikethrough|stroke|text|underline|unicode|units|v|vector|vert|word|writing|x)[A-Z]/;
+
+var BYPASS_HOOK = {};
+
+/*global process*/
+var DEV = typeof process === 'undefined' || !process.env || "production" !== 'production';
+
+// a component that renders nothing. Used to replace components for unmountComponentAtNode.
+function EmptyComponent() {
+	return null;
+}
+
+// make react think we're react.
+var VNode = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_preact__["h"])('a', null).constructor;
+VNode.prototype.$$typeof = REACT_ELEMENT_TYPE;
+VNode.prototype.preactCompatUpgraded = false;
+VNode.prototype.preactCompatNormalized = false;
+
+Object.defineProperty(VNode.prototype, 'type', {
+	get: function get() {
+		return this.nodeName;
+	},
+	set: function set(v) {
+		this.nodeName = v;
+	},
+	configurable: true
+});
+
+Object.defineProperty(VNode.prototype, 'props', {
+	get: function get() {
+		return this.attributes;
+	},
+	set: function set(v) {
+		this.attributes = v;
+	},
+	configurable: true
+});
+
+var oldEventHook = __WEBPACK_IMPORTED_MODULE_1_preact__["options"].event;
+__WEBPACK_IMPORTED_MODULE_1_preact__["options"].event = function (e) {
+	if (oldEventHook) {
+		e = oldEventHook(e);
+	}
+	e.persist = Object;
+	e.nativeEvent = e;
+	return e;
+};
+
+var oldVnodeHook = __WEBPACK_IMPORTED_MODULE_1_preact__["options"].vnode;
+__WEBPACK_IMPORTED_MODULE_1_preact__["options"].vnode = function (vnode) {
+	if (!vnode.preactCompatUpgraded) {
+		vnode.preactCompatUpgraded = true;
+
+		var tag = vnode.nodeName,
+		    attrs = vnode.attributes = extend({}, vnode.attributes);
+
+		if (typeof tag === 'function') {
+			if (tag[COMPONENT_WRAPPER_KEY] === true || tag.prototype && 'isReactComponent' in tag.prototype) {
+				if (vnode.children && String(vnode.children) === '') {
+					vnode.children = undefined;
+				}
+				if (vnode.children) {
+					attrs.children = vnode.children;
+				}
+
+				if (!vnode.preactCompatNormalized) {
+					normalizeVNode(vnode);
+				}
+				handleComponentVNode(vnode);
+			}
+		} else {
+			if (vnode.children && String(vnode.children) === '') {
+				vnode.children = undefined;
+			}
+			if (vnode.children) {
+				attrs.children = vnode.children;
+			}
+
+			if (attrs.defaultValue) {
+				if (!attrs.value && attrs.value !== 0) {
+					attrs.value = attrs.defaultValue;
+				}
+				delete attrs.defaultValue;
+			}
+
+			handleElementVNode(vnode, attrs);
+		}
+	}
+
+	if (oldVnodeHook) {
+		oldVnodeHook(vnode);
+	}
+};
+
+function handleComponentVNode(vnode) {
+	var tag = vnode.nodeName,
+	    a = vnode.attributes;
+
+	vnode.attributes = {};
+	if (tag.defaultProps) {
+		extend(vnode.attributes, tag.defaultProps);
+	}
+	if (a) {
+		extend(vnode.attributes, a);
+	}
+}
+
+function handleElementVNode(vnode, a) {
+	var shouldSanitize, attrs, i;
+	if (a) {
+		for (i in a) {
+			if (shouldSanitize = CAMEL_PROPS.test(i)) {
+				break;
+			}
+		}
+		if (shouldSanitize) {
+			attrs = vnode.attributes = {};
+			for (i in a) {
+				if (a.hasOwnProperty(i)) {
+					attrs[CAMEL_PROPS.test(i) ? i.replace(/([A-Z0-9])/, '-$1').toLowerCase() : i] = a[i];
+				}
+			}
+		}
+	}
+}
+
+// proxy render() since React returns a Component reference.
+function render$1(vnode, parent, callback) {
+	var prev = parent && parent._preactCompatRendered && parent._preactCompatRendered.base;
+
+	// ignore impossible previous renders
+	if (prev && prev.parentNode !== parent) {
+		prev = null;
+	}
+
+	// default to first Element child
+	if (!prev && parent) {
+		prev = parent.firstElementChild;
+	}
+
+	// remove unaffected siblings
+	for (var i = parent.childNodes.length; i--;) {
+		if (parent.childNodes[i] !== prev) {
+			parent.removeChild(parent.childNodes[i]);
+		}
+	}
+
+	var out = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_preact__["render"])(vnode, parent, prev);
+	if (parent) {
+		parent._preactCompatRendered = out && (out._component || { base: out });
+	}
+	if (typeof callback === 'function') {
+		callback();
+	}
+	return out && out._component || out;
+}
+
+var ContextProvider = function ContextProvider() {};
+
+ContextProvider.prototype.getChildContext = function () {
+	return this.props.context;
+};
+ContextProvider.prototype.render = function (props) {
+	return props.children[0];
+};
+
+function renderSubtreeIntoContainer(parentComponent, vnode, container, callback) {
+	var wrap = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_preact__["h"])(ContextProvider, { context: parentComponent.context }, vnode);
+	var renderContainer = render$1(wrap, container);
+	var component = renderContainer._component || renderContainer.base;
+	if (callback) {
+		callback.call(component, renderContainer);
+	}
+	return component;
+}
+
+function unmountComponentAtNode(container) {
+	var existing = container._preactCompatRendered && container._preactCompatRendered.base;
+	if (existing && existing.parentNode === container) {
+		__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_preact__["render"])(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_preact__["h"])(EmptyComponent), container, existing);
+		return true;
+	}
+	return false;
+}
+
+var ARR = [];
+
+// This API is completely unnecessary for Preact, so it's basically passthrough.
+var Children = {
+	map: function map(children, fn, ctx) {
+		if (children == null) {
+			return null;
+		}
+		children = Children.toArray(children);
+		if (ctx && ctx !== children) {
+			fn = fn.bind(ctx);
+		}
+		return children.map(fn);
+	},
+	forEach: function forEach(children, fn, ctx) {
+		if (children == null) {
+			return null;
+		}
+		children = Children.toArray(children);
+		if (ctx && ctx !== children) {
+			fn = fn.bind(ctx);
+		}
+		children.forEach(fn);
+	},
+	count: function count(children) {
+		return children && children.length || 0;
+	},
+	only: function only(children) {
+		children = Children.toArray(children);
+		if (children.length !== 1) {
+			throw new Error('Children.only() expects only one child.');
+		}
+		return children[0];
+	},
+	toArray: function toArray(children) {
+		if (children == null) {
+			return [];
+		}
+		return ARR.concat(children);
+	}
+};
+
+/** Track current render() component for ref assignment */
+var currentComponent;
+
+function createFactory(type) {
+	return createElement.bind(null, type);
+}
+
+var DOM = {};
+for (var i = ELEMENTS.length; i--;) {
+	DOM[ELEMENTS[i]] = createFactory(ELEMENTS[i]);
+}
+
+function upgradeToVNodes(arr, offset) {
+	for (var i = offset || 0; i < arr.length; i++) {
+		var obj = arr[i];
+		if (Array.isArray(obj)) {
+			upgradeToVNodes(obj);
+		} else if (obj && typeof obj === 'object' && !isValidElement(obj) && (obj.props && obj.type || obj.attributes && obj.nodeName || obj.children)) {
+			arr[i] = createElement(obj.type || obj.nodeName, obj.props || obj.attributes, obj.children);
+		}
+	}
+}
+
+function isStatelessComponent(c) {
+	return typeof c === 'function' && !(c.prototype && c.prototype.render);
+}
+
+// wraps stateless functional components in a PropTypes validator
+function wrapStatelessComponent(WrappedComponent) {
+	return createClass({
+		displayName: WrappedComponent.displayName || WrappedComponent.name,
+		render: function render() {
+			return WrappedComponent(this.props, this.context);
+		}
+	});
+}
+
+function statelessComponentHook(Ctor) {
+	var Wrapped = Ctor[COMPONENT_WRAPPER_KEY];
+	if (Wrapped) {
+		return Wrapped === true ? Ctor : Wrapped;
+	}
+
+	Wrapped = wrapStatelessComponent(Ctor);
+
+	Object.defineProperty(Wrapped, COMPONENT_WRAPPER_KEY, { configurable: true, value: true });
+	Wrapped.displayName = Ctor.displayName;
+	Wrapped.propTypes = Ctor.propTypes;
+	Wrapped.defaultProps = Ctor.defaultProps;
+
+	Object.defineProperty(Ctor, COMPONENT_WRAPPER_KEY, { configurable: true, value: Wrapped });
+
+	return Wrapped;
+}
+
+function createElement() {
+	var args = [],
+	    len = arguments.length;
+	while (len--) {
+		args[len] = arguments[len];
+	}upgradeToVNodes(args, 2);
+	return normalizeVNode(__WEBPACK_IMPORTED_MODULE_1_preact__["h"].apply(void 0, args));
+}
+
+function normalizeVNode(vnode) {
+	vnode.preactCompatNormalized = true;
+
+	applyClassName(vnode);
+
+	if (isStatelessComponent(vnode.nodeName)) {
+		vnode.nodeName = statelessComponentHook(vnode.nodeName);
+	}
+
+	var ref = vnode.attributes.ref,
+	    type = ref && typeof ref;
+	if (currentComponent && (type === 'string' || type === 'number')) {
+		vnode.attributes.ref = createStringRefProxy(ref, currentComponent);
+	}
+
+	applyEventNormalization(vnode);
+
+	return vnode;
+}
+
+function cloneElement$1(element, props) {
+	var children = [],
+	    len = arguments.length - 2;
+	while (len-- > 0) {
+		children[len] = arguments[len + 2];
+	}if (!isValidElement(element)) {
+		return element;
+	}
+	var elementProps = element.attributes || element.props;
+	var node = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_preact__["h"])(element.nodeName || element.type, elementProps, element.children || elementProps && elementProps.children);
+	// Only provide the 3rd argument if needed.
+	// Arguments 3+ overwrite element.children in preactCloneElement
+	var cloneArgs = [node, props];
+	if (children && children.length) {
+		cloneArgs.push(children);
+	} else if (props && props.children) {
+		cloneArgs.push(props.children);
+	}
+	return normalizeVNode(__WEBPACK_IMPORTED_MODULE_1_preact__["cloneElement"].apply(void 0, cloneArgs));
+}
+
+function isValidElement(element) {
+	return element && (element instanceof VNode || element.$$typeof === REACT_ELEMENT_TYPE);
+}
+
+function createStringRefProxy(name, component) {
+	return component._refProxies[name] || (component._refProxies[name] = function (resolved) {
+		if (component && component.refs) {
+			component.refs[name] = resolved;
+			if (resolved === null) {
+				delete component._refProxies[name];
+				component = null;
+			}
+		}
+	});
+}
+
+function applyEventNormalization(ref) {
+	var nodeName = ref.nodeName;
+	var attributes = ref.attributes;
+
+	if (!attributes || typeof nodeName !== 'string') {
+		return;
+	}
+	var props = {};
+	for (var i in attributes) {
+		props[i.toLowerCase()] = i;
+	}
+	if (props.ondoubleclick) {
+		attributes.ondblclick = attributes[props.ondoubleclick];
+		delete attributes[props.ondoubleclick];
+	}
+	// for *textual inputs* (incl textarea), normalize `onChange` -> `onInput`:
+	if (props.onchange && (nodeName === 'textarea' || nodeName.toLowerCase() === 'input' && !/^fil|che|rad/i.test(attributes.type))) {
+		var normalized = props.oninput || 'oninput';
+		if (!attributes[normalized]) {
+			attributes[normalized] = multihook([attributes[normalized], attributes[props.onchange]]);
+			delete attributes[props.onchange];
+		}
+	}
+}
+
+function applyClassName(vnode) {
+	var a = vnode.attributes || (vnode.attributes = {});
+	classNameDescriptor.enumerable = 'className' in a;
+	if (a.className) {
+		a.class = a.className;
+	}
+	Object.defineProperty(a, 'className', classNameDescriptor);
+}
+
+var classNameDescriptor = {
+	configurable: true,
+	get: function get() {
+		return this.class;
+	},
+	set: function set(v) {
+		this.class = v;
+	}
+};
+
+function extend(base, props) {
+	var arguments$1 = arguments;
+
+	for (var i = 1, obj = void 0; i < arguments.length; i++) {
+		if (obj = arguments$1[i]) {
+			for (var key in obj) {
+				if (obj.hasOwnProperty(key)) {
+					base[key] = obj[key];
+				}
+			}
+		}
+	}
+	return base;
+}
+
+function shallowDiffers(a, b) {
+	for (var i in a) {
+		if (!(i in b)) {
+			return true;
+		}
+	}
+	for (var i$1 in b) {
+		if (a[i$1] !== b[i$1]) {
+			return true;
+		}
+	}
+	return false;
+}
+
+function findDOMNode(component) {
+	return component && component.base || component;
+}
+
+function F() {}
+
+function createClass(obj) {
+	function cl(props, context) {
+		bindAll(this);
+		Component$1.call(this, props, context, BYPASS_HOOK);
+		newComponentHook.call(this, props, context);
+	}
+
+	obj = extend({ constructor: cl }, obj);
+
+	// We need to apply mixins here so that getDefaultProps is correctly mixed
+	if (obj.mixins) {
+		applyMixins(obj, collateMixins(obj.mixins));
+	}
+	if (obj.statics) {
+		extend(cl, obj.statics);
+	}
+	if (obj.propTypes) {
+		cl.propTypes = obj.propTypes;
+	}
+	if (obj.defaultProps) {
+		cl.defaultProps = obj.defaultProps;
+	}
+	if (obj.getDefaultProps) {
+		cl.defaultProps = obj.getDefaultProps();
+	}
+
+	F.prototype = Component$1.prototype;
+	cl.prototype = extend(new F(), obj);
+
+	cl.displayName = obj.displayName || 'Component';
+
+	return cl;
+}
+
+// Flatten an Array of mixins to a map of method name to mixin implementations
+function collateMixins(mixins) {
+	var keyed = {};
+	for (var i = 0; i < mixins.length; i++) {
+		var mixin = mixins[i];
+		for (var key in mixin) {
+			if (mixin.hasOwnProperty(key) && typeof mixin[key] === 'function') {
+				(keyed[key] || (keyed[key] = [])).push(mixin[key]);
+			}
+		}
+	}
+	return keyed;
+}
+
+// apply a mapping of Arrays of mixin methods to a component prototype
+function applyMixins(proto, mixins) {
+	for (var key in mixins) {
+		if (mixins.hasOwnProperty(key)) {
+			proto[key] = multihook(mixins[key].concat(proto[key] || ARR), key === 'getDefaultProps' || key === 'getInitialState' || key === 'getChildContext');
+		}
+	}
+}
+
+function bindAll(ctx) {
+	for (var i in ctx) {
+		var v = ctx[i];
+		if (typeof v === 'function' && !v.__bound && !AUTOBIND_BLACKLIST.hasOwnProperty(i)) {
+			(ctx[i] = v.bind(ctx)).__bound = true;
+		}
+	}
+}
+
+function callMethod(ctx, m, args) {
+	if (typeof m === 'string') {
+		m = ctx.constructor.prototype[m];
+	}
+	if (typeof m === 'function') {
+		return m.apply(ctx, args);
+	}
+}
+
+function multihook(hooks, skipDuplicates) {
+	return function () {
+		var arguments$1 = arguments;
+		var this$1 = this;
+
+		var ret;
+		for (var i = 0; i < hooks.length; i++) {
+			var r = callMethod(this$1, hooks[i], arguments$1);
+
+			if (skipDuplicates && r != null) {
+				if (!ret) {
+					ret = {};
+				}
+				for (var key in r) {
+					if (r.hasOwnProperty(key)) {
+						ret[key] = r[key];
+					}
+				}
+			} else if (typeof r !== 'undefined') {
+				ret = r;
+			}
+		}
+		return ret;
+	};
+}
+
+function newComponentHook(props, context) {
+	propsHook.call(this, props, context);
+	this.componentWillReceiveProps = multihook([propsHook, this.componentWillReceiveProps || 'componentWillReceiveProps']);
+	this.render = multihook([propsHook, beforeRender, this.render || 'render', afterRender]);
+}
+
+function propsHook(props, context) {
+	if (!props) {
+		return;
+	}
+
+	// React annoyingly special-cases single children, and some react components are ridiculously strict about this.
+	var c = props.children;
+	if (c && Array.isArray(c) && c.length === 1 && (typeof c[0] === 'string' || typeof c[0] === 'function' || c[0] instanceof VNode)) {
+		props.children = c[0];
+
+		// but its totally still going to be an Array.
+		if (props.children && typeof props.children === 'object') {
+			props.children.length = 1;
+			props.children[0] = props.children;
+		}
+	}
+
+	// add proptype checking
+	if (DEV) {
+		var ctor = typeof this === 'function' ? this : this.constructor,
+		    propTypes = this.propTypes || ctor.propTypes;
+		var displayName = this.displayName || ctor.name;
+
+		if (propTypes) {
+			__WEBPACK_IMPORTED_MODULE_0_prop_types___default.a.checkPropTypes(propTypes, props, 'prop', displayName);
+		}
+	}
+}
+
+function beforeRender(props) {
+	currentComponent = this;
+}
+
+function afterRender() {
+	if (currentComponent === this) {
+		currentComponent = null;
+	}
+}
+
+function Component$1(props, context, opts) {
+	__WEBPACK_IMPORTED_MODULE_1_preact__["Component"].call(this, props, context);
+	this.state = this.getInitialState ? this.getInitialState() : {};
+	this.refs = {};
+	this._refProxies = {};
+	if (opts !== BYPASS_HOOK) {
+		newComponentHook.call(this, props, context);
+	}
+}
+extend(Component$1.prototype = new __WEBPACK_IMPORTED_MODULE_1_preact__["Component"](), {
+	constructor: Component$1,
+
+	isReactComponent: {},
+
+	replaceState: function replaceState(state, callback) {
+		var this$1 = this;
+
+		this.setState(state, callback);
+		for (var i in this$1.state) {
+			if (!(i in state)) {
+				delete this$1.state[i];
+			}
+		}
+	},
+
+	getDOMNode: function getDOMNode() {
+		return this.base;
+	},
+
+	isMounted: function isMounted() {
+		return !!this.base;
+	}
+});
+
+function PureComponent(props, context) {
+	Component$1.call(this, props, context);
+}
+F.prototype = Component$1.prototype;
+PureComponent.prototype = new F();
+PureComponent.prototype.isPureReactComponent = true;
+PureComponent.prototype.shouldComponentUpdate = function (props, state) {
+	return shallowDiffers(this.props, props) || shallowDiffers(this.state, state);
+};
+
+var index = {
+	version: version,
+	DOM: DOM,
+	PropTypes: __WEBPACK_IMPORTED_MODULE_0_prop_types___default.a,
+	Children: Children,
+	render: render$1,
+	createClass: createClass,
+	createFactory: createFactory,
+	createElement: createElement,
+	cloneElement: cloneElement$1,
+	isValidElement: isValidElement,
+	findDOMNode: findDOMNode,
+	unmountComponentAtNode: unmountComponentAtNode,
+	Component: Component$1,
+	PureComponent: PureComponent,
+	unstable_renderSubtreeIntoContainer: renderSubtreeIntoContainer,
+	__spread: extend
+};
+
+/* harmony default export */ __webpack_exports__["a"] = (index);
+//# sourceMappingURL=preact-compat.es.js.map
 
 /***/ }),
 
@@ -2107,11 +4118,34 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 var _ref = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+  'section',
+  { className: 'bg-primary ph3' },
+  __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+    'div',
+    { className: 'flex items-center mw8 center vh-50' },
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+      'div',
+      { className: 'measure-wide white' },
+      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+        'h2',
+        { className: 'f3 f2-l fw6 white' },
+        'Drs. Arief Budiman'
+      ),
+      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+        'p',
+        { className: 'serif f5-l' },
+        'Konsultan Walet Asia Tenggara'
+      )
+    )
+  )
+);
+
+var _ref2 = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
   'div',
   { className: 'fl dib w-100 w-40-l' },
   __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
     'div',
-    { className: 'mb4 center w-40 w-100-l' },
+    { className: 'center w-40 w-100-l mb3 mb0-l' },
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_2__components_OwnerPicture__["a" /* default */], { pictures: 'assets/images/3-1.jpg' })
   )
 );
@@ -2153,15 +4187,15 @@ var Profile = function (_Component) {
   Profile.prototype.render = function render() {
     return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
       'div',
-      { className: '' },
-      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])('section', { className: 'vh-25 vh-50-l cover z-1', style: 'background:url("assets/images/sarang.jpg") center' }),
+      { className: 'mt4 mt5-l' },
+      _ref,
       __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
         'section',
-        { className: 'mw8 center bg-white ft--3-l pa4 z-3 cf bt bw2 b--primary' },
-        _ref,
+        { className: 'cf mw8 center ph3 ph4-l pv4 bg-white-l ft--4-l elevation-10' },
+        _ref2,
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
           'article',
-          { className: 'fl dib lh-copy w-100 w-60-l pl4-l' },
+          { className: 'fl dib w-100 w-60-l pl4-l lh-copy' },
           __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
             'p',
             null,
@@ -2179,11 +4213,19 @@ var Profile = function (_Component) {
 
 /***/ }),
 
+/***/ "ghUV":
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+module.exports = {"SB":"SB__3CYnd","SB_T":"SB_T__7GY6k","SB_F":"SB_F__1ZimL"};
+
+/***/ }),
+
 /***/ "hS8a":
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-module.exports = {"NewsThumb":"NewsThumb__1FLBp","NewsThumb_container":"NewsThumb_container__1dD0U","NewsThumb_img":"NewsThumb_img__2643G","NewsThumb_imgInner":"NewsThumb_imgInner__1IrUd","NewsThumb_title":"NewsThumb_title__1gqb7","NewsThumb_content":"NewsThumb_content__2QlgO","NewsThumb_date":"NewsThumb_date__1sHv-","NewsThumb_preview":"NewsThumb_preview__3nSz8"};
+module.exports = {"NewsThumb":"NewsThumb__3-kuu","NewsThumb_container":"NewsThumb_container__1fOlI","NewsThumb_imgContainer":"NewsThumb_imgContainer__33vBp","NewsThumb_img":"NewsThumb_img__1PJmm","NewsThumb_imgInner":"NewsThumb_imgInner__1PW9z","dn":"dn__1aoGF","NewsThumb_title":"NewsThumb_title__1uSCr","NewsThumb_content":"NewsThumb_content__2-L3_","NewsThumb_date":"NewsThumb_date__11BDS","NewsThumb_preview":"NewsThumb_preview__2n3IS"};
 
 /***/ }),
 
@@ -2191,6 +4233,86 @@ module.exports = {"NewsThumb":"NewsThumb__1FLBp","NewsThumb_container":"NewsThum
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "lGI2":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_preact__ = __webpack_require__("KM04");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_preact___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_preact__);
+
+
+
+var _ref = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+  "div",
+  { className: "action f7" },
+  __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+    "a",
+    { href: "#", className: "link primary" },
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+      "span",
+      { className: "v-mid" },
+      "Baca Selengkapnya"
+    ),
+    " ",
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])("i", { className: "icon icon-angle-right ml3 v-mid" })
+  )
+);
+
+function NewsFeatured(props) {
+  return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+    "div",
+    { className: "NewsFeatured elevation-10" },
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+      "div",
+      { className: "flex-l" },
+      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+        "div",
+        { className: "w-two-thirds-l cover", style: "background:url(" + props.image + ") center" },
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+          "div",
+          { className: "aspect-ratio aspect-ratio--4x3" },
+          __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+            "div",
+            { className: "aspect-ratio--object cover" },
+            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])("img", { src: props.image, alt: "", className: "dn" })
+          )
+        )
+      ),
+      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+        "div",
+        { className: "w-third-l bg-near-black pa3 pa4-l white flex-l flex-column justify-between" },
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+          "div",
+          { className: "content" },
+          __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+            "h3",
+            { className: "ttc primary f4 lh-title fw6 mb3 bb b--primary-2 pb3" },
+            props.title
+          ),
+          __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+            "p",
+            { className: "f6 serif" },
+            props.preview
+          )
+        ),
+        _ref
+      )
+    )
+  );
+}
+
+/* harmony default export */ __webpack_exports__["a"] = (NewsFeatured);
+
+/***/ }),
+
+/***/ "mxH6":
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+module.exports = {"AP":"AP__3OUjQ","T_s":"T_s__3WbLh","LNW_li":"LNW_li__3FoaM"};
 
 /***/ }),
 
@@ -2207,7 +4329,7 @@ module.exports = {"NewsThumb":"NewsThumb__1FLBp","NewsThumb_container":"NewsThum
 
 var _ref = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
   'span',
-  { className: 'f7 ttc' },
+  { className: 'f7 ttc primary' },
   'lihat details'
 );
 
@@ -2233,7 +4355,7 @@ function ProductThumb(props) {
         { style: Style.productDetails, className: 'absolute tc bottom-0 bg-white pa2 pa3-l z-3 w-80 center' },
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
           'h4',
-          { className: 'f6 f5-l fw6 mb2' },
+          { className: 'f7 f7-l fw6 mb1 lh-title' },
           props.title
         ),
         _ref
@@ -2266,6 +4388,9 @@ var Style = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__routes_profile__ = __webpack_require__("gNuw");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__routes_article__ = __webpack_require__("vf5e");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__routes_agen__ = __webpack_require__("8Njl");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__routes_product__ = __webpack_require__("2yh/");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__routes_kontak__ = __webpack_require__("xaAX");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__routes_errorpage__ = __webpack_require__("OHv1");
 
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -2273,6 +4398,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
 
 
 
@@ -2296,9 +4425,21 @@ var _ref4 = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__W
 
 var _ref5 = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_7__routes_agen__["a" /* default */], { path: '/agen/' });
 
-var _ref6 = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_5__routes_profile__["a" /* default */], { path: '/profile/:user' });
+var _ref6 = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_8__routes_product__["a" /* default */], { path: '/produk/' });
 
-var _ref7 = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_3__footer__["a" /* default */], null);
+var _ref7 = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_9__routes_kontak__["a" /* default */], { path: '/kontak/' });
+
+var _ref8 = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_10__routes_errorpage__["a" /* default */], { path: '/gallery/' });
+
+var _ref9 = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_10__routes_errorpage__["a" /* default */], { path: '/csr/' });
+
+var _ref10 = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_10__routes_errorpage__["a" /* default */], { path: '/member/' });
+
+var _ref11 = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_10__routes_errorpage__["a" /* default */], { path: '/pemesanan/' });
+
+var _ref12 = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_5__routes_profile__["a" /* default */], { path: '/profile/:user' });
+
+var _ref13 = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_3__footer__["a" /* default */], null);
 
 var App = function (_Component) {
 	_inherits(App, _Component);
@@ -2334,9 +4475,15 @@ var App = function (_Component) {
 				_ref3,
 				_ref4,
 				_ref5,
-				_ref6
+				_ref6,
+				_ref7,
+				_ref8,
+				_ref9,
+				_ref10,
+				_ref11,
+				_ref12
 			),
-			_ref7
+			_ref13
 		);
 	};
 
@@ -2351,7 +4498,7 @@ var App = function (_Component) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-module.exports = {"AgenCard":"AgenCard__1xpQ5","AgenCard_name":"AgenCard_name__3gwT-","AgenCard_address":"AgenCard_address__sdb0E","AgenCard_bar":"AgenCard_bar__IZ1_T","AgenCard_container":"AgenCard_container__2Evkn"};
+module.exports = {"AgenCard":"AgenCard__303IV","AgenCard_container":"AgenCard_container__1uOEJ","AgenCard_ava":"AgenCard_ava__2DWXf","AgenCard_content":"AgenCard_content__2pabp","AgenCard_name":"AgenCard_name__28vTi","AgenCard_address":"AgenCard_address__3fmM6","AgenCard_Arrow":"AgenCard_Arrow__xjU61","AgenCard_bar":"AgenCard_bar__1pnsi"};
 
 /***/ }),
 
@@ -2369,10 +4516,11 @@ module.exports = {"AgenCard":"AgenCard__1xpQ5","AgenCard_name":"AgenCard_name__3
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Header; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_preact__ = __webpack_require__("KM04");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_preact___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_preact__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_preact_router_match__ = __webpack_require__("sw5u");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_preact_router_match___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_preact_router_match__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__style__ = __webpack_require__("u3et");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__style___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__style__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react__ = __webpack_require__("eW0v");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_preact_router_match__ = __webpack_require__("sw5u");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_preact_router_match___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_preact_router_match__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__style__ = __webpack_require__("u3et");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__style___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__style__);
 
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -2392,154 +4540,275 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 // arief.walet@gmail.com",
 // Senin - Sabtu, Pukul 08.00 - 16.00 WIB"
 
+
 var _ref = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 	'div',
-	{ className: 'center bg-primary w-100 white' },
+	{ className: 'dn flex-l items-center justify-between h2 f7 ph3 bb b--primary' },
 	__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 		'div',
-		{ className: 'h2 mw9 ph3 center dn flex-l items-center justify-between' },
+		{ className: 'lift primary' },
 		__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-			'nav',
+			'p',
+			null,
+			__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+				'span',
+				{ className: 'mr3' },
+				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])('i', { className: 'icon icon-envelope mr2' }),
+				'arief.walet@gmail.com'
+			),
+			__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+				'span',
+				{ className: 'mr3' },
+				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])('i', { className: 'icon icon-whatsapp mr2' }),
+				'082138388899'
+			),
+			__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+				'span',
+				{ className: 'mr3' },
+				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])('i', { className: 'icon icon-phone mr2' }),
+				'082138388899'
+			)
+		)
+	),
+	__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+		'div',
+		{ className: 'right' },
+		__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+			'div',
 			{ className: 'f7' },
 			__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
 				'div',
-				{ className: 'dib' },
+				{ className: 'social-icon-top' },
 				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-					'span',
-					{ className: 'mr3' },
-					__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])('i', { className: 'icon icon-envelope' }),
-					' arief.walet@gmail.com '
+					'a',
+					{ className: 'link dib ml3 primary', href: '' },
+					__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])('i', { className: 'icon icon-facebook' })
 				),
 				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-					'span',
-					null,
-					__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])('i', { className: 'icon icon-phone' }),
-					' +6282138388899 '
+					'a',
+					{ className: 'link dib ml3 primary', href: '' },
+					__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])('i', { className: 'icon icon-twitter' })
+				),
+				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+					'a',
+					{ className: 'link dib ml3 primary', href: '' },
+					__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])('i', { className: 'icon icon-instagram' })
+				),
+				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+					'a',
+					{ className: 'link dib ml3 primary', href: '' },
+					__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])('i', { className: 'icon icon-youtube-play' })
 				)
-			)
-		),
-		__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-			'div',
-			{ className: 'social-icon-top' },
-			__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-				'a',
-				{ className: 'link dib mh2 white', href: '' },
-				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])('i', { className: 'icon icon-facebook' })
-			),
-			__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-				'a',
-				{ className: 'link dib mh2 white', href: '' },
-				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])('i', { className: 'icon icon-twitter' })
-			),
-			__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-				'a',
-				{ className: 'link dib mh2 white', href: '' },
-				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])('i', { className: 'icon icon-instagram' })
-			),
-			__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-				'a',
-				{ className: 'link dib mh2 white', href: '' },
-				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])('i', { className: 'icon icon-youtube-play' })
 			)
 		)
 	)
 );
 
-var _ref2 = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])('img', { src: 'assets/logo.svg', alt: '', className: 'h2' });
+var _ref2 = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])('img', { src: 'assets/logo-side.svg', alt: '', className: 'h2' });
 
-var _ref3 = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-	'div',
-	{ className: 'dn-l' },
-	__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-		'button',
-		{ className: 'bn flex items-center sans ttu tracked f7 fw5 pa2 bg-black white' },
-		'Menu'
-	)
-);
+var _ref3 = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])('i', { className: 'icon icon-menu' });
 
-var Header = function (_Component) {
-	_inherits(Header, _Component);
+var _ref4 = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])('img', { src: 'assets/logo.svg', alt: '' });
 
-	function Header() {
+var Header = function (_React$Component) {
+	_inherits(Header, _React$Component);
+
+	function Header(props) {
 		_classCallCheck(this, Header);
 
-		return _possibleConstructorReturn(this, _Component.apply(this, arguments));
+		var _this = _possibleConstructorReturn(this, _React$Component.call(this, props));
+
+		_this.state = {
+			sideOpen: false
+		};
+		return _this;
 	}
 
+	Header.prototype.handleSideBar = function handleSideBar(e) {
+		e.preventDefault();
+		window.scrollTo(0, 0);
+		this.setState({
+			sideOpen: !this.state.sideOpen
+		});
+	};
+
+	Header.prototype.handleMainNav = function handleMainNav(e) {
+		e.preventDefault();
+		window.scrollTo(0, 0);
+	};
+
 	Header.prototype.render = function render() {
+		var Style = {
+			isActive: {
+				transform: 'translate3d(0,0,0)'
+			},
+			isClosed: {
+				transform: 'translate3d(100%,0,0)'
+			}
+		};
+		var sidebarOpen = this.state.sideOpen ? Style.isActive : Style.isClosed;
+
 		return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-			'header',
-			{ className: 'bg-white bb b--black-10' },
-			_ref,
+			'div',
+			null,
+			console.log(this.state.sideOpen),
 			__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-				'div',
-				{ className: 'h3 mw9 center flex items-center justify-between ph3' },
+				'header',
+				{ className: __WEBPACK_IMPORTED_MODULE_3__style___default.a.MH },
+				_ref,
 				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-					__WEBPACK_IMPORTED_MODULE_1_preact_router_match__["Link"],
-					{ className: 'ttu dib ph3 link near-black tracked f7 fw5', activeClassName: __WEBPACK_IMPORTED_MODULE_2__style___default.a.active, href: '/' },
-					_ref2
-				),
-				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-					'nav',
-					{ className: 'dn db-l' },
+					'div',
+					{ className: 'flex items-center justify-between h3 f6 ph3' },
 					__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-						__WEBPACK_IMPORTED_MODULE_1_preact_router_match__["Link"],
-						{ className: 'ttu dib ph3 link near-black tracked f7 fw6', activeClassName: __WEBPACK_IMPORTED_MODULE_2__style___default.a.active, href: '/' },
-						'Home'
+						'div',
+						{ className: 'left' },
+						__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+							__WEBPACK_IMPORTED_MODULE_2_preact_router_match__["Link"],
+							{ className: 'link primary db', activeClassName: __WEBPACK_IMPORTED_MODULE_3__style___default.a.active, href: '/' },
+							_ref2
+						)
 					),
 					__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-						__WEBPACK_IMPORTED_MODULE_1_preact_router_match__["Link"],
-						{ className: 'ttu dib ph3 link near-black tracked f7 fw6', activeClassName: __WEBPACK_IMPORTED_MODULE_2__style___default.a.active, href: '/profile' },
-						'Profil'
+						'div',
+						{ className: 'right' },
+						__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+							'nav',
+							{ className: 'dn db-l fw4 f7 tracked' },
+							__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+								__WEBPACK_IMPORTED_MODULE_2_preact_router_match__["Link"],
+								{ onClick: this.handleMainNav.bind(this), className: 'link gray dim dib ml3', activeClassName: 'current', href: '/' },
+								'Home'
+							),
+							__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+								__WEBPACK_IMPORTED_MODULE_2_preact_router_match__["Link"],
+								{ onClick: this.handleMainNav.bind(this), className: 'link gray dim dib ml3', activeClassName: 'current', href: '/profile' },
+								'Profil'
+							),
+							__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+								__WEBPACK_IMPORTED_MODULE_2_preact_router_match__["Link"],
+								{ onClick: this.handleMainNav.bind(this), className: 'link gray dim dib ml3', activeClassName: 'current', href: '/produk' },
+								'Produk'
+							),
+							__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+								__WEBPACK_IMPORTED_MODULE_2_preact_router_match__["Link"],
+								{ onClick: this.handleMainNav.bind(this), className: 'link gray dim dib ml3', activeClassName: 'current', href: '/pemesanan' },
+								'Pemesanan'
+							),
+							__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+								__WEBPACK_IMPORTED_MODULE_2_preact_router_match__["Link"],
+								{ onClick: this.handleMainNav.bind(this), className: 'link gray dim dib ml3', activeClassName: 'current', href: '/article' },
+								'Article'
+							),
+							__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+								__WEBPACK_IMPORTED_MODULE_2_preact_router_match__["Link"],
+								{ onClick: this.handleMainNav.bind(this), className: 'link gray dim dib ml3', activeClassName: 'current', href: '/agen' },
+								'Agen Resmi'
+							),
+							__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+								__WEBPACK_IMPORTED_MODULE_2_preact_router_match__["Link"],
+								{ onClick: this.handleMainNav.bind(this), className: 'link gray dim dib ml3', activeClassName: 'current', href: '/kontak' },
+								'Kontak'
+							),
+							__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+								__WEBPACK_IMPORTED_MODULE_2_preact_router_match__["Link"],
+								{ onClick: this.handleMainNav.bind(this), className: 'link gray dim dib ml3', activeClassName: 'current', href: '/member' },
+								'Member'
+							),
+							__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+								__WEBPACK_IMPORTED_MODULE_2_preact_router_match__["Link"],
+								{ onClick: this.handleMainNav.bind(this), className: 'link gray dim dib ml3', activeClassName: 'current', href: '/gallery' },
+								'Galeri'
+							),
+							__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+								__WEBPACK_IMPORTED_MODULE_2_preact_router_match__["Link"],
+								{ onClick: this.handleMainNav.bind(this), className: 'link gray dim dib ml3', activeClassName: 'current', href: '/csr' },
+								'CSR'
+							)
+						)
 					),
 					__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-						__WEBPACK_IMPORTED_MODULE_1_preact_router_match__["Link"],
-						{ className: 'ttu dib ph3 link near-black tracked f7 fw6', activeClassName: __WEBPACK_IMPORTED_MODULE_2__style___default.a.active, href: '/produk' },
-						'Produk'
-					),
-					__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-						__WEBPACK_IMPORTED_MODULE_1_preact_router_match__["Link"],
-						{ className: 'ttu dib ph3 link near-black tracked f7 fw6', activeClassName: __WEBPACK_IMPORTED_MODULE_2__style___default.a.active, href: '/article' },
-						'Article'
-					),
-					__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-						__WEBPACK_IMPORTED_MODULE_1_preact_router_match__["Link"],
-						{ className: 'ttu dib ph3 link near-black tracked f7 fw6', activeClassName: __WEBPACK_IMPORTED_MODULE_2__style___default.a.active, href: '/pemesanan' },
-						'Pemesanan'
-					),
-					__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-						__WEBPACK_IMPORTED_MODULE_1_preact_router_match__["Link"],
-						{ className: 'ttu dib ph3 link near-black tracked f7 fw6', activeClassName: __WEBPACK_IMPORTED_MODULE_2__style___default.a.active, href: '/kontak' },
-						'Kontak'
-					),
-					__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-						__WEBPACK_IMPORTED_MODULE_1_preact_router_match__["Link"],
-						{ className: 'ttu dib ph3 link near-black tracked f7 fw6', activeClassName: __WEBPACK_IMPORTED_MODULE_2__style___default.a.active, href: '/agen' },
-						'Agen Resmi'
-					),
-					__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-						__WEBPACK_IMPORTED_MODULE_1_preact_router_match__["Link"],
-						{ className: 'ttu dib ph3 link near-black tracked f7 fw6', activeClassName: __WEBPACK_IMPORTED_MODULE_2__style___default.a.active, href: '/member' },
-						'Member'
-					),
-					__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-						__WEBPACK_IMPORTED_MODULE_1_preact_router_match__["Link"],
-						{ className: 'ttu dib ph3 link near-black tracked f7 fw6', activeClassName: __WEBPACK_IMPORTED_MODULE_2__style___default.a.active, href: '/gallery' },
-						'Galeri'
-					),
-					__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-						__WEBPACK_IMPORTED_MODULE_1_preact_router_match__["Link"],
-						{ className: 'ttu dib ph3 link near-black tracked f7 fw6', activeClassName: __WEBPACK_IMPORTED_MODULE_2__style___default.a.active, href: '/csr' },
-						'CSR'
+						'a',
+						{ href: '#', onClick: this.handleSideBar.bind(this), className: 'link primary f2  dn-l bn bg-transparent' },
+						_ref3
 					)
-				),
-				_ref3
+				)
+			),
+			__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+				'aside',
+				{ className: __WEBPACK_IMPORTED_MODULE_3__style___default.a.MS, style: sidebarOpen, onClick: this.handleSideBar.bind(this) },
+				__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+					'div',
+					{ className: __WEBPACK_IMPORTED_MODULE_3__style___default.a.MS_C, style: sidebarOpen },
+					__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+						'div',
+						{ className: __WEBPACK_IMPORTED_MODULE_3__style___default.a.MS_C_L },
+						_ref4
+					),
+					__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+						'div',
+						{ className: __WEBPACK_IMPORTED_MODULE_3__style___default.a.MS_NAV },
+						__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+							'nav',
+							{ onClick: this.handleSideBar.bind(this) },
+							__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+								__WEBPACK_IMPORTED_MODULE_2_preact_router_match__["Link"],
+								{ onClick: this.handleSideBar.bind(this), href: '/' },
+								'Home'
+							),
+							__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+								__WEBPACK_IMPORTED_MODULE_2_preact_router_match__["Link"],
+								{ onClick: this.handleSideBar.bind(this), href: '/profile' },
+								'Profil'
+							),
+							__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+								__WEBPACK_IMPORTED_MODULE_2_preact_router_match__["Link"],
+								{ onClick: this.handleSideBar.bind(this), href: '/produk' },
+								'Produk'
+							),
+							__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+								__WEBPACK_IMPORTED_MODULE_2_preact_router_match__["Link"],
+								{ onClick: this.handleSideBar.bind(this), href: '/article' },
+								'Article'
+							),
+							__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+								__WEBPACK_IMPORTED_MODULE_2_preact_router_match__["Link"],
+								{ onClick: this.handleSideBar.bind(this), href: '/pemesanan' },
+								'Pemesanan'
+							),
+							__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+								__WEBPACK_IMPORTED_MODULE_2_preact_router_match__["Link"],
+								{ onClick: this.handleSideBar.bind(this), href: '/kontak' },
+								'Kontak'
+							),
+							__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+								__WEBPACK_IMPORTED_MODULE_2_preact_router_match__["Link"],
+								{ onClick: this.handleSideBar.bind(this), href: '/agen' },
+								'Agen Resmi'
+							),
+							__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+								__WEBPACK_IMPORTED_MODULE_2_preact_router_match__["Link"],
+								{ onClick: this.handleSideBar.bind(this), href: '/member' },
+								'Member'
+							),
+							__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+								__WEBPACK_IMPORTED_MODULE_2_preact_router_match__["Link"],
+								{ onClick: this.handleSideBar.bind(this), href: '/gallery' },
+								'Galeri'
+							),
+							__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+								__WEBPACK_IMPORTED_MODULE_2_preact_router_match__["Link"],
+								{ onClick: this.handleSideBar.bind(this), href: '/csr' },
+								'CSR'
+							)
+						)
+					)
+				)
 			)
 		);
 	};
 
 	return Header;
-}(__WEBPACK_IMPORTED_MODULE_0_preact__["Component"]);
+}(__WEBPACK_IMPORTED_MODULE_1_react__["a" /* default */].Component);
 
 // {/* <Link activeClassName={style.active} href="/">Home</Link>
 // <Link activeClassName={style.active} href="/profile">Me</Link>
@@ -2668,7 +4937,7 @@ Match.Link = Link;
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-module.exports = {"header":"header__3QGkI","active":"active__3gItZ"};
+module.exports = {"MAINHEADER":"MAINHEADER__ZsYU8","MH":"MH__2Z-Ka","MH_CS":"MH_CS__3K5tR","MH_CB":"MH_CB__1KUkE","MS":"MS__qsz-2","MS_C":"MS_C__Zz7Ml","MS_EB":"MS_EB__1d2bz","MS_C_L":"MS_C_L__X4CuL","MS_NAV":"MS_NAV__1O0zs"};
 
 /***/ }),
 
@@ -2680,9 +4949,12 @@ module.exports = {"header":"header__3QGkI","active":"active__3gItZ"};
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_preact__ = __webpack_require__("KM04");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_preact___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_preact__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_unfetch__ = __webpack_require__("QAmr");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_HeadlineNews__ = __webpack_require__("PHPn");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_NewsThumb__ = __webpack_require__("Q55m");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_SubscribeBox__ = __webpack_require__("NPkS");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__style__ = __webpack_require__("mxH6");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__style___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__style__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_NewsFeatured__ = __webpack_require__("lGI2");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_NewsThumb__ = __webpack_require__("Q55m");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_SubscribeBox__ = __webpack_require__("NPkS");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_NewsList__ = __webpack_require__("KvjY");
 
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -2694,61 +4966,66 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
+
 // Import Components
 
 
 
 
+
 var _ref = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-  'h3',
-  { className: 'ttu f6 fw6 tracked primary mb3' },
-  'Latest News'
+  'section',
+  { className: 'bg-primary ph3' },
+  __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+    'div',
+    { className: 'flex items-center mw8 center vh-50' },
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+      'div',
+      { className: 'measure-wide white' },
+      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+        'h2',
+        { className: 'f3 f2-l fw6 white lh-title' },
+        'Artikel, Tips & Trick'
+      ),
+      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+        'p',
+        { className: 'serif f5-l' },
+        'Kumpulan berita terkini, Tips & Trick dan tanya jawab seputar dunia sarang burung walet'
+      )
+    )
+  )
 );
 
 var _ref2 = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-  'div',
-  { className: 'mb4' },
-  __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-    'h3',
-    { className: 'ttu f6 fw6 tracked primary mb3' },
-    'Follow Us'
-  ),
+  'section',
+  { className: 'mb4 mb5-l  ph3-l' },
   __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
     'div',
-    { className: 'social-icon-top' },
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-      'a',
-      { className: 'link dib mr3 f3 black', href: '' },
-      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])('i', { className: 'icon icon-facebook' })
-    ),
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-      'a',
-      { className: 'link dib mr3 f3 black', href: '' },
-      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])('i', { className: 'icon icon-twitter' })
-    ),
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-      'a',
-      { className: 'link dib mr3 f3 black', href: '' },
-      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])('i', { className: 'icon icon-instagram' })
-    ),
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-      'a',
-      { className: 'link dib mr3 f3 black', href: '' },
-      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])('i', { className: 'icon icon-youtube-play' })
-    )
+    { className: 'mw8 center' },
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_3__components_NewsFeatured__["a" /* default */], { image: 'assets/images/sarang.jpg',
+      title: 'Sekat Gantung apa Sekat Full?',
+      preview: 'Jika gedung walet anda ingin produktif, maka lakukan pengaturan \u2026' })
   )
 );
 
 var _ref3 = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
   'div',
-  { className: 'mb4' },
-  __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_4__components_SubscribeBox__["a" /* default */], null)
+  { className: 'fl w-100 w-third-l' },
+  __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+    'h4',
+    { className: 'f5-l primary ttu pa3 ph0-l tracked fw6' },
+    'Latest News'
+  )
 );
 
 var _ref4 = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-  'h3',
-  { className: 'ttu f6 fw6 tracked primary mb3' },
-  'Artikel Populer'
+  'div',
+  { className: 'mw8 center cf ph3 ph5-l tc mb3' },
+  __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+    'button',
+    { className: 'bg-primary white w-100 w-third-l tc pa3 ttu f7 bn fw6' },
+    'Read More'
+  )
 );
 
 var Article = function (_Component) {
@@ -2788,32 +5065,18 @@ var Article = function (_Component) {
 
   Article.prototype.render = function render() {
     // Render 5 latest post
-    var HighlightsNews = this.state.dataArticle.slice(0, 2).map(function (key) {
+
+    var LatestNews = this.state.dataArticle.slice(0, 5).map(function (key) {
       return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
         'div',
-        { className: 'dib fl w-100 w-50-l mr3-l' },
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_3__components_NewsThumb__["a" /* default */], {
+        { className: 'fl w-100 w-third-l pa3 mb5-l' },
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_6__components_NewsList__["a" /* default */], {
           title: key.title,
-          imageThumb: 'assets/images/news1.jpg',
+          imageThumb: 'assets/images/sarang.jpg',
           postDate: key.date,
           viewer: key.views,
           postLink: 'post',
-          reviews: key.preview
-        })
-      );
-    });
-
-    var LatestNews = this.state.dataArticle.map(function (key) {
-      return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-        'li',
-        { className: 'dib fl w-100 pv2 mr3-l bb b--black-10' },
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_3__components_NewsThumb__["a" /* default */], {
-          title: key.title,
-          imageThumb: 'assets/images/news1.jpg',
-          postDate: key.date,
-          viewer: key.views,
-          postLink: 'post',
-          reviews: key.preview
+          preview: key.preview
         })
       );
     });
@@ -2822,9 +5085,9 @@ var Article = function (_Component) {
       return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
         'li',
         { className: 'dib fl w-100 pv2 mr3-l bb b--black-10' },
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_3__components_NewsThumb__["a" /* default */], {
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_4__components_NewsThumb__["a" /* default */], {
           title: key.title,
-          imageThumb: 'assets/images/news1.jpg',
+          imageThumb: 'assets/images/news1-s.jpg',
           postDate: key.date,
           viewer: key.views,
           postLink: 'post'
@@ -2835,45 +5098,23 @@ var Article = function (_Component) {
     // PRact Render
     return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
       'div',
-      null,
+      { className: 'pt5 pt5-l' },
+      _ref,
       __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
         'div',
-        { className: 'mw8 center ph3 mt4' },
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_2__components_HeadlineNews__["a" /* default */], {
-          title: this.state.headline.title,
-          imageThumb: 'assets/images/news1.jpg',
-          postDate: this.state.headline.date,
-          viewer: this.state.headline.views,
-          postLink: 'post',
-          link: '#',
-          reviews: this.state.headline.preview
-        })
-      ),
-      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-        'div',
-        { className: 'cf mw8 center ph3' },
+        { className: 'ft--4-l' },
+        _ref2,
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-          'div',
-          { className: 'dib fl w-100 w-two-thirds-l mb4 mb0-l' },
-          _ref,
+          'section',
+          { className: 'mb4 mb0-l ph3-l ' },
           __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-            'ul',
-            { className: 'pr5-l' },
+            'div',
+            { className: 'mw8 center cf' },
+            _ref3,
             LatestNews
           )
         ),
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-          'div',
-          { className: 'dib fl w-100 w-third-l' },
-          _ref2,
-          _ref3,
-          __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
-            'div',
-            { className: 'mb4' },
-            _ref4,
-            MostView
-          )
-        )
+        _ref4
       )
     );
   };
@@ -2882,6 +5123,192 @@ var Article = function (_Component) {
 }(__WEBPACK_IMPORTED_MODULE_0_preact__["Component"]);
 
 
+
+/***/ }),
+
+/***/ "wRU+":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ *
+ */
+
+
+
+/**
+ * Use invariant() to assert state which your program assumes to be true.
+ *
+ * Provide sprintf-style format (only %s is supported) and arguments
+ * to provide information about what broke and what you were
+ * expecting.
+ *
+ * The invariant message will be stripped in production, but the invariant
+ * will remain to ensure logic does not differ in production.
+ */
+
+var validateFormat = function validateFormat(format) {};
+
+if (false) {
+  validateFormat = function validateFormat(format) {
+    if (format === undefined) {
+      throw new Error('invariant requires an error message argument');
+    }
+  };
+}
+
+function invariant(condition, format, a, b, c, d, e, f) {
+  validateFormat(format);
+
+  if (!condition) {
+    var error;
+    if (format === undefined) {
+      error = new Error('Minified exception occurred; use the non-minified dev environment ' + 'for the full error message and additional helpful warnings.');
+    } else {
+      var args = [a, b, c, d, e, f];
+      var argIndex = 0;
+      error = new Error(format.replace(/%s/g, function () {
+        return args[argIndex++];
+      }));
+      error.name = 'Invariant Violation';
+    }
+
+    error.framesToPop = 1; // we don't care about invariant's own frame
+    throw error;
+  }
+}
+
+module.exports = invariant;
+
+/***/ }),
+
+/***/ "wVGV":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * Copyright 2013-present, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ */
+
+
+
+var emptyFunction = __webpack_require__("UQex");
+var invariant = __webpack_require__("wRU+");
+var ReactPropTypesSecret = __webpack_require__("Asjh");
+
+module.exports = function () {
+  function shim(props, propName, componentName, location, propFullName, secret) {
+    if (secret === ReactPropTypesSecret) {
+      // It is still safe when called from React.
+      return;
+    }
+    invariant(false, 'Calling PropTypes validators directly is not supported by the `prop-types` package. ' + 'Use PropTypes.checkPropTypes() to call them. ' + 'Read more at http://fb.me/use-check-prop-types');
+  };
+  shim.isRequired = shim;
+  function getShim() {
+    return shim;
+  };
+  // Important!
+  // Keep this list in sync with production version in `./factoryWithTypeCheckers.js`.
+  var ReactPropTypes = {
+    array: shim,
+    bool: shim,
+    func: shim,
+    number: shim,
+    object: shim,
+    string: shim,
+    symbol: shim,
+
+    any: shim,
+    arrayOf: getShim,
+    element: shim,
+    instanceOf: getShim,
+    node: shim,
+    objectOf: getShim,
+    oneOf: getShim,
+    oneOfType: getShim,
+    shape: getShim
+  };
+
+  ReactPropTypes.checkPropTypes = emptyFunction;
+  ReactPropTypes.PropTypes = ReactPropTypes;
+
+  return ReactPropTypes;
+};
+
+/***/ }),
+
+/***/ "wmdF":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_preact__ = __webpack_require__("KM04");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_preact___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_preact__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__style__ = __webpack_require__("FUXK");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__style___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__style__);
+
+
+
+
+var _ref = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+  'div',
+  { className: 'dtc w3 v-mid' },
+  __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])('img', { src: 'assets/images/ava/image-1.png', alt: '', className: 'br-100' })
+);
+
+function TestiBox(props) {
+  return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+    'div',
+    { className: __WEBPACK_IMPORTED_MODULE_1__style___default.a.TestiBox },
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+      'div',
+      { className: 'serif lh-title f4 white' },
+      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+        'div',
+        { className: 'bg-primary pa4 minh-5' },
+        props.quote
+      )
+    ),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+      'div',
+      { className: 'pa3 bg-white' },
+      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+        'div',
+        { className: 'dt w-100' },
+        _ref,
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+          'div',
+          { className: 'dtc pl3 v-mid' },
+          __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+            'h4',
+            { className: 'f6 lh-solid ttc' },
+            props.user
+          ),
+          __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+            'span',
+            { className: 'f7 primary ttc' },
+            props.city,
+            ' - ',
+            props.prov
+          )
+        )
+      )
+    )
+  );
+}
+
+/* harmony default export */ __webpack_exports__["a"] = (TestiBox);
 
 /***/ }),
 
@@ -2907,6 +5334,215 @@ function OwnerPicture(props) {
 }
 
 /* harmony default export */ __webpack_exports__["a"] = (OwnerPicture);
+
+/***/ }),
+
+/***/ "xaAX":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Kontak; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_preact__ = __webpack_require__("KM04");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_preact___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_preact__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_TextField__ = __webpack_require__("GCBY");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_TextField_TextFieldRow_js__ = __webpack_require__("D4Qw");
+
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+
+var _ref = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])('div', { className: 'pt5' });
+
+var _ref2 = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+  'section',
+  { className: 'bg-primary ph3' },
+  __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+    'div',
+    { className: 'flex items-center mw8 center vh-50' },
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+      'div',
+      { className: 'measure-wide white' },
+      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+        'h2',
+        { className: 'f3 f2-l fw6 white' },
+        'Hubungi kami'
+      ),
+      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+        'p',
+        { className: 'serif f5-l' },
+        'Hubungi Kami untuk bertanya dan konsultasi seputar bisnis sarang burung walet dan perawatannya.'
+      )
+    )
+  )
+);
+
+var _ref3 = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+  'h4',
+  { className: 'f4 primary mb4' },
+  'Sampaikan Pesan Anda'
+);
+
+var _ref4 = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+  'div',
+  { className: 'cf mb3' },
+  __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+    'div',
+    { className: 'fl-l dib-l w-100 w-50-l mb3 pr4-l' },
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_1__components_TextField__["a" /* default */], { label: 'nama lengkap' })
+  ),
+  __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+    'div',
+    { className: 'fl-l dib-l w-100 w-50-l mb3 pr2-l' },
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_1__components_TextField__["a" /* default */], { label: 'Alamat' })
+  ),
+  __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+    'div',
+    { className: 'fl-l dib-l w-100 w-50-l mb3 pr4-l' },
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_1__components_TextField__["a" /* default */], { label: 'Nomor Telepon', type: 'number' })
+  ),
+  __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+    'div',
+    { className: 'fl-l dib-l w-100 w-50-l mb3 pr2-l' },
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_1__components_TextField__["a" /* default */], { label: 'Email', type: 'email' })
+  ),
+  __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+    'div',
+    { className: 'fl-l dib-l w-100 mb3 pr2-l' },
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(__WEBPACK_IMPORTED_MODULE_2__components_TextField_TextFieldRow_js__["a" /* default */], { label: 'pesan anda' })
+  )
+);
+
+var _ref5 = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])('i', { className: 'icon icon-paper-plane-o' });
+
+var _ref6 = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+  'div',
+  { className: 'w-third-l bg-near-black white pa3 ph4-l pv5-l' },
+  __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+    'h4',
+    { className: 'f4 primary mb4' },
+    'Kontak'
+  ),
+  __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+    'div',
+    { className: '' },
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+      'div',
+      { className: 'div f7 mb4' },
+      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+        'h6',
+        { className: 'mb3 ttu tracked f7 fw6 primary' },
+        'Office'
+      ),
+      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+        'p',
+        null,
+        'Jl. Dr. Soetomo 41 Weleri \u2013 Kendal 51355, Jawa Tengah \u2013 Indonesia'
+      )
+    ),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+      'div',
+      { className: 'div f7 mb4' },
+      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+        'h6',
+        { className: 'mb3 ttu tracked f7 fw6 primary' },
+        'Telepon'
+      ),
+      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+        'p',
+        { className: 'mb2' },
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])('i', { className: 'icon icon-phone mr3' }),
+        '082138388899'
+      ),
+      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+        'p',
+        { className: '' },
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])('i', { className: 'icon icon-whatsapp mr3' }),
+        '082138388899'
+      )
+    ),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+      'div',
+      { className: 'div f7 mb4' },
+      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+        'h6',
+        { className: 'mb3 ttu tracked f7 fw6 primary' },
+        'email'
+      ),
+      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+        'p',
+        null,
+        'arief.walet@gmail.com'
+      )
+    )
+  )
+);
+
+var Kontak = function (_Component) {
+  _inherits(Kontak, _Component);
+
+  function Kontak(props) {
+    _classCallCheck(this, Kontak);
+
+    return _possibleConstructorReturn(this, _Component.call(this, props));
+  }
+
+  Kontak.prototype.handleSubmit = function handleSubmit(e) {
+    e.preventDefault();
+    alert('submited');
+  };
+
+  Kontak.prototype.render = function render() {
+    return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+      'div',
+      { className: 'div' },
+      _ref,
+      _ref2,
+      __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+        'section',
+        { className: 'ph3-l' },
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+          'div',
+          { className: 'mw8 bg-white center elevation-10 ft--4-l' },
+          __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+            'div',
+            { className: 'flex-l' },
+            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+              'div',
+              { className: 'w-two-thirds-l pa3 pa5-l' },
+              _ref3,
+              __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+                'form',
+                { action: '' },
+                _ref4,
+                __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+                  'div',
+                  { className: 'sendButton tr' },
+                  __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_preact__["h"])(
+                    'button',
+                    { onClick: this.handleSubmit.bind(this), className: 'br-100 bn bg-primary white w3 h3 elevation-10 f4 lh-solid tc' },
+                    _ref5
+                  )
+                )
+              )
+            ),
+            _ref6
+          )
+        )
+      )
+    );
+  };
+
+  return Kontak;
+}(__WEBPACK_IMPORTED_MODULE_0_preact__["Component"]);
+
+
 
 /***/ })
 

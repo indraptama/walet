@@ -38,6 +38,7 @@ export default class App extends Component {
           <ErrorPage path="/gallery/"/>
           <ErrorPage path="/csr/"/>
           <ErrorPage path="/member/"/>
+					<ErrorPage path="/pemesanan/"/>
 					<Profile path="/profile/:user" />
 				</Router>
 				<MainFooter />

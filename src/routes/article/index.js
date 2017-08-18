@@ -39,27 +39,13 @@ export default class Article extends Component {
 
   render() {
     // Render 5 latest post
-    const HighlightsNews = this.state.dataArticle.slice(0,2).map(key => {
-      return (
-        <div className="dib fl w-100 w-50-l mr3-l">
-          <NewsThumb
-            title={key.title}
-            imageThumb="assets/images/news1.jpg"
-            postDate={key.date}
-            viewer={key.views}
-            postLink="post"
-            reviews={key.preview}
-           />
-        </div>
-      )
-    })
 
     const LatestNews = this.state.dataArticle.slice(0,5).map(key => {
       return (
         <div className="fl w-100 w-third-l pa3 mb5-l">
           <NewsList
             title={key.title}
-            imageThumb="assets/images/news1.jpg"
+            imageThumb="assets/images/sarang.jpg"
             postDate={key.date}
             viewer={key.views}
             postLink="post"
@@ -74,7 +60,7 @@ export default class Article extends Component {
         <li className="dib fl w-100 pv2 mr3-l bb b--black-10">
           <NewsThumb
             title={key.title}
-            imageThumb="assets/images/news1.jpg"
+            imageThumb="assets/images/news1-s.jpg"
             postDate={key.date}
             viewer={key.views}
             postLink="post"
@@ -97,7 +83,7 @@ export default class Article extends Component {
         <div className="ft--4-l">
           <section className="mb4 mb5-l  ph3-l">
             <div className="mw8 center">
-              <NewsFeatured image="assets/images/news1.jpg"
+              <NewsFeatured image="assets/images/sarang.jpg"
                 title="Sekat Gantung apa Sekat Full?"
                 preview="Jika gedung walet anda ingin produktif, maka lakukan pengaturan …"/>
             </div>

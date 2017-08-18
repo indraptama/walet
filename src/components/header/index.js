@@ -18,9 +18,35 @@ export default class Header extends React.Component {
 			sideOpen: false,
 		}
 	}
+
+	handleSideBar(e) {
+		e.preventDefault();
+		window.scrollTo(0, 0);
+		this.setState({
+			sideOpen: !this.state.sideOpen,
+		})
+	}
+
+	handleMainNav(e) {
+		e.preventDefault();
+		window.scrollTo(0, 0);
+	}
+
 	render() {
+		const Style = {
+			isActive: {
+				transform: 'translate3d(0,0,0)',
+			},
+			isClosed: {
+				transform: 'translate3d(100%,0,0)',
+			}
+		}
+		const sidebarOpen = this.state.sideOpen ? Style.isActive : Style.isClosed;
+
+
 		return (
       <div>
+				{console.log(this.state.sideOpen)}
   			<header className={style.MH}>
           <div className="dn flex-l items-center justify-between h2 f7 ph3 bb b--primary">
 						<div className="lift primary">
@@ -66,38 +92,39 @@ export default class Header extends React.Component {
 							</div>
 							<div className="right">
 								<nav className="dn db-l fw4 f7 tracked">
-	                <Link className="link gray dim dib ml3" activeClassName="current" href="/">Home</Link>
-	                <Link className="link gray dim dib ml3" activeClassName="current" href="/profile">Profil</Link>
-	                <Link className="link gray dim dib ml3" activeClassName="current" href="/produk">Produk</Link>
-									<Link className="link gray dim dib ml3" activeClassName="current" href="/pemesanan">Pemesanan</Link>
-	                <Link className="link gray dim dib ml3" activeClassName="current" href="/article">Article</Link>
-									<Link className="link gray dim dib ml3" activeClassName="current" href="/agen">Agen Resmi</Link>
-                  <Link className="link gray dim dib ml3" activeClassName="current" href="/kontak">Kontak</Link>
-									<Link className="link gray dim dib ml3" activeClassName="current" href="/member">Member</Link>
-									<Link className="link gray dim dib ml3" activeClassName="current" href="/gallery">Galeri</Link>
-									<Link className="link gray dim dib ml3" activeClassName="current" href="/csr">CSR</Link>
+	                <Link onClick={this.handleMainNav.bind(this)} className="link gray dim dib ml3" activeClassName="current" href="/">Home</Link>
+	                <Link onClick={this.handleMainNav.bind(this)} className="link gray dim dib ml3" activeClassName="current" href="/profile">Profil</Link>
+	                <Link onClick={this.handleMainNav.bind(this)} className="link gray dim dib ml3" activeClassName="current" href="/produk">Produk</Link>
+									<Link onClick={this.handleMainNav.bind(this)} className="link gray dim dib ml3" activeClassName="current" href="/pemesanan">Pemesanan</Link>
+	                <Link onClick={this.handleMainNav.bind(this)} className="link gray dim dib ml3" activeClassName="current" href="/article">Article</Link>
+									<Link onClick={this.handleMainNav.bind(this)} className="link gray dim dib ml3" activeClassName="current" href="/agen">Agen Resmi</Link>
+                  <Link onClick={this.handleMainNav.bind(this)} className="link gray dim dib ml3" activeClassName="current" href="/kontak">Kontak</Link>
+									<Link onClick={this.handleMainNav.bind(this)} className="link gray dim dib ml3" activeClassName="current" href="/member">Member</Link>
+									<Link onClick={this.handleMainNav.bind(this)} className="link gray dim dib ml3" activeClassName="current" href="/gallery">Galeri</Link>
+									<Link onClick={this.handleMainNav.bind(this)} className="link gray dim dib ml3" activeClassName="current" href="/csr">CSR</Link>
 	              </nav>
 							</div>
-							<a href="#" onClick={""} className="link primary f2 dn-l bn bg-transparent"><i className="icon icon-menu"></i></a>
+							<a href="#" onClick={this.handleSideBar.bind(this)} className="link primary f2  dn-l bn bg-transparent"><i className="icon icon-menu"></i></a>
 					</div>
         </header>
-        <aside className={style.MS}>
-          <div className={style.MS_C}>
+
+        <aside className={style.MS} style={sidebarOpen} onClick={this.handleSideBar.bind(this)}>
+          <div className={style.MS_C} style={sidebarOpen}>
             <div className={style.MS_C_L}>
               <img src="assets/logo.svg" alt=""/>
             </div>
             <div className={style.MS_NAV}>
-              <nav>
-                <Link activeClassName="current" href="/">Home</Link>
-                <Link activeClassName="current" href="/profile">Profil</Link>
-                <Link activeClassName="current" href="/produk">Produk</Link>
-                <Link activeClassName="current" href="/article">Article</Link>
-                <Link activeClassName="current" href="/pemesanan">Pemesanan</Link>
-                <Link activeClassName="current" href="/kontak">Kontak</Link>
-                <Link activeClassName="current" href="/agen">Agen Resmi</Link>
-                <Link activeClassName="current" href="/member">Member</Link>
-                <Link activeClassName="current" href="/gallery">Galeri</Link>
-                <Link activeClassName="current" href="/csr">CSR</Link>
+              <nav onClick={this.handleSideBar.bind(this)}>
+                <Link onClick={this.handleSideBar.bind(this)} href="/">Home</Link>
+                <Link onClick={this.handleSideBar.bind(this)} href="/profile">Profil</Link>
+                <Link onClick={this.handleSideBar.bind(this)} href="/produk">Produk</Link>
+                <Link onClick={this.handleSideBar.bind(this)} href="/article">Article</Link>
+                <Link onClick={this.handleSideBar.bind(this)} href="/pemesanan">Pemesanan</Link>
+                <Link onClick={this.handleSideBar.bind(this)} href="/kontak">Kontak</Link>
+                <Link onClick={this.handleSideBar.bind(this)} href="/agen">Agen Resmi</Link>
+                <Link onClick={this.handleSideBar.bind(this)} href="/member">Member</Link>
+                <Link onClick={this.handleSideBar.bind(this)} href="/gallery">Galeri</Link>
+                <Link onClick={this.handleSideBar.bind(this)} href="/csr">CSR</Link>
               </nav>
             </div>
 

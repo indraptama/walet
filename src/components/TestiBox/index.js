@@ -4,8 +4,8 @@ import style from './style';
 function TestiBox(props) {
   return (
     <div className={style.TestiBox}>
-      <div className="serif lh-title f4 white aspect-ratio aspect-ratio--16x9">
-        <div className="aspect-ratio--object bg-primary pa4">
+      <div className="serif lh-title f4 white">
+        <div className="bg-primary pa4 minh-5">
           {props.quote}
         </div>
       </div>

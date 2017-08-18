@@ -1,4 +1,4 @@
-import Wallop from 'wallop';
+import Wallop from './Wallop';
 
 const wallopInit = () => {
   var wallopEl = document.querySelector('.Wallop');

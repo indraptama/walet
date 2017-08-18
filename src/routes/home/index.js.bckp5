@@ -5,7 +5,7 @@ import HeadlineNews from '../../components/HeadlineNews';
 import ProductThumb from '../../components/ProductThumb';
 import MessageBox from '../../components/MessageBox';
 import OwnerPicture from '../../components/OwnerPicture';
-import Carousel from '../../components/Carousel';
+import Carousel from 're-carousel';
 import TestiBox from '../../components/TestiBox';
 import style from './style';
 
