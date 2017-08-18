@@ -8,7 +8,7 @@ function MainFooter(props) {
     <div className="ph3">
       <div className="mw8 center pv5 cf f8 pr3 flex-l items-end">
         <div className="dib db-l fl w-100 w-third-l primary mb3 mb0-l">
-          <img className="h3 tc mb3" src="assets/logo.svg" alt=""/>
+          <img className="h3 tc mb3" src="assets/logo-white.svg" alt=""/>
           <p>Jl. Dr. Soetomo 41 Weleri – Kendal 51355<br />Jawa Tengah – Indonesia<br/><br/>
           <i className="icon icon-phone"/> 082138388899  -  <i className="icon icon-whatsapp"/> 085729486688<br/>arief.walet@gmail.com<br/><br/>(Senin - Sabtu, Pukul 08.00 - 16.00 WIB)</p>
         </div>

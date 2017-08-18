@@ -33,10 +33,57 @@ export default class Agen extends Component {
 
   render() {
     const agens = this.state.dataAgen;
+    const agenSortProv = agens.reduce(function(r,a) {
+      r[a.provice] = r[a.provice] || [];
+      r[a.provice].push(a);
+      return r
+    }, Object.create(null))
+
+    console.log(agenSortProv);
+
+
+
+    // result = cars.reduce(function (r, a) {
+    //     r[a.make] = r[a.make] || [];
+    //     r[a.make].push(a);
+    //     return r;
+    // }, Object.create(null));
+
+    // console.log(result);
+
+
+    // const agenProv = agens.map(agen => {
+    //   agenSortProv[agen.provice] = agen;
+    //   console.log(agenSortProv);
+    // })
+
+    const agenRender = Object.keys(agenSortProv).sort().map(prov => {
+      return (
+        <section className="mw8 center">
+          <h4 className="f7 ttc fw6 primary ph2 pv2 bg-near-white bg-white-l">{prov}</h4>
+          <div className="flex-l flex-wrap">
+            {(agenSortProv[prov]).map(agen => {
+              return (
+                <div className="w-100 w-20-l pa2">
+                  <ListToCard name={agen.name}
+                    avatar={agen.avatar}
+                    city={agen.city}
+                    streetAddress={agen.address}
+                    contact={agen.contact}
+                    prov={agen.provice}/>
+                </div>
+              )
+            })}
+          </div>
+        </section>
+      )
+    })
+
+
     return (
       <div>
         <div className="pt5" />
-        <section className="bg-primary ph3">
+        <section className="bg-primary ph3 mb3">
           <div className="flex items-center mw8 center vh-50">
             <div className="measure-wide white">
               <h2 className="f3 f2-l fw6 white">Agen Resmi</h2>
@@ -44,20 +91,8 @@ export default class Agen extends Component {
             </div>
           </div>
         </section>
-        <section className="flex flex-wrap mw8 center">
-            {agens.map(agen => {
-              return (
-                <div className="w-100 w-25-l pa2">
-                  <ListToCard name={agen.name}
-                    avatar={agen.avatar}
-                    city={agen.city}
-                    contact={agen.contact}
-                    prov={agen.provice}/>
-                </div>
-              )
-            })}
 
-        </section>
+        {agenRender}
       </div>);
   }
 }
